@@ -17,20 +17,26 @@
 #### 使用说明
 
 1.  启动项目
+
 ```js
 yarn serve
 ```
+
 2.  打包项目
+
 ```js
 yarn build
 ```
+
 3.  格式化修复
+
 ```js
 yarn prettier
 ```
 
 #### 发布包
-1.  确保切换到npm的镜像源
+
+1.  确保切换到 npm 的镜像源
 2.  yarn build
 3.  npm login
 4.  npm publish

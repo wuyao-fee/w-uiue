@@ -19,6 +19,29 @@ module.exports = defineConfig({
       .tap((options) => {
         // 修改它的选项...
         return options;
+      })
+      .end();
+
+    // 删除默认的svg规则
+    config.module.rules.delete("svg");
+
+    // 添加新的svg规则
+    config.module
+      .rule("svg-sprite")
+      .test(/\.svg$/)
+      .include.add(path.resolve(__dirname, "packages/svg"))
+      .end()
+      .use("svg-sprite-loader")
+      .loader("svg-sprite-loader")
+      .options({
+        symbolId: "icon-[name]",
       });
+  },
+  css: {
+    loaderOptions: {
+      scss: {
+        additionalData: `@import "./examples/assets/style/variables.scss";`,
+      },
+    },
   },
 });

@@ -1,0 +1,87 @@
+// 主题色
+$primary-base-color: #c20000;
+$hover-base-color: #db1c1c;
+$active-base-color: #a90000;
+
+// 文字色
+$first-text-color: #282828;
+$second-text-color: #595959;
+$third-text-color: #969696;
+
+// 图标色
+$first-icon-color: $second-text-color;
+$second-icon-color: $third-text-color;
+
+// 填充色
+$hover-fill-color: #f4f4f4;
+$active-fill-color: #eaeaea;
+$disabled-fill-color: #f7f7f7;
+$background-fill-color: #f3f3f3;
+$table-header-fill-color: #f9f9f9;
+
+// 线条色
+$border-color: #cecece;
+$line-color: #e5e5e5;
+
+// 语义色
+$success-color: #01b42a;
+$hover-success-color: #42e167;
+$active-success-color: #01861f;
+$disabled-success-color: #74f091;
+$disabled-text--success-color: #aefac0;
+
+$warning-color: #ff7d00;
+$hover-warning-color: #ffa34a;
+$active-warning-color: #d66900;
+$disabled-warning-color: #ffbc7b;
+$disabled-text--warning-color: #ffd8b2;
+
+$danger-color: #ff5656;
+$hover-danger-color: #ffecec;
+$active-danger-color: #cf2525;
+$disabled-danger-color: #ff9595;
+$disabled-text--danger-color: #ffbfbf;
+
+$help-color: #4a8eff;
+$hover-help-color: #ebf2ff;
+$active-help-color: #0051d6;
+$disabled-help-color: #7badff;
+$disabled-text--help-color: #b2cfff;
+
+// 主要字体
+$font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Helvetica,
+  Arial, sans-serif;
+$font-size: 14px;
+$line-height: 22px;
+
+$font-weight: 400;
+$font-weight--bold: 600;
+
+$font-size--small: 12px;
+$line-height--small: 20px;
+
+$font-size--medium: 16px;
+$line-height--medium: 24px;
+
+$font-size--large: 18px;
+$line-height--large: 26px;
+
+// 颜色
+$white-color: #ffffff;
+
+// 描边
+$border: 1px solid $border-color;
+$border-dashed: 1px dashed $border-color;
+
+// 禁用文本
+$disabled-text-color: $third-text-color;
+
+// 圆角
+$radius: 4px;
+$radius--small: 2px;
+$radius--large: 8px;
+
+// 按钮尺寸
+$button-height: 32px;
+$button-height--small: 24px;
+$button-height--large: 40px;

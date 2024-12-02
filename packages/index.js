@@ -1,21 +1,30 @@
-import Button from "./button/index";
+import WSvgIcon from "./components/WSvgIcon";
+import { importAllSvg } from "../src/utils/svgBuilder";
 
-const components = [Button];
+// 导入所有SVG
+importAllSvg();
 
+// 组件列表
+const components = [WSvgIcon];
+
+// 定义 install 方法
 const install = function (Vue) {
-  // 全局注册组件
+  // 判断是否安装过
+  if (install.installed) return;
+  install.installed = true;
+
+  // 遍历注册全局组件
   components.forEach((component) => {
     Vue.component(component.name, component);
   });
 };
 
-/* istanbul ignore if */
+// 检测到 Vue 才执行
 if (typeof window !== "undefined" && window.Vue) {
   install(window.Vue);
 }
 
 export default {
-  version: "1.0.0",
   install,
-  Button,
+  WSvgIcon,
 };
