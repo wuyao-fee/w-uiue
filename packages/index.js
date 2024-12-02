@@ -1,11 +1,11 @@
-import WSvgIcon from "./components/WSvgIcon";
-import { importAllSvg } from "../src/utils/svgBuilder";
+import SvgIcon from "./svg-icon/src/svg-icon.vue";
+import { importAllSvg } from "./svg-icon/index";
 
 // 导入所有SVG
 importAllSvg();
 
 // 组件列表
-const components = [WSvgIcon];
+const components = [SvgIcon];
 
 // 定义 install 方法
 const install = function (Vue) {
@@ -26,5 +26,5 @@ if (typeof window !== "undefined" && window.Vue) {
 
 export default {
   install,
-  WSvgIcon,
+  SvgIcon,
 };

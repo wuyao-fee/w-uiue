@@ -2,7 +2,7 @@
   <div class="home">
     <h1>SVG Icon 示例</h1>
     <div class="icon-demo">
-      <w-svg-icon name="test" color="#333" :size="24" />
+      <w-svg-icon name="line-add" color="#333" :size="24" />
     </div>
   </div>
 </template>

@@ -1,12 +1,6 @@
 <template>
-  <div
-    v-if="isExternal"
-    :style="styleExternalIcon"
-    class="svg-external-icon svg-icon"
-    v-on="$listeners"
-  />
-  <svg v-else :class="svgClass" aria-hidden="true" v-on="$listeners">
-    <use :xlink:href="iconName" />
+  <svg :style="svgStyle" aria-hidden="true" class="w-svg-icon">
+    <use :xlink:href="symbolId" />
   </svg>
 </template>
 
@@ -14,60 +8,37 @@
 export default {
   name: "WSvgIcon",
   props: {
-    iconClass: {
+    name: {
       type: String,
       required: true,
     },
-    type: {
+    color: {
       type: String,
-      default: "line",
+      default: "currentColor",
     },
-    className: {
-      type: String,
-      default: "",
+    size: {
+      type: [Number, String],
+      default: 16,
     },
   },
-  created() {},
   computed: {
-    isExternal() {
-      return this.isExternalF(this.iconClass);
+    symbolId() {
+      return `#icon-${this.name}`;
     },
-    iconName() {
-      return `#icon-${this.type}-${this.iconClass}`;
-    },
-    svgClass() {
-      if (this.className) {
-        return "svg-icon " + this.className;
-      } else {
-        return "svg-icon";
-      }
-    },
-    styleExternalIcon() {
+    svgStyle() {
       return {
-        mask: `url(${this.iconClass}) no-repeat 50% 50%`,
-        "-webkit-mask": `url(${this.iconClass}) no-repeat 50% 50%`,
+        width: typeof this.size === "number" ? `${this.size}px` : this.size,
+        height: typeof this.size === "number" ? `${this.size}px` : this.size,
+        fill: this.color,
+        verticalAlign: "middle",
       };
-    },
-  },
-  methods: {
-    isExternalF(path) {
-      return /^(https?:|mailto:|tel:)/.test(path);
     },
   },
 };
 </script>
 
-<style scoped>
-.svg-icon {
-  width: 1em;
-  height: 1em;
-  fill: currentColor;
-  overflow: hidden;
-}
-
-.svg-external-icon {
-  background-color: currentColor;
-  mask-size: cover !important;
+<style>
+.w-svg-icon {
   display: inline-block;
 }
 </style>
