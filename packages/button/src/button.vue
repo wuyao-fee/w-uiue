@@ -1,6 +1,8 @@
 <script>
+import WSvgIcon from "../../svg-icon/src/svg-icon.vue";
 export default {
   name: "WButton",
+  components: { WSvgIcon },
   props: {
     type: {
       type: String,
@@ -14,25 +16,55 @@ export default {
       type: Boolean,
       default: false,
     },
+    loading: {
+      type: Boolean,
+      default: false,
+    },
+    // 判断是否有loading，内部自行维护加载状态
+    // 注意：使用该属性，点击事件需要返回一个promise
+    hasLoading: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
-    return {};
+    return {
+      localLoading: false,
+    };
   },
-  methods: {},
+  methods: {
+    async handleClick(evt) {
+      // 判断是否有loading，内部自行维护加载状态，使用promise
+      if (this.hasLoading) {
+        try {
+          this.localLoading = true;
+          await this.$listeners?.click(evt);
+        } catch (error) {
+          console.log(error);
+        } finally {
+          this.localLoading = false;
+        }
+      } else {
+        this.$emit("click", evt);
+      }
+    },
+  },
 };
 </script>
 
 <template>
   <button
     class="w-button"
-    :disabled="disabled"
+    @click="handleClick"
+    :disabled="disabled || loading || localLoading"
     :class="[
       type ? `w-button--${type}` : '',
       size ? `w-button--${size}` : '',
-      disabled ? 'w-button--disabled' : '',
+      disabled || loading || localLoading ? 'w-button--disabled' : '',
     ]"
   >
-    <span><slot></slot></span>
+    <w-svg-icon name="line-loading" v-if="loading || localLoading"></w-svg-icon>
+    <span v-if="$slots.default"><slot></slot></span>
   </button>
 </template>
 
@@ -45,16 +77,20 @@ export default {
   border-radius: $radius;
   box-sizing: border-box;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 .w-button--default {
   color: $second-text-color;
   background-color: $white-color;
   border: $border;
-  &:hover {
+  // 不能是禁用状态
+  &:not(.w-button--disabled):hover {
     color: $hover-base-color;
     border-color: $hover-base-color;
   }
-  &:active {
+  // 不能是禁用状态
+  &:not(.w-button--disabled):active {
     color: $active-base-color;
     border-color: $active-base-color;
   }
@@ -73,11 +109,11 @@ export default {
   color: $second-text-color;
   background-color: $white-color;
   border: $border-dashed;
-  &:hover {
+  &:not(.w-button--disabled):hover {
     color: $hover-base-color;
     border-color: $hover-base-color;
   }
-  &:active {
+  &:not(.w-button--disabled):active {
     color: $active-base-color;
     border-color: $active-base-color;
   }
@@ -87,10 +123,10 @@ export default {
   border: none;
   padding: 0 !important;
   background: none !important;
-  &:hover {
+  &:not(.w-button--disabled):hover {
     color: $hover-base-color;
   }
-  &:active {
+  &:not(.w-button--disabled):active {
     color: $active-base-color;
   }
 }
@@ -105,11 +141,28 @@ export default {
   &.w-button--text {
     color: $third-text-color;
   }
+  &:hover,
+  &:active {
+    border-color: none;
+    background-color: none;
+  }
 }
 .w-button--medium {
   padding: 6px 20px;
   font-size: $font-size;
   line-height: $line-height;
   height: $button-height;
+}
+.w-button--small {
+  padding: 4px 20px;
+  font-size: $font-size--small;
+  line-height: $line-height--small;
+  height: $button-height--small;
+}
+.w-button--large {
+  padding: 8px 20px;
+  font-size: $font-size--large;
+  line-height: $line-height--large;
+  height: $button-height--large;
 }
 </style>

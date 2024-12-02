@@ -1,3 +1,4 @@
+import Button from "./button/src/button.vue";
 import SvgIcon from "./svg-icon/src/svg-icon.vue";
 import { importAllSvg } from "./svg-icon/index";
 
@@ -5,7 +6,7 @@ import { importAllSvg } from "./svg-icon/index";
 importAllSvg();
 
 // 组件列表
-const components = [SvgIcon];
+const components = [Button, SvgIcon];
 
 // 定义 install 方法
 const install = function (Vue) {
@@ -26,5 +27,6 @@ if (typeof window !== "undefined" && window.Vue) {
 
 export default {
   install,
+  Button,
   SvgIcon,
 };
