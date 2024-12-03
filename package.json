@@ -2,7 +2,7 @@
   "name": "w-uiue",
   "version": "0.0.1",
   "private": true,
-  "main": "dist/w-ui.umd.min.js",
+  "main": "dist/w-uiue.umd.min.js",
   "author": {
     "name": "wuyao"
   },
@@ -41,7 +41,8 @@
     "svg-sprite-loader": "^6.0.11",
     "svgo-loader": "^4.0.0",
     "vue-template-compiler": "^2.6.14",
-    "vuepress": "^1.9.10"
+    "vuepress": "^1.9.10",
+    "webpack": "4"
   },
   "eslintConfig": {
     "root": true,
