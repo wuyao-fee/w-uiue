@@ -1,18 +1,21 @@
-# w-ui
+# w-uiue
 
 #### 介绍
 
-自定义 ui 组件库
+基于vue2的 uiue 组件库，参考联通uiue设计规范实现
 
 #### 软件架构
 
 软件架构说明
+vue2.6.14 + @vue/cli@5.0.8 + yarn@1.22.22 + sass + webpack5 + vuepress
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+```js
+yarn add w-uiue -S
+或者
+npm install w-uiue -S
+```
 
 #### 使用说明
 
