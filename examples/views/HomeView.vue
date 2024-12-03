@@ -29,14 +29,30 @@
       <w-button type="primary" :loading="loading" @click="handleClick"
         >主要按钮-中</w-button
       >
-      <w-button type="primary" hasLoading @click="handleClick2"
+      <w-button type="primary" hasLoading icon="line-plus" @click="handleClick2"
+        >主要按钮-中</w-button
+      >
+      <w-button
+        type="primary"
+        size="small"
+        hasLoading
+        icon="line-delete"
+        @click="handleClick2"
+        >主要按钮-中</w-button
+      >
+      <w-button
+        type="primary"
+        size="large"
+        hasLoading
+        icon="line-plus"
+        @click="handleClick2"
         >主要按钮-中</w-button
       >
     </div>
     <h1>SVG Icon 示例</h1>
     <div class="icon-demo">
-      <w-svg-icon name="line-loading" color="#333" :size="24" />
-      <w-svg-icon name="line-loading2" color="#333" :size="24" />
+      <w-svg-icon name="line-add" color="#f40" :size="24" />
+      <w-svg-icon name="line-add-user" color="#f40" :size="24" />
     </div>
   </div>
 </template>

@@ -1,83 +1,21 @@
-# Button按钮
+# Button 按钮
 
-## 基本用法
+### 基础用法
 
-通用广泛的基础单选按钮
+基础的按钮用法。
 
-:::demo通用广泛的基础单选
+:::demo 使用`type`属性来定义 Button 的样式。
 ```html
 <template>
-  <div class="home">
-    <h1>Button 示例</h1>
-    <div class="button-demo">
-      <w-button>默认按钮-中</w-button>
-      <w-button type="primary">主要按钮-中</w-button>
-      <w-button type="dashed">虚线按钮-中</w-button>
-      <w-button type="text">文本按钮-中</w-button>
-    </div>
-    <div class="button-demo">
-      <w-button disabled>默认按钮</w-button>
-      <w-button type="primary" disabled>主要按钮</w-button>
-      <w-button type="dashed" disabled>虚线按钮</w-button>
-      <w-button type="text" disabled>文本按钮</w-button>
-    </div>
-    <div class="button-demo">
-      <w-button size="small">默认按钮-小</w-button>
-      <w-button type="primary" size="small">主要按钮-小</w-button>
-      <w-button type="dashed" size="small">虚线按钮-小</w-button>
-      <w-button type="text" size="small">文本按钮-小</w-button>
-    </div>
-    <div class="button-demo">
-      <w-button size="large">默认按钮-大</w-button>
-      <w-button type="primary" size="large">主要按钮-大</w-button>
-      <w-button type="dashed" size="large">虚线按钮-大</w-button>
-      <w-button type="text" size="large">文本按钮-大</w-button>
-    </div>
-    <div class="button-demo">
-      <w-button type="primary" :loading="loading" @click="handleClick"
-        >主要按钮-中</w-button
-      >
-      <w-button type="primary" hasLoading @click="handleClick2"
-        >主要按钮-中</w-button
-      >
-    </div>
-    <h1>SVG Icon 示例</h1>
-    <div class="icon-demo">
-      <w-svg-icon name="line-loading" color="#333" :size="24" />
-      <w-svg-icon name="line-loading2" color="#333" :size="24" />
-    </div>
+  <div class="button-demo">
+    <w-button>默认按钮-中</w-button>
+    <w-button type="primary">主要按钮-中</w-button>
+    <w-button type="dashed">虚线按钮-中</w-button>
+    <w-button type="text">文本按钮-中</w-button>
   </div>
 </template>
 
-<script>
-export default {
-  name: "HomeView",
-  data() {
-    return {
-      loading: false,
-    };
-  },
-  methods: {
-    handleClick() {
-      this.loading = true;
-      setTimeout(() => {
-        this.loading = false;
-      }, 2000);
-    },
-    async handleClick2() {
-      return new Promise((resolve) => {
-        setTimeout(() => {
-          resolve();
-        }, 2000);
-      });
-    },
-  },
-};
-</script>
 <style>
-.icon-demo {
-  margin: 20px;
-}
 .button-demo {
   display: flex;
   margin-bottom: 5px;
@@ -85,3 +23,167 @@ export default {
 </style>
 ```
 :::
+
+### 禁用状态
+
+按钮不可用状态。
+
+:::demo 你可以使用disabled属性来定义按钮是否可用，它接受一个Boolean值。
+```html
+<template>
+  <div class="button-demo">
+    <w-button disabled>默认按钮-中</w-button>
+    <w-button type="primary" disabled>主要按钮-中</w-button>
+    <w-button type="dashed" disabled>虚线按钮-中</w-button>
+    <w-button type="text" disabled>文本按钮-中</w-button>
+  </div>
+</template>
+
+<style>
+.button-demo {
+  display: flex;
+  margin-bottom: 5px;
+}
+</style>
+```
+:::
+
+### 图标按钮
+
+带图标的按钮可增强辨识度。
+
+:::demo 设置icon属性即可。
+```html
+<template>
+  <div class="button-demo">
+    <w-button type="primary" icon="line-plus">新增-中</w-button>
+    <w-button type="primary" icon="line-delete">删除-中</w-button>
+    <w-button type="primary" icon="line-edit">编辑-中</w-button>
+    <w-button type="primary" icon="line-search">搜索-中</w-button>
+  </div>
+</template>
+
+<style>
+.button-demo {
+  display: flex;
+  margin-bottom: 5px;
+}
+</style>
+```
+:::
+
+### 加载中
+
+点击按钮后进行数据加载操作，在按钮上显示加载状态。
+
+:::demo 要设置为 loading 状态，只要设置loading属性为true即可。
+```html
+<template>
+  <div class="button-demo">
+    <w-button type="primary" :loading="loading">加载中</w-button>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      loading: true,
+    };
+  },
+};
+</script>
+
+<style>
+.button-demo {
+  display: flex;
+  margin-bottom: 5px;
+}
+</style>
+```
+:::
+
+### 加载中
+
+点击按钮后进行数据加载操作，在按钮上显示加载状态。
+
+:::demo 要设置为 loading 状态，只要设置loading属性为true即可。
+```html
+<template>
+  <div class="button-demo">
+    <w-button type="primary" :loading="loading">加载中</w-button>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      loading: true,
+    };
+  },
+};
+</script>
+
+<style>
+.button-demo {
+  display: flex;
+  margin-bottom: 5px;
+}
+</style>
+```
+:::
+
+### 自行维护加载中状态
+
+Button 组件内部自行维护loading状态。
+
+:::demo 添加`hasLoading`属性，处理`click`事件时需要返回一个`promise`。
+```html
+<template>
+  <div class="button-demo">
+    <w-button type="primary" hasLoading @click="handleClick">自行维护</w-button>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      loading: true,
+    };
+  },
+  methods: {
+    async handleClick() {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          // 模拟异步操作
+          resolve();
+        }, 2000);
+      });
+    },
+  },
+};
+</script>
+
+<style>
+.button-demo {
+  display: flex;
+  margin-bottom: 5px;
+}
+</style>
+```
+:::
+
+
+
+### 属性
+
+| 参数       | 说明                   | 类型    | 可选值                         | 默认值  |
+| ---------- | ---------------------- | ------- | ------------------------------ | ------- |
+| type       | 类型                   | string  | default、primary、dashed、text | default |
+| size       | 尺寸                   | string  | small、medium、large           | medium  |
+| loading    | 是否加载中状态         | boolean | —                              | false   |
+| hasLoading | 是否自行维护加载中状态 | boolean | —                              | false   |
+| disabled   | 是否禁用状态           | boolean | —                              | false   |
+| icon       | 图标类型               | string  | —                              |         |

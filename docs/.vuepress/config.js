@@ -18,11 +18,19 @@ module.exports = {
     ],
     sidebar: {
       "/components/": [
-        "/components/",
-        "/components/button.md"
+        {
+          title: "安装",
+          collapsable: false,
+          path: "/components/install.md",
+        },
+        {
+          title: "Button按钮",
+          collapsable: false,
+          path: "/components/button.md",
+        },
       ]
     }, // 侧边栏配置
-    sidebarDepth: 2, // 侧边栏显示2级
+    sidebarDepth: 1, // 侧边栏显示2级
   },
   plugins: ["demo-container"],
 };

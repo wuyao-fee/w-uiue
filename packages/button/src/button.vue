@@ -26,11 +26,34 @@ export default {
       type: Boolean,
       default: false,
     },
+    icon: {
+      type: String,
+      default: "",
+    },
   },
   data() {
     return {
       localLoading: false,
     };
+  },
+  computed: {
+    // 处理icon名称
+    iconClass() {
+      return `w-icon-${this.icon}`;
+    },
+    // 设置icon大小
+    iconSize() {
+      if (this.size === "medium") {
+        return 16;
+      }
+      if (this.size === "small") {
+        return 14;
+      }
+      if (this.size === "large") {
+        return 18;
+      }
+      return 16;
+    },
   },
   methods: {
     async handleClick(evt) {
@@ -61,9 +84,21 @@ export default {
       type ? `w-button--${type}` : '',
       size ? `w-button--${size}` : '',
       disabled || loading || localLoading ? 'w-button--disabled' : '',
+      icon ? `w-button--icon` : '',
     ]"
   >
-    <w-svg-icon name="line-loading" v-if="loading || localLoading"></w-svg-icon>
+    <w-svg-icon
+      name="line-loading"
+      :size="iconSize"
+      v-if="loading || localLoading"
+      class="w-button--loading"
+    ></w-svg-icon>
+    <w-svg-icon
+      :name="icon"
+      color="#fff"
+      :size="iconSize"
+      v-if="icon && !loading && !localLoading"
+    ></w-svg-icon>
     <span v-if="$slots.default"><slot></slot></span>
   </button>
 </template>
@@ -164,5 +199,15 @@ export default {
   font-size: $font-size--large;
   line-height: $line-height--large;
   height: $button-height--large;
+}
+// 内部有图标的按钮
+.w-button--icon {
+  padding-left: 16px;
+  .w-svg-icon {
+    margin-right: 4px;
+  }
+}
+.w-button--loading {
+  margin-right: 4px;
 }
 </style>

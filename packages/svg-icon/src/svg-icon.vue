@@ -23,7 +23,7 @@ export default {
   },
   computed: {
     symbolId() {
-      return `#icon-${this.name}`;
+      return `#w-icon-${this.name}`;
     },
     svgStyle() {
       return {
