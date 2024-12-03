@@ -74,5 +74,14 @@ export default {
   },
 };
 </script>
+<style>
+.icon-demo {
+  margin: 20px;
+}
+.button-demo {
+  display: flex;
+  margin-bottom: 5px;
+}
+</style>
 ```
 :::
