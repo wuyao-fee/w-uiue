@@ -28,7 +28,7 @@ module.exports = {
           collapsable: false,
           path: "/components/button.md",
         },
-      ]
+      ],
     }, // 侧边栏配置
     sidebarDepth: 1, // 侧边栏显示2级
   },

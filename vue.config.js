@@ -41,12 +41,14 @@ module.exports = defineConfig({
       .loader("svgo-loader")
       .tap((options) => ({
         ...options,
-        plugins: [{
-          name: 'removeAttrs',
-          params: {
-            attrs: 'fill'
-          }
-        }]
+        plugins: [
+          {
+            name: "removeAttrs",
+            params: {
+              attrs: "fill",
+            },
+          },
+        ],
       }))
       .end();
 

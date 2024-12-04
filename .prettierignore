@@ -1,0 +1,14 @@
+.gieee
+.temp
+.dist
+docs/dist
+*.log
+*.swp
+*.swo
+*.swn
+*.swnb
+*.swp
+*.swpx
+*.swpu
+*.swp~
+node_modules
