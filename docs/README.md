@@ -1,7 +1,7 @@
 ---
 home: true
 defaultHome: true
-heroText: WUI
+heroText: w-uiue
 tagline: 基于Vue2.0的UI组件库
 actionText: 快速上手 →
 actionLink: /components/install
@@ -12,5 +12,5 @@ features:
     details: 提供丰富的组件，满足日常开发需求。
   - title: 持续维护
     details: 持续更新，及时修复bug。
-footer: MIT Licensed | Copyright © 2024-present WUI
+footer: MIT Licensed | Copyright © 2024-present w-uiue
 ---

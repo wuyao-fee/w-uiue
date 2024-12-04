@@ -1,6 +1,6 @@
 {
   "name": "w-uiue",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "main": "dist/w-uiue.umd.min.js",
   "author": {
