@@ -14,7 +14,7 @@ module.exports = {
     nav: [
       // 导航栏配置
       { text: "首页", link: "/" },
-      { text: "组件", link: "/components/" },
+      { text: "组件", link: "/components/install" },
     ],
     sidebar: {
       "/components/": [

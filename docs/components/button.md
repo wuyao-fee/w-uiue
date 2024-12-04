@@ -191,8 +191,8 @@ Button 组件内部自行维护 loading 状态。
 
 | 参数       | 说明                   | 类型    | 可选值                         | 默认值  |
 | ---------- | ---------------------- | ------- | ------------------------------ | ------- |
-| type       | 类型                   | string  | default、primary、dashed、text | default |
-| size       | 尺寸                   | string  | small、medium、large           | medium  |
+| type       | 类型                   | string  | primary / dashed / text |  —       |
+| size       | 尺寸                   | string  | small / medium / large           | medium  |
 | loading    | 是否加载中状态         | boolean | —                              | false   |
 | hasLoading | 是否自行维护加载中状态 | boolean | —                              | false   |
 | disabled   | 是否禁用状态           | boolean | —                              | false   |
