@@ -30,6 +30,11 @@ export default {
       type: String,
       default: "",
     },
+    // 特殊图标时设置，如：使用stroke绘制而不是fill填充的图标
+    iconStroke: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -96,6 +101,7 @@ export default {
     <w-svg-icon
       :name="icon"
       color="#fff"
+      :stroke="iconStroke"
       :size="iconSize"
       v-if="icon && !loading && !localLoading"
     ></w-svg-icon>

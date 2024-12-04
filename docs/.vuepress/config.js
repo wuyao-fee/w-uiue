@@ -24,6 +24,11 @@ module.exports = {
           path: "/components/install.md",
         },
         {
+          title: "Icon图标",
+          collapsable: false,
+          path: "/components/icon.md",
+        },
+        {
           title: "Button按钮",
           collapsable: false,
           path: "/components/button.md",

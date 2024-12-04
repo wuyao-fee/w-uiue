@@ -45,7 +45,7 @@ module.exports = defineConfig({
           {
             name: "removeAttrs",
             params: {
-              attrs: "fill",
+              attrs: ["fill", "stroke"],
             },
           },
         ],

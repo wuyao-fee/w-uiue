@@ -29,7 +29,12 @@
       <w-button type="primary" :loading="loading" @click="handleClick"
         >主要按钮-中</w-button
       >
-      <w-button type="primary" hasLoading icon="line-plus" @click="handleClick2"
+      <w-button
+        type="primary"
+        hasLoading
+        icon="line-plus"
+        iconStroke
+        @click="handleClick2"
         >主要按钮-中</w-button
       >
       <w-button
@@ -45,6 +50,7 @@
         size="large"
         hasLoading
         icon="line-plus"
+        iconStroke
         @click="handleClick2"
         >主要按钮-中</w-button
       >
@@ -53,6 +59,9 @@
     <div class="icon-demo">
       <w-svg-icon name="line-add" color="#f40" :size="24" />
       <w-svg-icon name="line-add-user" color="#f40" :size="24" />
+      <w-svg-icon name="line-plus" stroke color="#f40" :size="24" />
+      <w-svg-icon name="line-user" color="#f40" :size="24" />
+      <w-svg-icon name="line-me" color="#f40" :size="24" />
     </div>
   </div>
 </template>

@@ -20,6 +20,11 @@ export default {
       type: [Number, String],
       default: 16,
     },
+    // 判断是否由stoke填充，例如：line-plus需要调整为#fff以外的颜色需要设置
+    stroke: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     symbolId() {
@@ -29,7 +34,8 @@ export default {
       return {
         width: typeof this.size === "number" ? `${this.size}px` : this.size,
         height: typeof this.size === "number" ? `${this.size}px` : this.size,
-        fill: this.color,
+        fill: this.stroke ? "none" : this.color,
+        stroke: this.stroke ? this.color : "none",
         verticalAlign: "middle",
       };
     },
