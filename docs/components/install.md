@@ -3,7 +3,9 @@
 ### yarn 安装
 
 ```shell
-yarn add w-ui -S
+yarn add w-uiue -S
+或者
+npm install w-uiue -S
 ```
 
 ### CDN

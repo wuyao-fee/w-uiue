@@ -111,39 +111,6 @@
 
 :::
 
-### 加载中
-
-点击按钮后进行数据加载操作，在按钮上显示加载状态。
-
-:::demo 要设置为 loading 状态，只要设置 loading 属性为 true 即可。
-
-```html
-<template>
-  <div class="button-demo">
-    <w-button type="primary" :loading="loading">加载中</w-button>
-  </div>
-</template>
-
-<script>
-  export default {
-    data() {
-      return {
-        loading: true,
-      };
-    },
-  };
-</script>
-
-<style>
-  .button-demo {
-    display: flex;
-    margin-bottom: 5px;
-  }
-</style>
-```
-
-:::
-
 ### 自行维护加载中状态
 
 Button 组件内部自行维护 loading 状态。
@@ -197,3 +164,4 @@ Button 组件内部自行维护 loading 状态。
 | hasLoading | 是否自行维护加载中状态 | boolean | —                              | false   |
 | disabled   | 是否禁用状态           | boolean | —                              | false   |
 | icon       | 图标类型               | string  | —                              |         |
+| iconStroke | 图标是否描边(少数svg通过stroke绘制)           | boolean | —                              | false   |
