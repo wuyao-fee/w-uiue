@@ -11,12 +11,21 @@ module.exports = {
     lineNumbers: false, // 代码块显示行号
   },
   themeConfig: {
+    lastUpdated: '最后更新于', // 文档更新时间：每个文件git最后提交的时间
     nav: [
       // 导航栏配置
       { text: "首页", link: "/" },
       { text: "组件", link: "/components/install" },
+      { text: "更新日志", link: "/guide/updateLog" },
     ],
     sidebar: {
+      "/guide/": [
+        {
+          title: "更新日志",
+          collapsable: false,
+          path: "/guide/updateLog.md",
+        }
+      ],
       "/components/": [
         {
           title: "安装",
@@ -33,9 +42,14 @@ module.exports = {
           collapsable: false,
           path: "/components/button.md",
         },
+        {
+          title: "Divider分割线",
+          collapsable: false,
+          path: "/components/divider.md",
+        },
       ],
     }, // 侧边栏配置
-    sidebarDepth: 1, // 侧边栏显示2级
+    sidebarDepth: 2, // 侧边栏显示2级
   },
   plugins: ["demo-container"],
 };

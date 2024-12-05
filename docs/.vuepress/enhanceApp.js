@@ -1,8 +1,16 @@
 import WUI from "../../dist/w-uiue.umd.min.js";
 import "../../dist/w-uiue.css";
 
-const commonSvgRequire = require.context("../../packages/svg/common", false, /\.svg$/);
-const tipSvgRequire = require.context("../../packages/svg/tip", false, /\.svg$/);
+const commonSvgRequire = require.context(
+  "../../packages/svg/common",
+  false,
+  /\.svg$/
+);
+const tipSvgRequire = require.context(
+  "../../packages/svg/tip",
+  false,
+  /\.svg$/
+);
 
 // 获取SVG图标名称
 export function getSvgIconNames(svgRequire) {

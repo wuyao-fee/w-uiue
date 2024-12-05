@@ -63,6 +63,65 @@
       <w-svg-icon name="line-user" color="#f40" :size="24" />
       <w-svg-icon name="line-me" color="#f40" :size="24" />
     </div>
+    <h1>Divider 示例</h1>
+    <div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat quis
+        nam laboriosam quidem officia, dolorum atque expedita consequatur nulla
+        excepturi delectus nihil incidunt fugit, illum, quia voluptatibus vitae
+        debitis doloribus?
+      </p>
+      <w-divider></w-divider>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat quis
+        nam laboriosam quidem officia, dolorum atque expedita consequatur nulla
+        excepturi delectus nihil incidunt fugit, illum, quia voluptatibus vitae
+        debitis doloribus?
+      </p>
+    </div>
+    <div style="display: flex">
+      <p style="width: 100px">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat quis
+        nam laboriosam quidem officia, dolorum atque expedita consequatur nulla
+        excepturi delectus nihil incidunt fugit, illum, quia voluptatibus vitae
+        debitis doloribus?
+      </p>
+      <w-divider direction="vertical">文本</w-divider>
+      <w-divider
+        direction="vertical"
+        type="dashed"
+        orientation="left"
+        margin="24"
+        >left文本</w-divider
+      >
+      <w-divider direction="vertical" type="dotted" orientation="right"
+        >right文本</w-divider
+      >
+      <p style="width: 100px">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat quis
+        nam laboriosam quidem officia, dolorum atque expedita consequatur nulla
+        excepturi delectus nihil incidunt fugit, illum, quia voluptatibus vitae
+        debitis doloribus?
+      </p>
+    </div>
+    <div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat quis
+        nam laboriosam quidem officia, dolorum atque expedita consequatur nulla
+        excepturi delectus nihil incidunt fugit, illum, quia voluptatibus vitae
+        debitis doloribus?
+      </p>
+      <w-divider orientation="left" type="dashed">文本</w-divider>
+      <w-divider orientation="center" margin="30">文本</w-divider>
+      <w-divider orientation="right" type="dotted">文本</w-divider>
+      <w-divider orientation="center" type="dashed">文本</w-divider>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat quis
+        nam laboriosam quidem officia, dolorum atque expedita consequatur nulla
+        excepturi delectus nihil incidunt fugit, illum, quia voluptatibus vitae
+        debitis doloribus?
+      </p>
+    </div>
   </div>
 </template>
 

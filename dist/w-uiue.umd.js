@@ -4880,7 +4880,93 @@ function importAllSvg() {
 // console.log(requireAll(req));
 
 /* harmony default export */ var packages_svg_icon = ((/* unused pure expression or super */ null && (WSvgIcon)));
+;// ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"7430ce2d-vue-loader-template"}!./node_modules/@vue/cli-plugin-babel/node_modules/thread-loader/dist/cjs.js!./node_modules/@vue/cli-plugin-babel/node_modules/babel-loader/lib/index.js??clonedRuleSet-81.use[1]!./node_modules/@vue/cli-plugin-babel/node_modules/babel-loader/lib/index.js!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./packages/divider/src/divider.vue?vue&type=template&id=1720196c&scoped=true
+var dividervue_type_template_id_1720196c_scoped_true_render = function render() {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c('div', {
+    staticClass: "w-divider",
+    class: [_vm.type ? `w-divider--${_vm.type}` : '', _vm.direction ? `w-divider--${_vm.direction}` : '', _vm.$slots.default ? 'w-divider--text' : '', _vm.orientation ? `w-divider--orientation-${_vm.orientation}` : ''],
+    style: {
+      margin: _vm.marginStyle
+    }
+  }, [_vm.$slots.default ? _c('span', {
+    staticClass: "w-divider--text-inner"
+  }, [_vm._t("default")], 2) : _vm._e()]);
+};
+var dividervue_type_template_id_1720196c_scoped_true_staticRenderFns = [];
+
+;// ./node_modules/@vue/cli-plugin-babel/node_modules/thread-loader/dist/cjs.js!./node_modules/@vue/cli-plugin-babel/node_modules/babel-loader/lib/index.js??clonedRuleSet-81.use[1]!./node_modules/@vue/cli-plugin-babel/node_modules/babel-loader/lib/index.js!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./packages/divider/src/divider.vue?vue&type=script&lang=js
+/* harmony default export */ var dividervue_type_script_lang_js = ({
+  name: "WDivider",
+  props: {
+    type: {
+      type: String,
+      default: "solid"
+    },
+    direction: {
+      type: String,
+      default: "horizontal"
+    },
+    // 分割线文字位置
+    orientation: {
+      type: String,
+      default: "center",
+      validator: value => ["left", "right", "center"].includes(value)
+    },
+    // 外边距
+    margin: {
+      type: [String, Number],
+      default: "16"
+    }
+  },
+  data() {
+    return {};
+  },
+  computed: {
+    // 计算外边距样式
+    marginStyle() {
+      if (this.direction === "horizontal") {
+        return `${this.margin}px 0`;
+      }
+      if (this.direction === "vertical") {
+        return `0 ${this.margin}px`;
+      }
+      return `${this.margin}px 0`;
+    }
+  },
+  methods: {}
+});
+;// ./packages/divider/src/divider.vue?vue&type=script&lang=js
+ /* harmony default export */ var src_dividervue_type_script_lang_js = (dividervue_type_script_lang_js); 
+;// ./node_modules/@vue/cli-service/node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-63.use[0]!./node_modules/@vue/cli-service/node_modules/css-loader/dist/cjs.js??clonedRuleSet-63.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/stylePostLoader.js!./node_modules/@vue/cli-service/node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-63.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-63.use[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./packages/divider/src/divider.vue?vue&type=style&index=0&id=1720196c&prod&lang=scss&scoped=true
+// extracted by mini-css-extract-plugin
+
+;// ./packages/divider/src/divider.vue?vue&type=style&index=0&id=1720196c&prod&lang=scss&scoped=true
+
+;// ./packages/divider/src/divider.vue
+
+
+
+;
+
+
+/* normalize component */
+
+var divider_component = normalizeComponent(
+  src_dividervue_type_script_lang_js,
+  dividervue_type_template_id_1720196c_scoped_true_render,
+  dividervue_type_template_id_1720196c_scoped_true_staticRenderFns,
+  false,
+  null,
+  "1720196c",
+  null
+  
+)
+
+/* harmony default export */ var divider = (divider_component.exports);
 ;// ./packages/index.js
+
 
 
 
@@ -4893,7 +4979,7 @@ function importAllSvg() {
 importAllSvg();
 
 // 组件列表
-const components = [src_button, svg_icon];
+const components = [src_button, svg_icon, divider];
 
 // 定义 install 方法
 const install = function (Vue) {
@@ -4914,7 +5000,8 @@ if (typeof window !== "undefined" && window.Vue) {
 /* harmony default export */ var packages_0 = ({
   install,
   Button: src_button,
-  SvgIcon: svg_icon
+  SvgIcon: svg_icon,
+  Divider: divider
 });
 ;// ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
 
