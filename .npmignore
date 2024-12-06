@@ -2,10 +2,14 @@
 examples/
 public/
 packages/
-.temp
+docs/
+.temp/
+.giee/
 node_modules/
 
 # 忽略指定文件
 vue.config.js
 babel.config.js
 *.map
+.prettierignore
+.prettierrc
