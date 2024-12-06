@@ -6,12 +6,12 @@
 
 组件库说明文档：http://113.45.180.231:6200/
 
-版本：0.0.3
+版本：0.0.4
 
 #### 软件架构
 
 软件架构说明
-vue2.6.14 + @vue/cli@5.0.8 + yarn@1.22.22 + sass + webpack5 + vuepress
+node16.17.0 + vue2.6.14 + @vue/cli@5.0.8 + yarn@1.22.22 + sass + webpack5 + vuepress
 
 #### 安装教程
 
