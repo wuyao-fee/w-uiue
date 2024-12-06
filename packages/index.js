@@ -2,12 +2,13 @@ import Button from "./button/src/button.vue";
 import SvgIcon from "./svg-icon/src/svg-icon.vue";
 import { importAllSvg } from "./svg-icon/index";
 import Divider from "./divider/src/divider.vue";
+import Card from "./card/src/card.vue";
 
 // 导入所有SVG
 importAllSvg();
 
 // 组件列表
-const components = [Button, SvgIcon, Divider];
+const components = [Button, SvgIcon, Divider, Card];
 
 // 定义 install 方法
 const install = function (Vue) {
@@ -31,4 +32,5 @@ export default {
   Button,
   SvgIcon,
   Divider,
+  Card,
 };

@@ -1,7 +1,8 @@
 .gieee
 .temp
 .dist
-docs/dist
+dist
+docs
 *.log
 *.swp
 *.swo

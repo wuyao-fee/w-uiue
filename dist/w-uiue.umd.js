@@ -4965,7 +4965,98 @@ var divider_component = normalizeComponent(
 )
 
 /* harmony default export */ var divider = (divider_component.exports);
+;// ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"7430ce2d-vue-loader-template"}!./node_modules/@vue/cli-plugin-babel/node_modules/thread-loader/dist/cjs.js!./node_modules/@vue/cli-plugin-babel/node_modules/babel-loader/lib/index.js??clonedRuleSet-81.use[1]!./node_modules/@vue/cli-plugin-babel/node_modules/babel-loader/lib/index.js!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./packages/card/src/card.vue?vue&type=template&id=2cc328f2&scoped=true
+var cardvue_type_template_id_2cc328f2_scoped_true_render = function render() {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c('div', {
+    staticClass: "w-card",
+    class: [_vm.title || _vm.$slots.header ? 'w-card--has-header' : 'w-card--no-header', _vm.size ? `w-card--size-${_vm.size}` : '', _vm.shadow ? `w-card--shadow-${_vm.shadow}` : '']
+  }, [_vm.title || _vm.$slots.header ? _c('div', {
+    staticClass: "w-card-header"
+  }, [_vm.$slots.header ? _c('div', {
+    staticClass: "title"
+  }, [_vm._t("header")], 2) : _c('div', {
+    staticClass: "title"
+  }, [_vm._v(_vm._s(_vm.title))]), _vm.$slots['sub-title'] ? _c('div', {
+    staticClass: "sub-title"
+  }, [_vm._t("sub-title")], 2) : _vm._e(), _vm.subTitle && !_vm.$slots['sub-title'] ? _c('div', {
+    staticClass: "sub-title"
+  }, [_vm._v(" " + _vm._s(_vm.subTitle) + " ")]) : _vm._e()]) : _vm._e(), _c('div', {
+    staticClass: "w-card-body",
+    style: `padding-bottom: ${_vm.bottom}px`
+  }, [_vm._t("default")], 2)]);
+};
+var cardvue_type_template_id_2cc328f2_scoped_true_staticRenderFns = [];
+
+;// ./node_modules/@vue/cli-plugin-babel/node_modules/thread-loader/dist/cjs.js!./node_modules/@vue/cli-plugin-babel/node_modules/babel-loader/lib/index.js??clonedRuleSet-81.use[1]!./node_modules/@vue/cli-plugin-babel/node_modules/babel-loader/lib/index.js!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./packages/card/src/card.vue?vue&type=script&lang=js
+/* harmony default export */ var cardvue_type_script_lang_js = ({
+  name: "WCard",
+  props: {
+    // 主标题
+    title: {
+      type: String,
+      default: ""
+    },
+    // 副标题
+    subTitle: {
+      type: String,
+      default: ""
+    },
+    // 尺寸大小
+    size: {
+      type: String,
+      default: "small",
+      validator: value => {
+        return ["small", "large"].includes(value);
+      }
+    },
+    // 阴影显示时机
+    shadow: {
+      type: String,
+      default: "always"
+    },
+    // 卡片距离底部的距离
+    bottom: {
+      type: [Number, String],
+      default: 40
+    }
+  },
+  data() {
+    return {};
+  },
+  methods: {}
+});
+;// ./packages/card/src/card.vue?vue&type=script&lang=js
+ /* harmony default export */ var src_cardvue_type_script_lang_js = (cardvue_type_script_lang_js); 
+;// ./node_modules/@vue/cli-service/node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-63.use[0]!./node_modules/@vue/cli-service/node_modules/css-loader/dist/cjs.js??clonedRuleSet-63.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/stylePostLoader.js!./node_modules/@vue/cli-service/node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-63.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-63.use[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./packages/card/src/card.vue?vue&type=style&index=0&id=2cc328f2&prod&lang=scss&scoped=true
+// extracted by mini-css-extract-plugin
+
+;// ./packages/card/src/card.vue?vue&type=style&index=0&id=2cc328f2&prod&lang=scss&scoped=true
+
+;// ./packages/card/src/card.vue
+
+
+
+;
+
+
+/* normalize component */
+
+var card_component = normalizeComponent(
+  src_cardvue_type_script_lang_js,
+  cardvue_type_template_id_2cc328f2_scoped_true_render,
+  cardvue_type_template_id_2cc328f2_scoped_true_staticRenderFns,
+  false,
+  null,
+  "2cc328f2",
+  null
+  
+)
+
+/* harmony default export */ var card = (card_component.exports);
 ;// ./packages/index.js
+
 
 
 
@@ -4979,7 +5070,7 @@ var divider_component = normalizeComponent(
 importAllSvg();
 
 // 组件列表
-const components = [src_button, svg_icon, divider];
+const components = [src_button, svg_icon, divider, card];
 
 // 定义 install 方法
 const install = function (Vue) {
@@ -5001,7 +5092,8 @@ if (typeof window !== "undefined" && window.Vue) {
   install,
   Button: src_button,
   SvgIcon: svg_icon,
-  Divider: divider
+  Divider: divider,
+  Card: card
 });
 ;// ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
 

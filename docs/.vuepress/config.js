@@ -4,6 +4,16 @@ module.exports = {
   head: [
     // 注入到当前页面的 HTML <head> 中的标签
     ["link", { rel: "icon", href: "/logo.jpg" }], // 增加一个自定义的 favicon(网页标签的图标)
+    // 注入百度统计脚本
+    ["script", {},
+      `var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?7c45c2c42d636d77d05c8a1fe97a34ef";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();`
+    ]
   ],
   port: "6200", // 监听端口
   base: "/", // 这是部署到github相关的配置
@@ -46,6 +56,11 @@ module.exports = {
           title: "Divider分割线",
           collapsable: false,
           path: "/components/divider.md",
+        },
+        {
+          title: "Card卡片",
+          collapsable: false,
+          path: "/components/card.md",
         },
       ],
     }, // 侧边栏配置

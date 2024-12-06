@@ -10,4 +10,4 @@ npm install w-uiue -S
 
 ### CDN
 
-修改版暂未支持 CDN 引入
+当前版本暂未支持 CDN 引入

@@ -24,10 +24,19 @@ export function getSvgIconNames(svgRequire) {
   }
 }
 
-export default async ({ Vue }) => {
+export default async ({ Vue, router }) => {
   if (typeof process === "undefined") {
     Vue.use(WUI);
     Vue.prototype.$commonIcon = getSvgIconNames(commonSvgRequire);
     Vue.prototype.$tipIcon = getSvgIconNames(tipSvgRequire);
   }
+  router.beforeEach((to, from, next) => {
+    // 触发百度的pv统计
+    if (typeof _hmt !== "undefined") {
+      if (to.path) {
+        _hmt.push(["_trackPageview", to.fullPath]);
+      }
+    }
+    next();
+  })
 };

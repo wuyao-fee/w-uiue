@@ -122,6 +122,63 @@
         debitis doloribus?
       </p>
     </div>
+    <w-card style="margin: 20px"
+      ><p style="text-align: justify; margin: 0">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi quam,
+        exercitationem molestiae, recusandae necessitatibus eligendi iure
+        laudantium facere sunt unde sed ut perspiciatis voluptatibus omnis
+        suscipit dolor ipsa, dolorem saepe.
+      </p></w-card
+    >
+    <w-card title="文本标题" style="margin: 20px"
+      ><p style="text-align: justify; margin: 0">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi quam,
+        exercitationem molestiae, recusandae necessitatibus eligendi iure
+        laudantium facere sunt unde sed ut perspiciatis voluptatibus omnis
+        suscipit dolor ipsa, dolorem saepe.
+      </p></w-card
+    >
+    <w-card title="文本标题hover" shadow="hover" style="margin: 20px"
+      ><p style="text-align: justify; margin: 0">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi quam,
+        exercitationem molestiae, recusandae necessitatibus eligendi iure
+        laudantium facere sunt unde sed ut perspiciatis voluptatibus omnis
+        suscipit dolor ipsa, dolorem saepe.
+      </p></w-card
+    >
+    <w-card
+      title="小文本标题nover"
+      subTitle="小副标题"
+      shadow="nover"
+      style="margin: 20px"
+      ><p style="text-align: justify; margin: 0">
+        中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本
+        中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中
+      </p></w-card
+    >
+    <w-card
+      title="小文本标题nover"
+      subTitle="小副标题"
+      shadow="nover"
+      style="margin: 20px"
+    >
+      <template #sub-title>时间：2024-12-05</template>
+      <p style="text-align: justify; margin: 0">
+        中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本
+        中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中
+      </p></w-card
+    >
+    <w-card
+      title="大文本标题nover"
+      size="large"
+      shadow="nover"
+      bottom="0"
+      style="margin: 20px"
+      ><p style="text-align: justify; margin: 0">
+        中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本
+        中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中
+      </p></w-card
+    >
   </div>
 </template>
 
@@ -152,6 +209,10 @@ export default {
 </script>
 
 <style scoped>
+.home {
+  background-color: #f3f3f3;
+  padding-bottom: 100px;
+}
 .icon-demo {
   margin: 20px;
 }
