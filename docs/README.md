@@ -4,7 +4,7 @@ defaultHome: true
 heroText: w-uiue
 tagline: 基于Vue2.0的UI组件库
 actionText: 快速上手 →
-actionLink: /components/install
+actionLink: /guide/install
 features:
   - title: 简洁至上
     details: 以简洁的代码实现丰富的功能。

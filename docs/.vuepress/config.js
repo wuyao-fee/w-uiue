@@ -25,45 +25,32 @@ module.exports = {
     nav: [
       // 导航栏配置
       { text: "首页", link: "/" },
-      { text: "组件", link: "/components/install" },
+      { text: "指南", link: "/guide/install" },
+      { text: "组件", link: "/components/icon" },
       { text: "更新日志", link: "/guide/updateLog" },
+      { text: "博客", link: "http://113.45.180.231/", target: "_blank" },
     ],
-    sidebar: {
-      "/guide/": [
-        {
-          title: "更新日志",
-          collapsable: false,
-          path: "/guide/updateLog.md",
-        }
-      ],
-      "/components/": [
-        {
-          title: "安装",
-          collapsable: false,
-          path: "/components/install.md",
-        },
-        {
-          title: "Icon图标",
-          collapsable: false,
-          path: "/components/icon.md",
-        },
-        {
-          title: "Button按钮",
-          collapsable: false,
-          path: "/components/button.md",
-        },
-        {
-          title: "Divider分割线",
-          collapsable: false,
-          path: "/components/divider.md",
-        },
-        {
-          title: "Card卡片",
-          collapsable: false,
-          path: "/components/card.md",
-        },
-      ],
-    }, // 侧边栏配置
+    sidebar: [
+      {
+        title: "指南",
+        collapsable: false,
+        children: [
+          { title: '安装', path: '/guide/install.md', collapsable: false },
+          { title: '快速开始', path: '/guide/quickstart.md', collapsable: false },
+          { title: '更新日志', path: '/guide/updateLog.md', collapsable: false },
+        ]
+      },
+      {
+        title: "组件",
+        collapsable: false,
+        children: [
+          { title: 'Icon图标', path: '/components/icon.md', collapsable: false },
+          { title: 'Button按钮', path: '/components/button.md', collapsable: false },
+          { title: 'Divider分割线', path: '/components/divider.md', collapsable: false },
+          { title: 'Card卡片', path: '/components/card.md', collapsable: false },
+        ]
+      }
+    ],
     sidebarDepth: 2, // 侧边栏显示2级
   },
   plugins: ["demo-container"],

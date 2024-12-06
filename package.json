@@ -1,10 +1,30 @@
 {
   "name": "w-uiue",
   "version": "0.0.4",
+  "description": "基于vue2及联通规范的UI组件库",
+  "keywords": [
+    "ui",
+    "w-uiue",
+    "vue",
+    "components"
+  ],
   "private": false,
   "main": "dist/w-uiue.umd.min.js",
   "author": {
-    "name": "wuyao"
+    "name": "wuyao",
+    "email": "wuyao.fee@qq.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/wuyao-fee/w-uiue.git"
+  },
+  "homepage": "http://113.45.180.231:6200/",
+  "bugs": {
+    "url": "https://gitee.com/wuyao-fee/w-uiue/issues"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -67,5 +87,8 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "engines": {
+    "node": ">= 14.0.0"
+  }
 }
