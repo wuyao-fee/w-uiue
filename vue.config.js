@@ -29,7 +29,7 @@ module.exports = defineConfig({
     config.module
       .rule("svg-sprite")
       .test(/\.svg$/)
-      .include.add(path.resolve(__dirname, "packages/svg"))
+      .include.add(path.resolve(__dirname, "packages/theme-chalk/src/images/svg"))
       .end()
       .use("svg-sprite-loader")
       .loader("svg-sprite-loader")
@@ -48,32 +48,17 @@ module.exports = defineConfig({
               attrs: ["fill", "stroke"],
             },
           },
+          { name: 'removeComments', active: true }, // 移除注释
+          { name: 'removeDesc', active: true }, // 移除描述标签
+          { name: 'removeTitle', active: true }, // 移除标题标签
         ],
       }))
       .end();
-
-    // 去除svg中指定属性
-    // config.module
-    //   .rule("svg-sprite")
-    //   .test(/\.svg$/)
-    //   .include.add(path.resolve(__dirname, "packages/svg"))
-    //   .end()
-    //   .use("svgo-loader")
-    //   .loader("svgo-loader")
-    //   .tap((options) => ({
-    //     ...options,
-    //     plugins: [{
-    //       removeAttrs: {
-    //         attrs: 'fill'
-    //       }
-    //     }]
-    //   }))
-    //   .end();
   },
   css: {
     loaderOptions: {
       scss: {
-        additionalData: `@import "./examples/assets/style/variables.scss";`,
+        additionalData: `@import "./packages/theme-chalk/src/common/variables.scss";`,
       },
     },
   },

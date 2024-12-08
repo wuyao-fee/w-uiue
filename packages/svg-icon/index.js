@@ -5,7 +5,11 @@ WSvgIcon.install = function (Vue) {
   Vue.component(WSvgIcon.name, WSvgIcon);
 };
 
-const svgRequire = require.context("../../packages/svg", true, /\.svg$/);
+const svgRequire = require.context(
+  "../../packages/theme-chalk/src/images/svg",
+  true,
+  /\.svg$/
+);
 
 // 获取所有SVG图标名称
 export function getSvgIconNames() {

@@ -2,12 +2,12 @@ import WUI from "../../dist/w-uiue.umd.min.js";
 import "../../dist/w-uiue.css";
 
 const commonSvgRequire = require.context(
-  "../../packages/svg/common",
+  "../../packages/theme-chalk/src/images/svg/common",
   false,
   /\.svg$/
 );
 const tipSvgRequire = require.context(
-  "../../packages/svg/tip",
+  "../../packages/theme-chalk/src/images/svg/tip",
   false,
   /\.svg$/
 );
