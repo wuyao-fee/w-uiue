@@ -179,6 +179,11 @@
         中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中
       </p></w-card
     >
+
+    <h1>descriptions 示例</h1>
+    <w-descriptions>
+      <w-descriptions-item label="名称">张三</w-descriptions-item>
+    </w-descriptions>
   </div>
 </template>
 

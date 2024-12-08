@@ -29,7 +29,9 @@ module.exports = defineConfig({
     config.module
       .rule("svg-sprite")
       .test(/\.svg$/)
-      .include.add(path.resolve(__dirname, "packages/theme-chalk/src/images/svg"))
+      .include.add(
+        path.resolve(__dirname, "packages/theme-chalk/src/images/svg")
+      )
       .end()
       .use("svg-sprite-loader")
       .loader("svg-sprite-loader")
@@ -48,9 +50,9 @@ module.exports = defineConfig({
               attrs: ["fill", "stroke"],
             },
           },
-          { name: 'removeComments', active: true }, // 移除注释
-          { name: 'removeDesc', active: true }, // 移除描述标签
-          { name: 'removeTitle', active: true }, // 移除标题标签
+          { name: "removeComments", active: true }, // 移除注释
+          { name: "removeDesc", active: true }, // 移除描述标签
+          { name: "removeTitle", active: true }, // 移除标题标签
         ],
       }))
       .end();
