@@ -183,6 +183,7 @@
     <h1>descriptions 示例</h1>
     <w-descriptions>
       <w-descriptions-item label="名称">张三</w-descriptions-item>
+      <w-descriptions-item label="年龄">18</w-descriptions-item>
     </w-descriptions>
   </div>
 </template>
