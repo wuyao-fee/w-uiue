@@ -64,6 +64,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@import "../../../packages/theme-chalk/src/common/variables.scss";
 .w-card {
   background-color: #fff;
   border-radius: $radius;

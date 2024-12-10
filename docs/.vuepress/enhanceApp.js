@@ -1,5 +1,5 @@
-import WUI from "../../dist/w-uiue.umd.min.js";
-import "../../dist/w-uiue.css";
+import WUI from "../../lib/w-uiue.umd.min.js";
+import "../../lib/w-uiue.css";
 
 const commonSvgRequire = require.context(
   "../../packages/theme-chalk/src/images/svg/common",

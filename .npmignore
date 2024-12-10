@@ -4,7 +4,7 @@ public/
 packages/
 docs/
 .temp/
-.giee/
+.gitee/
 node_modules/
 
 # 忽略指定文件

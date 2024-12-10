@@ -110,6 +110,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@import "../../../packages/theme-chalk/src/common/variables.scss";
 .w-button + .w-button {
   margin-left: 8px;
 }

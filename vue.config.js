@@ -2,6 +2,8 @@ const { defineConfig } = require("@vue/cli-service");
 const path = require("path");
 module.exports = defineConfig({
   transpileDependencies: true,
+  productionSourceMap: false, // 关闭生产环境的sourceMap
+  outputDir: "lib", // 打包后的文件存放目录
   pages: {
     index: {
       entry: "examples/main.js",

@@ -9,7 +9,7 @@
     "components"
   ],
   "private": false,
-  "main": "dist/w-uiue.umd.min.js",
+  "main": "lib/w-uiue.umd.min.js",
   "author": {
     "name": "wuyao",
     "email": "wuyao.fee@qq.com"
@@ -33,7 +33,7 @@
     "lint-fix": "eslint . --fix",
     "prettier": "prettier --write .",
     "fix": "prettier --write . && eslint . --fix",
-    "lib": "vue-cli-service build --target lib packages/index.js",
+    "lib": "vue-cli-service build --target lib packages/index.js --name w-uiue --formats umd-min,commonjs",
     "docs:dev": "vuepress dev docs --temp .temp",
     "docs:build": "vuepress build docs"
   },

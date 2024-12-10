@@ -59,6 +59,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@import "../../../packages/theme-chalk/src/common/variables.scss";
 $border-type: solid;
 .w-divider {
   box-sizing: border-box;
