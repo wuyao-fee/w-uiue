@@ -179,12 +179,22 @@
         中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中中文测试文本中文测试文本中文测试文本中文测试文本中文测试文本中
       </p></w-card
     >
-
-    <h1>descriptions 示例</h1>
-    <w-descriptions>
-      <w-descriptions-item label="名称">张三</w-descriptions-item>
-      <w-descriptions-item label="年龄">18</w-descriptions-item>
-    </w-descriptions>
+    <div class="white">
+      <h1>descriptions 示例</h1>
+      <w-descriptions title="用户信息" labelWidth="102px" labelAlign="right">
+        <w-descriptions-item label="用户名">kooriookami</w-descriptions-item>
+        <w-descriptions-item label="手机号手机号手机号"
+          >18100000000</w-descriptions-item
+        >
+        <w-descriptions-item label="居住地"
+          >苏州市苏州市苏州市苏州市苏州市苏州市苏州市苏州市苏州市苏州市苏州市苏州市苏州市苏州市苏州市苏州市</w-descriptions-item
+        >
+        <w-descriptions-item label="备注"> 学校 </w-descriptions-item>
+        <w-descriptions-item label="联系地址详细名"
+          >江苏省苏州市吴中区吴中大道 1188 号</w-descriptions-item
+        >
+      </w-descriptions>
+    </div>
   </div>
 </template>
 
@@ -225,5 +235,10 @@ export default {
 .button-demo {
   display: flex;
   margin-bottom: 5px;
+}
+.white {
+  background-color: #fff;
+  margin: 30px 0;
+  padding: 30px 20px;
 }
 </style>

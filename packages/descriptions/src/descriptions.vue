@@ -19,6 +19,19 @@ export default {
       type: Number,
       default: 3,
     },
+    labelWidth: {
+      type: String,
+      default: "auto",
+    },
+    labelAlign: {
+      type: String,
+      default: "left",
+    },
+    // 是否显示冒号
+    colon: {
+      type: Boolean,
+      default: true,
+    },
   },
   computed: {
     rows() {
@@ -142,7 +155,8 @@ export default {
   <div class="w-descriptions">
     <div class="w-descriptions__header">
       <div class="w-descriptions__title">
-        <slot name="title"></slot>
+        <slot name="title" v-if="$slots.title"></slot>
+        <span v-else>{{ title }}</span>
       </div>
       <div class="w-descriptions__extra">
         <slot name="extra"></slot>
@@ -161,7 +175,16 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@import "../../../packages/theme-chalk//src//common/variables.scss";
 .w-descriptions {
+  .w-descriptions__title {
+    font-family: $font-family;
+    font-size: $font-size--large;
+    line-height: $line-height--large;
+    color: $first-text-color;
+    font-weight: $font-weight--bold;
+    margin-bottom: 24px;
+  }
   .w-descriptions__table {
     width: 100%;
     border-collapse: collapse;

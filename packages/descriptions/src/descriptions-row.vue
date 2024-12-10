@@ -12,10 +12,34 @@ export default {
     },
   },
   mounted() {
-    console.log(this.wDescriptions);
+    console.log(this.wDescriptions, "this.wDescriptions");
   },
   computed: {
     processedRow() {
+      console.log(
+        this.row.map((item) => ({
+          ...item,
+          label: item.slots.label || item.props.label,
+          ...[
+            "labelClassName",
+            "contentClassName",
+            "labelStyle",
+            "contentStyle",
+          ].reduce((res, key) => {
+            res[key] =
+              item.props[key] !== undefined
+                ? item.props[key]
+                : this.wDescriptions[key];
+            res["labelStyle"] = {
+              // 父级设置的labelWidth
+              width: this.wDescriptions.labelWidth,
+              "text-align": this.wDescriptions.labelAlign,
+            };
+            return res;
+          }, {}),
+        })),
+        "processedRow"
+      );
       return this.row.map((item) => ({
         ...item,
         label: item.slots.label || item.props.label,
@@ -29,6 +53,11 @@ export default {
             item.props[key] !== undefined
               ? item.props[key]
               : this.wDescriptions[key];
+          res["labelStyle"] = {
+            // 父级设置的labelWidth
+            width: this.wDescriptions.labelWidth,
+            "text-align": this.wDescriptions.labelAlign,
+          };
           return res;
         }, {}),
       }));
@@ -62,9 +91,15 @@ export default {
           class="w-descriptions-item__cell"
           v-for="(rowItem, index) in processedRow"
           :key="index"
+          :colspan="rowItem.props.span"
+          :style="{ flex: rowItem.props.span }"
         >
           <div class="w-descriptions-item__container">
-            <span class="w-descriptions-item__label">
+            <span
+              class="w-descriptions-item__label"
+              :class="[wDescriptions.colon ? 'has-colon' : '']"
+              :style="rowItem.labelStyle"
+            >
               <slot name="label" v-bind="rowItem.slots">{{
                 rowItem.label
               }}</slot>
@@ -82,7 +117,29 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.container {
-  box-sizing: border-box;
+@import "../../../packages/theme-chalk//src//common/variables.scss";
+.w-descriptions-row {
+  line-height: 22px;
+  font-family: $font-family;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  display: flex;
+  margin-bottom: 16px;
+  .w-descriptions-item__label {
+    color: $second-text-color;
+    margin-right: 26px;
+    position: relative;
+    &.has-colon::after {
+      position: absolute;
+      content: ":";
+      top: 0;
+    }
+  }
+  .w-descriptions-item__content {
+    color: $first-text-color;
+  }
+  .w-descriptions-item__container {
+    display: flex;
+  }
 }
 </style>
