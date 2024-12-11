@@ -32,6 +32,11 @@ export default {
       type: Boolean,
       default: true,
     },
+    // 超出省略
+    ellipsis: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     rows() {
@@ -186,6 +191,7 @@ export default {
     margin-bottom: 24px;
   }
   .w-descriptions__table {
+    table-layout: fixed;
     width: 100%;
     border-collapse: collapse;
   }

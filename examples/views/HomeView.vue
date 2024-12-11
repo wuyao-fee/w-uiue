@@ -181,12 +181,19 @@
     >
     <div class="white">
       <h1>descriptions 示例</h1>
-      <w-descriptions title="用户信息" labelWidth="102px" labelAlign="right">
-        <w-descriptions-item label="用户名">kooriookami</w-descriptions-item>
-        <w-descriptions-item label="手机号手机号手机号"
-          >18100000000</w-descriptions-item
+      <w-descriptions
+        title="用户信息"
+        labelWidth="102px"
+        labelAlign="right"
+        ellipsis
+      >
+        <w-descriptions-item label="用户名"
+          >kooriookamikooriookamikooriookamikooriookamikooriookamikooriookamikooriookamikooriookamikooriookami</w-descriptions-item
         >
-        <w-descriptions-item label="居住地"
+        <w-descriptions-item label="手机号手机号手机号"
+          >18100000000181000000001810000000018100000000181000000001810000000018100000000181000000001810000000018100000000</w-descriptions-item
+        >
+        <w-descriptions-item label="居住地居住地居"
           >苏州市苏州市苏州市苏州市苏州市苏州市苏州市苏州市苏州市苏州市苏州市苏州市苏州市苏州市苏州市苏州市</w-descriptions-item
         >
         <w-descriptions-item label="备注"> 学校 </w-descriptions-item>
