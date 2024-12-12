@@ -12,14 +12,24 @@ export default {
     },
   },
   mounted() {
-    console.log(this.wDescriptions, "this.wDescriptions", this.getCellWidth);
+    console.log(typeof this.wDescriptions.border);
   },
   computed: {
     processedRow() {
-      console.log(
-        this.row.map((item) => ({
+      const spanTotal = this.row.reduce(
+        (sum, item) => sum + +item.props.span,
+        0
+      );
+      return this.row.map((item) => {
+        const cellWidth =
+          ((this.wDescriptions.wDescriptionsWidth - (spanTotal - 1) * 60) /
+            spanTotal) *
+            item.props.span +
+          (item.props.span - 1) * 60;
+        return {
           ...item,
           label: item.slots.label || item.props.label,
+          cellWidth: cellWidth,
           ...[
             "labelClassName",
             "contentClassName",
@@ -32,48 +42,21 @@ export default {
                 : this.wDescriptions[key];
             res["labelStyle"] = {
               // 父级设置的labelWidth
-              width: this.wDescriptions.labelWidth,
+              "min-width": this.wDescriptions.labelWidth,
+              "max-width": this.wDescriptions.labelWidth,
               "text-align": this.wDescriptions.labelAlign,
             };
             return res;
           }, {}),
-        })),
-        "processedRow"
-      );
-      return this.row.map((item) => ({
-        ...item,
-        label: item.slots.label || item.props.label,
-        ...[
-          "labelClassName",
-          "contentClassName",
-          "labelStyle",
-          "contentStyle",
-        ].reduce((res, key) => {
-          res[key] =
-            item.props[key] !== undefined
-              ? item.props[key]
-              : this.wDescriptions[key];
-          res["labelStyle"] = {
-            // 父级设置的labelWidth
-            "min-width": this.wDescriptions.labelWidth,
-            "max-width": this.wDescriptions.labelWidth,
-            "text-align": this.wDescriptions.labelAlign,
-          };
-          return res;
-        }, {}),
-      }));
-    },
-    // 计算单元格宽度，均分，减去间距60px
-    getCellWidth() {
-      const cellNum = this.row.length;
-      return ((100 % -(cellNum - 1)) * 60) / cellNum;
+        };
+      });
     },
   },
 };
 </script>
 
 <template>
-  <tbody>
+  <tbody :class="wDescriptions.border ? 'has-border' : ''">
     <!-- 垂直方向 -->
     <template v-if="wDescriptions.direction === 'vertical'">
       <tr class="w-descriptions-row">
@@ -88,7 +71,41 @@ export default {
     </template>
 
     <!-- 边框 -->
-    <template v-else-if="wDescriptions.border"></template>
+    <template v-else-if="wDescriptions.border">
+      <tr class="w-descriptions-row">
+        <td
+          class="w-descriptions-item__cell"
+          v-for="(rowItem, index) in processedRow"
+          :key="index"
+          :colspan="rowItem.props.span"
+          :style="{
+            flex: rowItem.props.span,
+            'max-width': rowItem.cellWidth + 'px',
+          }"
+        >
+          <div class="w-descriptions-item__container">
+            <span
+              class="w-descriptions-item__label"
+              :class="[wDescriptions.colon ? 'has-colon' : '']"
+              :style="rowItem.labelStyle"
+            >
+              <slot name="label" v-bind="rowItem.slots">{{
+                rowItem.label
+              }}</slot>
+            </span>
+            <span
+              class="w-descriptions-item__content"
+              :class="[wDescriptions.ellipsis ? 'has-ellipsis' : '']"
+              :title="rowItem.slots.default[0].text"
+            >
+              <slot v-bind="rowItem.slots">{{
+                rowItem.slots.default[0].text
+              }}</slot>
+            </span>
+          </div>
+        </td>
+      </tr>
+    </template>
 
     <!-- 默认 -->
     <template v-else>
@@ -100,7 +117,7 @@ export default {
           :colspan="rowItem.props.span"
           :style="{
             flex: rowItem.props.span,
-            width: calc((100 % -(row.length - 1)) * 60) / row.length,
+            'max-width': rowItem.cellWidth + 'px',
           }"
         >
           <div class="w-descriptions-item__container">
@@ -131,6 +148,12 @@ export default {
 
 <style lang="scss" scoped>
 @import "../../../packages/theme-chalk/src/common/variables.scss";
+tbody {
+  &.has-border {
+    height: 22px;
+    border: 1px solid $border-color;
+  }
+}
 .w-descriptions-row {
   line-height: 22px;
   font-family: $font-family;
@@ -139,9 +162,13 @@ export default {
   display: flex;
   margin-bottom: 16px;
   overflow: hidden;
+  &.has-border {
+    border: 1px solid $border-color;
+  }
   .w-descriptions-item__cell {
-    width: 33%;
+    // width: 33%;
     // 排除第一个
+    box-sizing: border-box;
     &:not(:first-child) {
       margin-left: 60px;
     }

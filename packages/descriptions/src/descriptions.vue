@@ -1,6 +1,7 @@
 <script>
 import WDescriptionsRow from "./descriptions-row.vue";
 import { isFunction } from "../../theme-chalk/src/utils/types.js";
+import { debounce } from "../../theme-chalk/src/utils/tool.js";
 export default {
   name: "WDescriptions",
   components: {
@@ -16,7 +17,7 @@ export default {
       default: "",
     },
     column: {
-      type: Number,
+      type: [Number, String],
       default: 3,
     },
     labelWidth: {
@@ -37,11 +38,32 @@ export default {
       type: Boolean,
       default: false,
     },
+    // 实现显示边框
+    border: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  data() {
+    return {
+      wDescriptionsWidth: 0,
+    };
   },
   computed: {
     rows() {
       return this.getRows();
     },
+  },
+  mounted() {
+    this.updateWDescriptionsWidth(); // 初始化宽度
+    this.updateWDescriptionsWidthDebounce = debounce(
+      this.updateWDescriptionsWidth,
+      200
+    );
+    window.addEventListener("resize", this.updateWDescriptionsWidthDebounce); // 监听窗口大小变化
+  },
+  beforeDestroy() {
+    window.removeEventListener("resize", this.updateWDescriptionsWidthDebounce); // 清除事件监听器
   },
   provide() {
     return {
@@ -49,16 +71,23 @@ export default {
     };
   },
   methods: {
+    // 更新容器宽度
+    updateWDescriptionsWidth() {
+      this.$nextTick(() => {
+        const descriptionsContainer = this.$refs["w-descriptions"];
+        if (descriptionsContainer) {
+          this.wDescriptionsWidth = descriptionsContainer.offsetWidth;
+        }
+      });
+    },
     getRows() {
       // 获取所有的子组件，确保都是WDescriptionsItem
-      console.log(this.$slots.default, "default");
       const children = (this.$slots.default || []).filter(
         (vnode) =>
           vnode.tag &&
           vnode.componentOptions &&
           vnode.componentOptions.Ctor.options.name === "WDescriptionsItem"
       );
-      console.log(children, "children");
 
       // 预处理每个子组件的props和slots
       const nodes = children.map((vnode) => ({
@@ -66,7 +95,6 @@ export default {
         slots: this.getSlots(vnode),
         vnode,
       }));
-      console.log(nodes, "nodes");
 
       // 初始化变量
       const rows = [];
@@ -93,7 +121,6 @@ export default {
           temp = [];
         }
       });
-      console.log(rows, "rows");
       return rows;
     },
     getOptionProps(vnode) {
@@ -114,11 +141,9 @@ export default {
             : defaultValue;
         }
       }
-
       return { ...res, ...propsData };
     },
     getSlots(vnode) {
-      console.log(vnode);
       let componentOptions = vnode.componentOptions || {};
       const children = vnode.children || componentOptions.children || [];
       const slots = {};
@@ -137,6 +162,7 @@ export default {
 
       return { ...slots };
     },
+    // 填充节点
     filledNode(node, span, count, isLast = false) {
       if (!node.props) {
         node.props = {};
@@ -157,7 +183,7 @@ export default {
 </script>
 
 <template>
-  <div class="w-descriptions">
+  <div class="w-descriptions" ref="w-descriptions">
     <div class="w-descriptions__header">
       <div class="w-descriptions__title">
         <slot name="title" v-if="$slots.title"></slot>

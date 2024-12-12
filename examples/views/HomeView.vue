@@ -186,6 +186,7 @@
         labelWidth="102px"
         labelAlign="right"
         ellipsis
+        column="2"
       >
         <w-descriptions-item label="用户名"
           >kooriookamikooriookamikooriookamikooriookamikooriookamikooriookamikooriookamikooriookamikooriookami</w-descriptions-item
@@ -196,8 +197,44 @@
         <w-descriptions-item label="居住地居住地居"
           >苏州市苏州市苏州市苏州市苏州市苏州市苏州市苏州市苏州市苏州市苏州市苏州市苏州市苏州市苏州市苏州市</w-descriptions-item
         >
-        <w-descriptions-item label="备注"> 学校 </w-descriptions-item>
+        <!-- <w-descriptions-item label="备注"> 学校 </w-descriptions-item> -->
+        <!-- <w-descriptions-item label="联系地址详细名"
+          >江苏省苏州市吴中区吴中大道 1188 号江苏省苏州市吴中区吴中大道 1188
+          号江苏省苏州市吴中区吴中大道 1188 号江苏省苏州市吴中区吴中大道 1188
+          号省苏州市吴中区吴中大道 1188</w-descriptions-item
+        > -->
+        <w-descriptions-item label="联系地址详细2" span="1"
+          >江苏省苏州市吴中区吴中大道 1188 号江苏省苏州市吴中区吴中大道 1188
+          号江苏省苏州市吴中区吴中大道 1188 号江苏省苏州市吴中区吴中大道 1188
+          号省苏州市吴中区吴中大道 1188</w-descriptions-item
+        >
         <w-descriptions-item label="联系地址详细名"
+          >江苏省苏州市吴中区吴中大道 1188 号江苏省苏州市吴中区吴中大道 1188
+          号江苏省苏州市吴中区吴中大道 1188 号江苏省苏州市吴中区吴中大道 1188
+          号省苏州市吴中区吴中大道 1188苏省苏州市吴中区吴中大道 1188
+          号江苏省苏州市吴中区吴中大道 1188 号省苏州市吴中区吴中大道
+          1188</w-descriptions-item
+        >
+      </w-descriptions>
+    </div>
+    <div class="white">
+      <w-descriptions title="用户信息">
+        <w-descriptions-item label="用户名">kooriookami</w-descriptions-item>
+        <w-descriptions-item label="手机号">18100000000</w-descriptions-item>
+        <w-descriptions-item label="居住地">苏州市</w-descriptions-item>
+        <w-descriptions-item label="备注">学校</w-descriptions-item>
+        <w-descriptions-item label="联系地址"
+          >江苏省苏州市吴中区吴中大道 1188 号</w-descriptions-item
+        >
+      </w-descriptions>
+    </div>
+    <div class="white">
+      <w-descriptions title="用户信息" border>
+        <w-descriptions-item label="用户名">kooriookami</w-descriptions-item>
+        <w-descriptions-item label="手机号">18100000000</w-descriptions-item>
+        <w-descriptions-item label="居住地">苏州市</w-descriptions-item>
+        <w-descriptions-item label="备注">学校</w-descriptions-item>
+        <w-descriptions-item label="联系地址"
           >江苏省苏州市吴中区吴中大道 1188 号</w-descriptions-item
         >
       </w-descriptions>

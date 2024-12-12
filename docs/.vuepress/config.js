@@ -48,6 +48,7 @@ module.exports = {
           { title: 'Button按钮', path: '/components/button.md', collapsable: false },
           { title: 'Divider分割线', path: '/components/divider.md', collapsable: false },
           { title: 'Card卡片', path: '/components/card.md', collapsable: false },
+          { title: 'Descriptions描述列表', path: '/components/descriptions.md', collapsable: false },
         ]
       }
     ],
