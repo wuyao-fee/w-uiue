@@ -24,11 +24,22 @@ export function getSvgIconNames(svgRequire) {
   }
 }
 
+// icon插件
+const IconPlugin = {
+  install(Vue) {
+    Vue.prototype.$icon = {
+      common: ['common'],
+      tip: ['tip']
+    };
+  }
+}
+
 export default async ({ Vue, router }) => {
   if (typeof process === "undefined") {
     Vue.use(WUI);
-    Vue.prototype.$commonIcon = getSvgIconNames(commonSvgRequire);
-    Vue.prototype.$tipIcon = getSvgIconNames(tipSvgRequire);
+    Vue.use(IconPlugin);
+    Vue.prototype.$commonSvgIcon = getSvgIconNames(commonSvgRequire);
+    Vue.prototype.$tipSvgIcon = getSvgIconNames(tipSvgRequire);
   }
   router.beforeEach((to, from, next) => {
     // 触发百度的pv统计

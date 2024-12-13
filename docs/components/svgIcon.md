@@ -69,11 +69,11 @@
         list: [
           {
             title: "通用名词",
-            iconList: this.$commonIcon,
+            iconList: this.$commonSvgIcon,
           },
           {
             title: "提示状态",
-            iconList: this.$tipIcon,
+            iconList: this.$tipSvgIcon,
           },
         ],
       };

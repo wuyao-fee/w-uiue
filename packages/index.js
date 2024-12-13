@@ -5,6 +5,7 @@ import Divider from "./divider/src/divider.vue";
 import Card from "./card/src/card.vue";
 import Descriptions from "./descriptions/src/descriptions.vue";
 import DescriptionsItem from "./descriptions-item/src/descriptions-item";
+import Icon from "./icon//src/icon.vue";
 
 // 导入所有SVG
 importAllSvg();
@@ -17,6 +18,7 @@ const components = [
   Card,
   Descriptions,
   DescriptionsItem,
+  Icon,
 ];
 
 // 定义 install 方法
@@ -44,4 +46,5 @@ export default {
   Card,
   Descriptions,
   DescriptionsItem,
+  Icon,
 };
