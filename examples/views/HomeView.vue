@@ -239,6 +239,10 @@
         >
       </w-descriptions>
     </div>
+    <div class="white">
+      <h1>fontawesome图标示例</h1>
+      <i class="fa-solid fa-house"></i>
+    </div>
   </div>
 </template>
 
