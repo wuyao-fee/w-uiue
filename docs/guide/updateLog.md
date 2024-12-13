@@ -1,5 +1,11 @@
 # 更新日志
 
+## v0.0.5
+发布时间：2024-12-13
+
+- 新增Descriptions描述列表组件
+- 更改打包名称dist为lib，引入css样式路径调整为`import 'w-uiue/lib/w-uiue.css';`
+
 ## v0.0.4
 发布时间：2024-12-06
 

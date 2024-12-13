@@ -26,7 +26,7 @@ module.exports = {
       // 导航栏配置
       { text: "首页", link: "/" },
       { text: "指南", link: "/guide/install" },
-      { text: "组件", link: "/components/icon" },
+      { text: "组件", link: "/components/svgIcon" },
       { text: "更新日志", link: "/guide/updateLog" },
       { text: "博客", link: "http://113.45.180.231/", target: "_blank" },
     ],
@@ -44,7 +44,7 @@ module.exports = {
         title: "组件",
         collapsable: false,
         children: [
-          { title: 'Icon图标', path: '/components/icon.md', collapsable: false },
+          { title: 'SvgIcon图标', path: '/components/svgIcon.md', collapsable: false },
           { title: 'Button按钮', path: '/components/button.md', collapsable: false },
           { title: 'Divider分割线', path: '/components/divider.md', collapsable: false },
           { title: 'Card卡片', path: '/components/card.md', collapsable: false },

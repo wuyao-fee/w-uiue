@@ -7,7 +7,7 @@ export default {
       default: "",
     },
     span: {
-      type: Number,
+      type: [Number, String],
       default: 1,
     },
   },

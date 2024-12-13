@@ -148,12 +148,6 @@ export default {
 
 <style lang="scss" scoped>
 @import "../../../packages/theme-chalk/src/common/variables.scss";
-tbody {
-  &.has-border {
-    height: 22px;
-    border: 1px solid $border-color;
-  }
-}
 .w-descriptions-row {
   line-height: 22px;
   font-family: $font-family;
@@ -162,9 +156,6 @@ tbody {
   display: flex;
   margin-bottom: 16px;
   overflow: hidden;
-  &.has-border {
-    border: 1px solid $border-color;
-  }
   .w-descriptions-item__cell {
     // width: 33%;
     // 排除第一个
@@ -185,6 +176,7 @@ tbody {
   }
   .w-descriptions-item__content {
     color: $first-text-color;
+    text-align: justify;
     &.has-ellipsis {
       overflow: hidden;
       text-overflow: ellipsis;

@@ -1,4 +1,4 @@
-# Icon 图标
+# SvgIcon 图标
 
 提供了一套常用的图标集合，由 svg 图片和 svg-icon 组件实现。
 
