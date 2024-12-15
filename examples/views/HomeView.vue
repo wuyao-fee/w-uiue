@@ -242,6 +242,37 @@
     <div class="white">
       <h1>fontawesome图标示例</h1>
       <i class="fa-solid fa-house"></i>
+      <w-icon name="home"></w-icon>
+      <w-icon name="home" size="xl"></w-icon>
+      <w-icon name="home" size="2x"></w-icon>
+      <p>
+        图标的使用方法16px
+        <w-icon name="home"></w-icon>
+      </p>
+      <p style="font-size: 24px">
+        图标的使用方法24px
+        <w-icon name="home"></w-icon>
+      </p>
+      <p style="font-size: 24px">
+        图标flip翻转
+        <w-icon name="home" flip="horizontal"></w-icon>
+        <w-icon name="home" flip="vertical"></w-icon>
+        <w-icon name="home" flip="both"></w-icon>
+      </p>
+      <p style="font-size: 24px">
+        图标rotate旋转
+        <w-icon name="home" rotate="90"></w-icon>
+        <w-icon name="home" rotate="180"></w-icon>
+        <w-icon name="home" rotate="270"></w-icon>
+        <w-icon name="home" rotate="45"></w-icon>
+      </p>
+      <p style="font-size: 24px">
+        图标spin自动旋转
+        <w-icon name="home" spin></w-icon>
+        <w-icon name="home" pulse></w-icon>
+        <w-icon name="home" rotate="270"></w-icon>
+        <w-icon name="home" rotate="45"></w-icon>
+      </p>
     </div>
   </div>
 </template>

@@ -2,6 +2,7 @@
 const path = require("path");
 const fileSave = require("file-save");
 const uppercamelcase = require("uppercamelcase");
+const fs = require("fs").promises;
 
 function upperCamelToLowerCase(str) {
   if (!str || typeof str !== "string") return str;
@@ -78,3 +79,37 @@ const DocsPath = path.resolve(
   `${componentNameLowerCase}.md`
 );
 fileSave(DocsPath).write(`# ${componentNameUppercase}`, "utf8").end("\n");
+
+// 更新侧边栏组件
+async function updateSidebarEntry(filePath, newEntry) {
+  try {
+    const fileContent = await fs.readFile(filePath, "utf-8");
+    let { nav, sidebar } = JSON.parse(fileContent);
+    if (!sidebar[1]?.children) {
+      sidebar[1] = { children: [] };
+    }
+    if (!sidebar[1].children.some((item) => item.path === newEntry.path)) {
+      sidebar[1].children.push(newEntry);
+      await fs.writeFile(
+        filePath,
+        JSON.stringify({ nav, sidebar }, null, 2),
+        "utf-8"
+      );
+      console.log("添加完成：", newEntry);
+    } else {
+      console.log("已经存在：", newEntry.path);
+    }
+  } catch (error) {
+    console.error("添加失败：", error);
+  }
+}
+
+const filePath = path.resolve(__dirname, "../../nav.config.json");
+const newEntry = {
+  title: componentNameUppercase,
+  path: `/components/${componentNameLowerCase}.md`,
+  collapsable: false,
+};
+
+updateSidebarEntry(filePath, newEntry);
+console.log(`组件${componentNameUppercase}创建成功！`);

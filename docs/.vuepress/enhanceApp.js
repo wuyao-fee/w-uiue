@@ -1,5 +1,7 @@
 import WUI from "../../lib/w-uiue.umd.min.js";
 import "../../lib/w-uiue.css";
+import "@fortawesome/fontawesome-free/css/all.css";
+import iconJson from '../../icon.json';
 
 const commonSvgRequire = require.context(
   "../../packages/theme-chalk/src/images/svg/common",
@@ -27,9 +29,15 @@ export function getSvgIconNames(svgRequire) {
 // icon插件
 const IconPlugin = {
   install(Vue) {
+    // 遍历iconJson
+    const iconObject = {};
+    for (const key in iconJson) {
+      iconObject[key] = iconJson[key];
+    }
     Vue.prototype.$icon = {
-      common: ['common'],
-      tip: ['tip']
+      // common: iconJson.common,
+      // tip: iconJson.tip
+      ...iconObject
     };
   }
 }

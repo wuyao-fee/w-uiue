@@ -1,0 +1,22 @@
+{
+  "common": {
+    "title": "通用名称",
+    "list": ["house", "user", "location-dot", "phone", "bars", "envelope"]
+  },
+  "tip": {
+    "title": "提示状态",
+    "list": ["image", "star", "heart"]
+  },
+  "interaction": {
+    "title": "交互操作",
+    "list": ["magnifying-glass", "check", "download"]
+  },
+  "direction": {
+    "title": "方向提示",
+    "list": ["arrow-right"]
+  },
+  "other": {
+    "title": "其他",
+    "list": ["music"]
+  }
+}
