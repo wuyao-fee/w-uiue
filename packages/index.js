@@ -5,6 +5,7 @@ import Card from "./card/src/card.vue";
 import Descriptions from "./descriptions/src/descriptions.vue";
 import DescriptionsItem from "./descriptions-item/src/descriptions-item.vue";
 import Icon from "./icon/src/icon.vue";
+import Message from "./message/src/message.vue";
 import { importAllSvg } from "./svg-icon/index";
 // 导入所有SVG
 importAllSvg();
@@ -18,6 +19,7 @@ const components = [
   Descriptions,
   DescriptionsItem,
   Icon,
+  Message,
 ];
 
 // 定义 install 方法
@@ -47,4 +49,5 @@ export default {
   Descriptions,
   DescriptionsItem,
   Icon,
+  Message,
 };

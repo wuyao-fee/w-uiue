@@ -282,6 +282,10 @@
         <w-icon name="home" rotate="270"></w-icon>
         <w-icon name="home" rotate="45"></w-icon>
       </p>
+      <h1>message 示例</h1>
+      <p style="font-size: 24px">
+        <w-message>aaa</w-message>
+      </p>
     </div>
   </div>
 </template>

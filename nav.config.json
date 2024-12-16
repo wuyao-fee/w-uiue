@@ -77,6 +77,11 @@
           "title": "Descriptions描述列表",
           "path": "/components/descriptions.md",
           "collapsable": false
+        },
+        {
+          "title": "Message",
+          "path": "/components/message.md",
+          "collapsable": false
         }
       ]
     }
