@@ -14,7 +14,6 @@
     <w-svg-icon name="line-add" color="#000" size="24"></w-svg-icon>
     <w-svg-icon name="line-edit" color="#000" size="24"></w-svg-icon>
     <w-svg-icon name="line-delete" color="#000" size="24"></w-svg-icon>
-    <w-button type="primary" icon="line-search">搜索</w-button>
   </div>
 </template>
 
@@ -104,7 +103,7 @@
   .icon-list li {
     position: relative;
     display: flex;
-    width: 16.66%;
+    width: 16.64%;
     text-align: center;
     height: 120px;
     line-height: 120px;

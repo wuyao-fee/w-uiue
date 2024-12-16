@@ -61,10 +61,10 @@
 ```html
 <template>
   <div class="button-demo">
-    <w-button type="primary" icon="line-plus" iconStroke>新增-中</w-button>
-    <w-button type="primary" icon="line-delete">删除-中</w-button>
-    <w-button type="primary" icon="line-edit">编辑-中</w-button>
-    <w-button type="primary" icon="line-search">搜索-中</w-button>
+    <w-button type="primary" icon="plus">新增-中</w-button>
+    <w-button type="primary" icon="trash-can">删除-中</w-button>
+    <w-button type="primary" icon="pen-to-square">编辑-中</w-button>
+    <w-button type="primary" icon="magnifying-glass">搜索-中</w-button>
   </div>
 </template>
 

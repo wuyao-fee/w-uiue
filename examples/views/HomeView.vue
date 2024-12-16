@@ -54,6 +54,15 @@
         @click="handleClick2"
         >主要按钮-中</w-button
       >
+      <w-button
+        type="primary"
+        size="large"
+        hasLoading
+        icon="plus"
+        iconStroke
+        @click="handleClick2"
+        >主要按钮-中</w-button
+      >
     </div>
     <h1>SVG Icon 示例</h1>
     <div class="icon-demo">

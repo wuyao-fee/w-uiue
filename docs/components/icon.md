@@ -1,5 +1,7 @@
 # Icon
 
+提供了一套常用的图标集合，由字体图标实现。
+
 ### 使用方法
 
 直接通过设置类名为 iconName 来使用即可。例如：
@@ -34,6 +36,7 @@
 
 ### 图标集合
 
+点击图标进行复制
 
 :::demo
 
@@ -42,8 +45,8 @@
   <div class="icon-demo2">
     <div class="list-item" v-for="(item, index) in $icon" :key="item + index">
       <h4>{{ item.title }}</h4>
-      <ul class="icon-list">
-        <li v-for="(sub, i) in item.list" :key="sub + i">
+      <ul class="icon-list" @click="handleClick"> 
+        <li v-for="(sub, i) in item.list" :key="sub + i" :data-icon="sub">
           <span class="li-span">
             <w-icon :name="sub" size="2x"></w-icon>
             <span class="icon-name">{{ sub }}</span>
@@ -61,6 +64,24 @@
         const whiteList = ["line-plus"];
         return whiteList.includes(iconName);
       },
+      handleClick(e) {
+        // 检查点击的目标是否为 .icon-name 或 w-icon 组件
+        if (e.target.closest('.icon-name') || e.target.closest('w-icon') || e.target.closest('span.li-span') || e.target.closest('.icon-list li')) {
+          // 获取最近的 li 元素上的 data-icon 属性值
+          const liElement = e.target.closest('li');
+          if (liElement) {
+            const iconName = liElement.getAttribute('data-icon');
+            let text = "";
+            if (iconName === 'spinner') {
+              text = `<w-icon name="${iconName}" pulse />`;
+            } else {
+              const text = `<w-icon name="${iconName}" />`;
+            }
+            this.$copy(text); 
+            alert('复制成功');
+          }
+        }
+      }
     },
   };
 </script>
@@ -82,7 +103,7 @@
   .icon-list li {
     position: relative;
     display: flex;
-    width: 16.66%;
+    width: 16.64%;
     text-align: center;
     height: 120px;
     line-height: 120px;
@@ -133,8 +154,9 @@
   }
 </style>
 ```
-
 :::
+
+更多图标可以参考Font Awesome官网：[https://fontawesome.com/v6/search?o=r&m=free&s=solid](https://fontawesome.com/v6/search?o=r&m=free&s=solid)
 
 ### 属性
 

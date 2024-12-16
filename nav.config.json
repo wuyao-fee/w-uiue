@@ -10,7 +10,7 @@
     },
     {
       "text": "组件",
-      "link": "/components/svgIcon"
+      "link": "/components/icon"
     },
     {
       "text": "更新日志",
@@ -49,6 +49,11 @@
       "collapsable": false,
       "children": [
         {
+          "title": "Icon图标",
+          "path": "/components/icon.md",
+          "collapsable": false
+        },
+        {
           "title": "SvgIcon图标",
           "path": "/components/svgIcon.md",
           "collapsable": false
@@ -71,11 +76,6 @@
         {
           "title": "Descriptions描述列表",
           "path": "/components/descriptions.md",
-          "collapsable": false
-        },
-        {
-          "title": "Icon图标",
-          "path": "/components/icon.md",
           "collapsable": false
         }
       ]

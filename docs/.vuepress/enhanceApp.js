@@ -2,6 +2,7 @@ import WUI from "../../lib/w-uiue.umd.min.js";
 import "../../lib/w-uiue.css";
 import "@fortawesome/fontawesome-free/css/all.css";
 import iconJson from '../../icon.json';
+import { copyToClipboard } from "../../packages/theme-chalk/src/utils/tool.js";
 
 const commonSvgRequire = require.context(
   "../../packages/theme-chalk/src/images/svg/common",
@@ -48,6 +49,7 @@ export default async ({ Vue, router }) => {
     Vue.use(IconPlugin);
     Vue.prototype.$commonSvgIcon = getSvgIconNames(commonSvgRequire);
     Vue.prototype.$tipSvgIcon = getSvgIconNames(tipSvgRequire);
+    Vue.prototype.$copy = copyToClipboard;
   }
   router.beforeEach((to, from, next) => {
     // 触发百度的pv统计

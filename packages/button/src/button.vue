@@ -1,8 +1,9 @@
 <script>
-import WSvgIcon from "../../svg-icon/src/svg-icon.vue";
+// import WSvgIcon from "../../svg-icon/src/svg-icon.vue";
+import WIcon from "../../icon/src/icon.vue";
 export default {
   name: "WButton",
-  components: { WSvgIcon },
+  components: { WIcon },
   props: {
     type: {
       type: String,
@@ -92,7 +93,7 @@ export default {
       icon ? `w-button--icon` : '',
     ]"
   >
-    <w-svg-icon
+    <!-- <w-svg-icon
       name="line-loading"
       :size="iconSize"
       v-if="loading || localLoading"
@@ -104,7 +105,18 @@ export default {
       :stroke="iconStroke"
       :size="iconSize"
       v-if="icon && !loading && !localLoading"
-    ></w-svg-icon>
+    ></w-svg-icon> -->
+    <w-icon
+      name="spinner"
+      pulse
+      v-if="loading || localLoading"
+      class="w-button--loading"
+    ></w-icon>
+    <w-icon
+      :name="icon"
+      color="#fff"
+      v-if="icon && !loading && !localLoading"
+    ></w-icon>
     <span v-if="$slots.default"><slot></slot></span>
   </button>
 </template>

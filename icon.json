@@ -5,15 +5,36 @@
   },
   "tip": {
     "title": "提示状态",
-    "list": ["image", "star", "heart"]
+    "list": [
+      "spinner",
+      "circle-info",
+      "circle-question",
+      "image",
+      "star",
+      "heart"
+    ]
   },
   "interaction": {
     "title": "交互操作",
-    "list": ["magnifying-glass", "check", "download"]
+    "list": [
+      "magnifying-glass",
+      "check",
+      "upload",
+      "download",
+      "share-nodes",
+      "trash-can"
+    ]
   },
   "direction": {
     "title": "方向提示",
-    "list": ["arrow-right"]
+    "list": [
+      "arrow-left",
+      "arrow-right",
+      "arrow-up",
+      "arrow-down",
+      "angles-left",
+      "angles-right"
+    ]
   },
   "other": {
     "title": "其他",
