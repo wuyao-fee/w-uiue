@@ -1,0 +1,9 @@
+{
+  "Button": "./button/src/button.vue",
+  "SvgIcon": "./svg-icon/src/svg-icon.vue",
+  "Divider": "./divider/src/divider.vue",
+  "Card": "./card/src/card.vue",
+  "Descriptions": "./descriptions/src/descriptions.vue",
+  "DescriptionsItem": "./descriptions-item/src/descriptions-item.vue",
+  "Icon": "./icon/src/icon.vue"
+}

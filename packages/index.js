@@ -1,12 +1,11 @@
 import Button from "./button/src/button.vue";
 import SvgIcon from "./svg-icon/src/svg-icon.vue";
-import { importAllSvg } from "./svg-icon/index";
 import Divider from "./divider/src/divider.vue";
 import Card from "./card/src/card.vue";
 import Descriptions from "./descriptions/src/descriptions.vue";
-import DescriptionsItem from "./descriptions-item/src/descriptions-item";
-import Icon from "./icon//src/icon.vue";
-
+import DescriptionsItem from "./descriptions-item/src/descriptions-item.vue";
+import Icon from "./icon/src/icon.vue";
+import { importAllSvg } from "./svg-icon/index";
 // 导入所有SVG
 importAllSvg();
 
@@ -38,6 +37,7 @@ if (typeof window !== "undefined" && window.Vue) {
   install(window.Vue);
 }
 
+// 默认导出
 export default {
   install,
   Button,

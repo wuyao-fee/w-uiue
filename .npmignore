@@ -6,6 +6,7 @@ docs/
 .temp/
 .gitee/
 node_modules/
+build/
 
 # 忽略指定文件
 vue.config.js
