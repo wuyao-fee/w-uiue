@@ -5,7 +5,7 @@ import Card from "./card/src/card.vue";
 import Descriptions from "./descriptions/src/descriptions.vue";
 import DescriptionsItem from "./descriptions-item/src/descriptions-item.vue";
 import Icon from "./icon/src/icon.vue";
-import Message from "./message/src/message.vue";
+import Message from "./message/index.js";
 import { importAllSvg } from "./svg-icon/index";
 // 导入所有SVG
 importAllSvg();
@@ -32,6 +32,8 @@ const install = function (Vue) {
   components.forEach((component) => {
     Vue.component(component.name, component);
   });
+
+  Vue.prototype.$message = Message;
 };
 
 // 检测到 Vue 才执行

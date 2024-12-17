@@ -61,6 +61,8 @@ const install = function (Vue) {
   components.forEach((component) => {
     Vue.component(component.name, component);
   });
+
+  Vue.prototype.$message = Message;
 };
 
 // 检测到 Vue 才执行

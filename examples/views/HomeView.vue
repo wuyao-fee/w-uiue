@@ -283,8 +283,16 @@
         <w-icon name="home" rotate="45"></w-icon>
       </p>
       <h1>message 示例</h1>
-      <p style="font-size: 24px">
-        <w-message>aaa</w-message>
+      <p style="display: flex">
+        <w-button type="primary" @click="handleClick3('success')"
+          >success</w-button
+        >
+        <w-button type="primary" @click="handleClick3('error')">error</w-button>
+        <w-button type="primary" @click="handleClick3('warning')"
+          >warning</w-button
+        >
+        <w-button type="primary" @click="handleClick3('info')">info</w-button>
+        <w-button type="primary" @click="handleClick3('help')">help</w-button>
       </p>
     </div>
   </div>
@@ -311,6 +319,23 @@ export default {
           resolve();
         }, 2000);
       });
+    },
+    handleClick3(type) {
+      if (type === "success") {
+        this.$message.success("操作成功");
+      }
+      if (type === "error") {
+        this.$message.error("操作失败");
+      }
+      if (type === "warning") {
+        this.$message.warning("操作警告");
+      }
+      if (type === "info") {
+        this.$message.info("操作信息");
+      }
+      if (type === "help") {
+        this.$message.help("帮助信息");
+      }
     },
   },
 };

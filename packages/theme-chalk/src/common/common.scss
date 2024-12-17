@@ -1,0 +1,23 @@
+@import "./variables.scss";
+
+::-webkit-scrollbar-track {
+  background-color: transparent !important;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background-color: rgb(206, 206, 206) !important;
+}
+
+.w-message-fade-enter-active,
+.w-message-fade-leave-active {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.w-message-fade-enter {
+  opacity: 0;
+  transform: translate(-50%, -100%);
+}
+.w-message-fade-leave-to {
+  opacity: 0;
+  transform: translate(-50%, -100%);
+}

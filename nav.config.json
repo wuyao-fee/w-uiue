@@ -79,7 +79,7 @@
           "collapsable": false
         },
         {
-          "title": "Message",
+          "title": "Message消息提示",
           "path": "/components/message.md",
           "collapsable": false
         }
