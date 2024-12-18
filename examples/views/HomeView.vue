@@ -299,6 +299,49 @@
           >onClose回调函数</w-button
         >
       </p>
+      <h1>scrollbar 示例</h1>
+      <w-scrollbar
+        color="#f40"
+        width="10px"
+        style="height: 200px; overflow-y: auto"
+      >
+        <ul>
+          <li>列表项1</li>
+          <li>列表项1</li>
+          <li>列表项1</li>
+          <li>列表项1</li>
+          <li>列表项1</li>
+          <li>列表项1</li>
+          <li>列表项1</li>
+          <li>列表项1</li>
+          <li>列表项1</li>
+          <li>列表项1</li>
+          <li>列表项1</li>
+          <li>列表项1</li>
+          <li>列表项1</li>
+          <li>列表项1</li>
+          <li>列表项1</li>
+          <li>列表项1</li>
+        </ul>
+      </w-scrollbar>
+      <hr />
+      <br />
+      <w-scrollbar
+        color="#f40"
+        height="12px"
+        style="width: 500px; height: 200px; overflow-x: auto"
+      >
+        <ul>
+          <li style="width: 1000px">
+            列表项1列表项1列表项1列表项1列表项1列表项1列表项1列表项1列表项1列表项1列表项1列表项1列表项1列表项1
+            列表项1列表项1列表项1列表项1列表项1列表项1列表项1列表项1列表项1列表项1列表项1列表项1列表项1列表项1
+            列表项1列表项1列表项1列表项1列表项1列表项1列表项1列表项1列表项1列表项1列表项1列表项1列表项1列表项1
+          </li>
+          <li>列表项1</li>
+          <li>列表项1</li>
+          <li>列表项1</li>
+        </ul>
+      </w-scrollbar>
     </div>
   </div>
 </template>
@@ -309,6 +352,9 @@ export default {
   data() {
     return {
       loading: false,
+      viewStyle: {
+        backgroundColor: "red",
+      },
     };
   },
   methods: {
@@ -388,5 +434,11 @@ export default {
   background-color: #fff;
   margin: 30px 0;
   padding: 30px 20px;
+}
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 </style>

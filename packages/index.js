@@ -6,6 +6,7 @@ import Descriptions from "./descriptions/src/descriptions.vue";
 import DescriptionsItem from "./descriptions-item/src/descriptions-item.vue";
 import Icon from "./icon/src/icon.vue";
 import Message from "./message/index.js";
+import Scrollbar from "./scrollbar/src/scrollbar.vue";
 import { importAllSvg } from "./svg-icon/index";
 // 导入所有SVG
 importAllSvg();
@@ -20,6 +21,7 @@ const components = [
   DescriptionsItem,
   Icon,
   Message,
+  Scrollbar,
 ];
 
 // 定义 install 方法
@@ -52,4 +54,5 @@ export default {
   DescriptionsItem,
   Icon,
   Message,
+  Scrollbar,
 };

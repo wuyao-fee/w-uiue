@@ -82,6 +82,11 @@
           "title": "Message消息提示",
           "path": "/components/message.md",
           "collapsable": false
+        },
+        {
+          "title": "Scrollbar滚动条",
+          "path": "/components/scrollbar.md",
+          "collapsable": false
         }
       ]
     }

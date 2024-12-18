@@ -95,3 +95,12 @@ $shadow-sidebar: 1px 0 3px 0 rgba(0, 0, 0, 0.05);
 $shadow-dropdown: 0 4px 10px 2px rgba(0, 0, 0, 0.06),
   0 2px 5px -1px rgba(0, 0, 0, 0.08);
 $shadow-message: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+
+// 滚动条
+$scrollbar-color: $border-color;
+$scrollbar-vertical-width: 6px;
+$scrollbar-horizontal-top: 2px;
+
+$scrollbar-horizontal-height: 6px;
+$scrollbar-horizontal-right: 2px;
+

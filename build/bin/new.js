@@ -46,7 +46,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@import "../../../packages/theme-chalk/src/common/variables.scss";
+@import "../../../packages/theme-chalk/src/common/common.scss";
 </style>
 `;
 

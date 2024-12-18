@@ -6,5 +6,6 @@
   "Descriptions": "./descriptions/src/descriptions.vue",
   "DescriptionsItem": "./descriptions-item/src/descriptions-item.vue",
   "Icon": "./icon/src/icon.vue",
-  "Message": "./message/index.js"
+  "Message": "./message/index.js",
+  "Scrollbar": "./scrollbar/src/scrollbar.vue"
 }
