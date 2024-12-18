@@ -293,6 +293,11 @@
         >
         <w-button type="primary" @click="handleClick3('info')">info</w-button>
         <w-button type="primary" @click="handleClick3('help')">help</w-button>
+        <w-button type="primary" @click="handleClick4()">duration</w-button>
+        <w-button type="primary" @click="handleClick5()">offset</w-button>
+        <w-button type="primary" @click="handleClick6()"
+          >onClose回调函数</w-button
+        >
       </p>
     </div>
   </div>
@@ -336,6 +341,32 @@ export default {
       if (type === "help") {
         this.$message.help("帮助信息");
       }
+    },
+    handleClick4() {
+      this.$message({
+        type: "info",
+        message: "这是一条消息提示",
+        duration: 0,
+        showClose: true,
+      });
+    },
+    handleClick5() {
+      this.$message({
+        type: "info",
+        message: "这是一条消息提示",
+        offset: 100,
+      });
+    },
+    handleClick6() {
+      this.$message({
+        type: "info",
+        message: "这是一条消息提示",
+        duration: 0,
+        showClose: true,
+        onClose: () => {
+          this.$message.success("关闭成功");
+        },
+      });
     },
   },
 };

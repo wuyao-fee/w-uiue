@@ -65,6 +65,8 @@ export default {
       pulse ? 'fa-pulse' : '',
     ]"
     :style="getStyle"
+    v-bind="$attrs"
+    v-on="$listeners"
   ></i>
 </template>
 

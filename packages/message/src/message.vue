@@ -13,11 +13,14 @@ export default {
   data() {
     return {
       visible: false,
-      message: "1111lorem ipsum dolor sit amet .",
+      message: "",
       duration: 3000,
       type: "success",
       closed: false,
       timer: null,
+      onClose: null,
+      showClose: false,
+      verticalOffset: 20,
     };
   },
   watch: {
@@ -30,6 +33,10 @@ export default {
   mounted() {
     this.visible = true;
     this.startTimer();
+    document.addEventListener("keydown", this.keydown);
+  },
+  beforeDestroy() {
+    document.removeEventListener("keydown", this.keydown);
   },
   computed: {
     getIconName() {
@@ -43,6 +50,11 @@ export default {
         return this.type;
       }
       return "";
+    },
+    positionStyle() {
+      return {
+        top: `${this.verticalOffset}px`,
+      };
     },
   },
   methods: {
@@ -68,17 +80,36 @@ export default {
         }, this.duration);
       }
     },
+    keydown(e) {
+      if (e.keyCode === 27) {
+        // esc关闭消息
+        if (!this.closed) {
+          this.close();
+        }
+      }
+    },
   },
 };
 </script>
 
 <template>
   <transition @after-leave="handleAfterLeave" name="w-message-fade">
-    <div class="w-message" :class="[`w-message--${type}`]" v-show="visible">
+    <div
+      class="w-message"
+      :class="[`w-message--${type}`, showClose ? 'is-closable' : '']"
+      :style="positionStyle"
+      v-show="visible"
+    >
       <w-icon :name="getIconName" :class="[`w-message--${type}`]"></w-icon>
       <slot>
         <p class="w-message__content">{{ message }}</p>
       </slot>
+      <w-icon
+        name="xmark"
+        class="w-message__close"
+        v-if="showClose"
+        @click="close"
+      ></w-icon>
     </div>
   </transition>
 </template>
@@ -98,6 +129,10 @@ export default {
   background-color: $disabled-text--success-color;
   display: flex;
   align-items: center;
+  font-size: $font-size;
+  font-family: $font-family;
+  box-shadow: $shadow-message;
+  z-index: 9999;
   span {
     line-height: 22px;
     text-align: justify;
@@ -111,6 +146,10 @@ export default {
     overflow-y: auto;
     text-align: justify;
     overflow-anchor: none;
+    line-height: 22px;
+    font-size: $font-size;
+    font-family: $font-family;
+    color: $second-text-color;
   }
   &--success {
     // 背景颜色浅一点
@@ -131,6 +170,11 @@ export default {
   &--help {
     background-color: lighten($disabled-text--help-color, 5%);
     color: $active-help-color !important;
+  }
+  .w-message__close {
+    margin-left: auto;
+    margin-right: 0;
+    cursor: pointer;
   }
 }
 .w-message-fade-enter-active,
