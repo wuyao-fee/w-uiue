@@ -25,7 +25,7 @@
   align-items: center;
   margin-bottom: 5px;
 }
-.w-icon {
+icon-demo .w-icon {
   margin-right: 30px;
 }
 </style>
