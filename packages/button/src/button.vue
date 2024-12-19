@@ -238,6 +238,11 @@ export default {
         height: $font-size;
       }
     }
+    &.w-button--default:not(.w-button--disabled) {
+      .w-icon {
+        color: $first-icon-color !important;
+      }
+    }
   }
 }
 .w-button--small {
@@ -258,6 +263,11 @@ export default {
         height: $font-size--small;
       }
     }
+    &.w-button--default:not(.w-button--disabled) {
+      .w-icon {
+        color: $first-icon-color !important;
+      }
+    }
   }
 }
 .w-button--large {
@@ -276,6 +286,11 @@ export default {
       .w-icon {
         width: $font-size--large;
         height: $font-size--large;
+      }
+    }
+    &.w-button--default:not(.w-button--disabled) {
+      .w-icon {
+        color: $first-icon-color !important;
       }
     }
   }

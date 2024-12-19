@@ -46,7 +46,7 @@
       <w-button circle type="primary" size="small" icon="plus"
         >主要按钮-中</w-button
       >
-      <w-button circle>默认按钮-中</w-button>
+      <w-button circle icon="plus">默认按钮-中</w-button>
       <w-button circle type="primary" icon="plus">主要按钮-中</w-button>
       <w-button circle type="dashed">虚线按钮-中</w-button>
       <w-button circle type="text">文本按钮-中</w-button>
@@ -64,7 +64,7 @@
       <w-button disabled circle type="primary" size="small" icon="plus"
         >主要按钮-中</w-button
       >
-      <w-button disabled circle>默认按钮-中</w-button>
+      <w-button disabled circle icon="plus">默认按钮-中</w-button>
       <w-button disabled circle type="primary" icon="plus"
         >主要按钮-中</w-button
       >
