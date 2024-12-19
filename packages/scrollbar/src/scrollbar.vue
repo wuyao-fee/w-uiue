@@ -165,9 +165,9 @@ export default {
 .w-scrollbar {
   scrollbar-width: none; /* firefox */
   -ms-overflow-style: none; /* IE 10+ */
-  border: 1px solid #000;
   overflow: hidden;
   position: relative;
+  // overflow: scroll;
   &::-webkit-scrollbar {
     display: none;
   }

@@ -1,4 +1,5 @@
 <script>
+import { calculatePixels } from "../../theme-chalk/src/utils/tool.js";
 export default {
   name: "WBar",
   props: {
@@ -40,26 +41,47 @@ export default {
         },
       }[this.vertical ? "vertical" : "horizontal"];
     },
+    trackStyle() {
+      if (this.bar.key === "vertical") {
+        const width = this.wScrollbar.width ? this.wScrollbar.width : "6px";
+        return {
+          // 仅vertical时，才有width属性
+          width: width,
+          right: this.wScrollbar.right
+            ? calculatePixels(this.wScrollbar.right, width)
+            : "2px",
+        };
+      } else {
+        const height = this.wScrollbar.height ? this.wScrollbar.height : "6px";
+        return {
+          // 仅horizontal时，才有height属性
+          height: height,
+          bottom: this.wScrollbar.bottom
+            ? calculatePixels(this.wScrollbar.bottom, height)
+            : "8px",
+        };
+      }
+    },
     thumbStyle() {
-      return {
+      const commonStyle = {
         transform: `translate${this.bar.axis.toUpperCase()}(${this.move}%)`,
         opacity: this.size !== "" ? 1 : 0,
         [this.bar.axis === "x" ? "width" : "height"]: this.size,
         backgroundColor: this.wScrollbar.color || "#cecece",
-        // 仅vertical时，才有width属性，horizontal时，才有height属性
-        width:
-          this.bar.key === "vertical"
-            ? this.wScrollbar.width
-              ? this.wScrollbar.width
-              : "6px"
-            : "",
-        right:
-          this.bar.key === "vertical"
-            ? this.wScrollbar.right
-              ? this.wScrollbar.right
-              : "2px"
-            : "",
       };
+      if (this.bar.key === "vertical") {
+        return {
+          ...commonStyle,
+          // 仅vertical时，才有width属性
+          width: this.wScrollbar.width ? this.wScrollbar.width : "6px",
+        };
+      } else {
+        return {
+          ...commonStyle,
+          // 仅horizontal时，才有height属性
+          height: this.wScrollbar.height ? this.wScrollbar.height : "6px",
+        };
+      }
     },
   },
   mounted() {
@@ -128,6 +150,7 @@ export default {
   <div
     class="w-scrollbar__bar"
     :class="[`is-${bar.key}`]"
+    :style="trackStyle"
     @mousedown="handleClickTrack"
   >
     <div
