@@ -6,6 +6,79 @@
       <w-button type="primary">主要按钮-中</w-button>
       <w-button type="dashed">虚线按钮-中</w-button>
       <w-button type="text">文本按钮-中</w-button>
+      <w-button type="success">成功按钮-中</w-button>
+      <w-button type="warning">警告按钮-中</w-button>
+      <w-button type="danger">危险按钮-中</w-button>
+      <w-button type="help">帮助按钮-中</w-button>
+    </div>
+    <div class="button-demo">
+      <w-button round>默认按钮-中</w-button>
+      <w-button round type="primary">主要按钮-中</w-button>
+      <w-button round type="dashed">虚线按钮-中</w-button>
+      <w-button round type="text">文本按钮-中</w-button>
+      <w-button round type="success">成功按钮-中</w-button>
+      <w-button round type="warning">警告按钮-中</w-button>
+      <w-button round type="danger">危险按钮-中</w-button>
+      <w-button round type="help">帮助按钮-中</w-button>
+    </div>
+    <div class="button-demo">
+      <w-button plain>默认按钮-中</w-button>
+      <w-button plain type="primary">主要按钮-中</w-button>
+      <w-button plain type="dashed">虚线按钮-中</w-button>
+      <w-button plain type="text">文本按钮-中</w-button>
+      <w-button plain type="success">成功按钮-中</w-button>
+      <w-button plain type="warning">警告按钮-中</w-button>
+      <w-button plain type="danger">危险按钮-中</w-button>
+      <w-button plain type="help">帮助按钮-中</w-button>
+    </div>
+    <div class="button-demo">
+      <w-button disabled plain>默认按钮-中</w-button>
+      <w-button disabled plain type="primary">主要按钮-中</w-button>
+      <w-button disabled plain type="dashed">虚线按钮-中</w-button>
+      <w-button disabled plain type="text">文本按钮-中</w-button>
+      <w-button disabled plain type="success">成功按钮-中</w-button>
+      <w-button disabled plain type="warning">警告按钮-中</w-button>
+      <w-button disabled plain type="danger">危险按钮-中</w-button>
+      <w-button disabled plain type="help">帮助按钮-中</w-button>
+    </div>
+    disabled
+    <div class="button-demo">
+      <w-button circle type="primary" size="small" icon="plus"
+        >主要按钮-中</w-button
+      >
+      <w-button circle>默认按钮-中</w-button>
+      <w-button circle type="primary" icon="plus">主要按钮-中</w-button>
+      <w-button circle type="dashed">虚线按钮-中</w-button>
+      <w-button circle type="text">文本按钮-中</w-button>
+      <w-button circle type="success" icon="pen-to-square"
+        >成功按钮-中</w-button
+      >
+      <w-button circle type="warning">警告按钮-中</w-button>
+      <w-button circle type="danger">危险按钮-中</w-button>
+      <w-button circle type="help">帮助按钮-中</w-button>
+      <w-button circle type="success" size="large" icon="pen-to-square"
+        >成功按钮-中</w-button
+      >
+    </div>
+    <div class="button-demo">
+      <w-button disabled circle type="primary" size="small" icon="plus"
+        >主要按钮-中</w-button
+      >
+      <w-button disabled circle>默认按钮-中</w-button>
+      <w-button disabled circle type="primary" icon="plus"
+        >主要按钮-中</w-button
+      >
+      <w-button disabled circle type="dashed">虚线按钮-中</w-button>
+      <w-button disabled circle type="text">文本按钮-中</w-button>
+      <w-button disabled circle type="success" icon="pen-to-square"
+        >成功按钮-中</w-button
+      >
+      <w-button disabled circle type="warning">警告按钮-中</w-button>
+      <w-button disabled circle type="danger">危险按钮-中</w-button>
+      <w-button disabled circle type="help">帮助按钮-中</w-button>
+      <w-button disabled circle type="success" size="large" icon="pen-to-square"
+        >成功按钮-中</w-button
+      >
     </div>
     <div class="button-demo">
       <w-button disabled>默认按钮</w-button>

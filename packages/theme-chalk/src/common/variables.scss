@@ -36,14 +36,14 @@ $active-warning-color: #d66900;
 $disabled-warning-color: #ffbc7b;
 $disabled-text--warning-color: #ffd8b2;
 
-$danger-color: #ff5656;
-$hover-danger-color: #ffecec;
+$danger-color: #f53f3f;
+$hover-danger-color: #ff5656;
 $active-danger-color: #cf2525;
 $disabled-danger-color: #ff9595;
 $disabled-text--danger-color: #ffbfbf;
 
-$help-color: #4a8eff;
-$hover-help-color: #ebf2ff;
+$help-color: #0060ff;
+$hover-help-color: #4a8eff;
 $active-help-color: #0051d6;
 $disabled-help-color: #7badff;
 $disabled-text--help-color: #b2cfff;
@@ -103,3 +103,155 @@ $scrollbar-horizontal-top: 2px;
 
 $scrollbar-horizontal-height: 6px;
 $scrollbar-horizontal-right: 2px;
+
+// 按钮颜色列表
+$button-colors: (
+  default: (
+    color: $second-text-color,
+    background-color: $white-color,
+    border-style: solid,
+    border-color: $border-color,
+    hover-color: $hover-base-color,
+    hover-border-color: $hover-base-color,
+    // hover-background-color: $white-color,
+    active-color: $active-base-color,
+    active-border-color: $active-base-color,
+    active-background-color: $white-color,
+    disabled-color: $third-text-color,
+    disabled-border-color: $border-color,
+    disabled-background-color: $disabled-fill-color,
+  ),
+  primary:
+  (
+    color: $white-color,
+    background-color: $primary-base-color,
+    hover-color: $white-color,
+    hover-border-color: none,
+    hover-background-color: $hover-base-color,
+    active-color: $white-color,
+    active-border-color: none,
+    active-background-color: $active-base-color,
+    disabled-color: $third-text-color,
+    disabled-background-color: $disabled-fill-color,
+    plain-color: $primary-base-color,
+    plain-border-color: lighten($primary-base-color, 40%),
+    plain-background-color: lighten($primary-base-color, 50%),
+    plain-hover-color: $white-color,
+    plain-hover-border-color: $primary-base-color,
+    plain-hover-background-color: $hover-base-color,
+    plain-active-color: $white-color,
+    plain-active-border-color: $active-base-color,
+    plain-active-background-color: $active-base-color,
+  ),
+  dashed:
+  (
+    color: $second-text-color,
+    background-color: $white-color,
+    border-style: dashed,
+    border-color: $border-color,
+    hover-color: $hover-base-color,
+    hover-border-color: $hover-base-color,
+    // hover-background-color: $white-color,
+    active-color: $active-base-color,
+    active-border-color: $active-base-color,
+    active-background-color: $white-color,
+    disabled-color: $third-text-color,
+    disabled-border-color: $border-color,
+    disabled-background-color: $disabled-fill-color,
+  ),
+  text:
+  (
+    color: $primary-base-color,
+    hover-color: $hover-base-color,
+    active-color: $active-base-color,
+    disabled-color: $third-text-color,
+  ),
+  success:
+  (
+    color: $white-color,
+    background-color: $success-color,
+    hover-color: $white-color,
+    hover-border-color: none,
+    hover-background-color: $hover-success-color,
+    active-color: $white-color,
+    active-border-color: none,
+    active-background-color: $active-success-color,
+    disabled-color: $third-text-color,
+    disabled-background-color: $disabled-fill-color,
+    plain-color: $success-color,
+    plain-border-color: lighten($success-color, 40%),
+    plain-background-color: lighten($success-color, 50%),
+    plain-hover-color: $white-color,
+    plain-hover-border-color: $success-color,
+    plain-hover-background-color: $success-color,
+    plain-active-color: $white-color,
+    plain-active-border-color: $active-success-color,
+    plain-active-background-color: $active-success-color,
+  ),
+  warning:
+  (
+    color: $white-color,
+    background-color: $warning-color,
+    hover-color: $white-color,
+    hover-border-color: none,
+    hover-background-color: $hover-warning-color,
+    active-color: $white-color,
+    active-border-color: none,
+    active-background-color: $active-warning-color,
+    disabled-color: $third-text-color,
+    disabled-background-color: $disabled-fill-color,
+    plain-color: $warning-color,
+    plain-border-color: lighten($warning-color, 30%),
+    plain-background-color: lighten($warning-color, 40%),
+    plain-hover-color: $white-color,
+    plain-hover-border-color: $warning-color,
+    plain-hover-background-color: $warning-color,
+    plain-active-color: $white-color,
+    plain-active-border-color: $active-warning-color,
+    plain-active-background-color: $active-warning-color,
+  ),
+  danger:
+  (
+    color: $white-color,
+    background-color: $danger-color,
+    hover-color: $white-color,
+    hover-border-color: none,
+    hover-background-color: $hover-danger-color,
+    active-color: $white-color,
+    active-border-color: none,
+    active-background-color: $active-danger-color,
+    disabled-color: $third-text-color,
+    disabled-background-color: $disabled-fill-color,
+    plain-color: $danger-color,
+    plain-border-color: lighten($danger-color, 30%),
+    plain-background-color: lighten($danger-color, 35%),
+    plain-hover-color: $white-color,
+    plain-hover-border-color: $danger-color,
+    plain-hover-background-color: $danger-color,
+    plain-active-color: $white-color,
+    plain-active-border-color: $active-danger-color,
+    plain-active-background-color: $active-danger-color,
+  ),
+  help:
+  (
+    color: $white-color,
+    background-color: $help-color,
+    hover-color: $white-color,
+    hover-border-color: none,
+    hover-background-color: $hover-help-color,
+    active-color: $white-color,
+    active-border-color: none,
+    active-background-color: $active-help-color,
+    disabled-color: $third-text-color,
+    disabled-background-color: $disabled-fill-color,
+    plain-color: $help-color,
+    plain-border-color: lighten($help-color, 30%),
+    plain-background-color: lighten($help-color, 40%),
+    plain-hover-color: $white-color,
+    plain-hover-border-color: $help-color,
+    plain-hover-background-color: $help-color,
+    plain-active-color: $white-color,
+    plain-active-border-color: $active-help-color,
+    plain-active-background-color: $active-help-color,
+  ),
+);

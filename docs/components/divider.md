@@ -208,10 +208,10 @@
 
 ### 属性
 
-| 参数        | 说明           | 类型            | 可选值                  | 默认值     |
-| ----------- | -------------- | --------------- | ----------------------- | ---------- |
-| type        | 类型           | string          | solid / dashed / dotted | solid      |
-| direction   | 水平或垂直方向 | string          | horizontal / vertical   | horizontal |
-| orientation | 标题对齐方式   | string          | left / center / right   | center     |
-| margin      | 分割线两侧边距 | string / number | —                       | 16         |
+| 参数        | 说明           | 类型            | 是否必须 | 可选值                  | 默认值     |
+| ----------- | -------------- | --------------- | ---- | ----------------------- | ---------- |
+| type        | 类型           | string          | 否 | solid / dashed / dotted | solid      |
+| direction   | 水平或垂直方向 | string          | 否 | horizontal / vertical   | horizontal |
+| orientation | 标题对齐方式   | string          | 否 | left / center / right   | center     |
+| margin      | 分割线两侧边距 | string / number | 否 | —                       | 16         |
 

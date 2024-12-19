@@ -13,6 +13,15 @@ export default {
       type: String,
       default: "medium",
     },
+    round: {
+      type: Boolean,
+    },
+    circle: {
+      type: Boolean,
+    },
+    plain: {
+      type: Boolean,
+    },
     disabled: {
       type: Boolean,
       default: false,
@@ -91,6 +100,9 @@ export default {
       size ? `w-button--${size}` : '',
       disabled || loading || localLoading ? 'w-button--disabled' : '',
       icon ? `w-button--icon` : '',
+      round ? 'is-round' : '',
+      circle ? 'is-circle' : '',
+      plain ? 'is-plain' : '',
     ]"
   >
     <!-- <w-svg-icon
@@ -117,7 +129,7 @@ export default {
       color="#fff"
       v-if="icon && !loading && !localLoading"
     ></w-icon>
-    <span v-if="$slots.default"><slot></slot></span>
+    <span v-if="$slots.default && !circle"><slot></slot></span>
   </button>
 </template>
 
@@ -134,71 +146,78 @@ export default {
   display: flex;
   align-items: center;
 }
-.w-button--default {
-  color: $second-text-color;
-  background-color: $white-color;
-  border: $border;
-  // 不能是禁用状态
-  &:not(.w-button--disabled):hover {
-    color: $hover-base-color;
-    border-color: $hover-base-color;
+@each $type, $theme in $button-colors {
+  @if $type == "text" {
+    .w-button--#{$type} {
+      color: map-get($theme, color);
+      border: none;
+      padding: 0 !important;
+      background: none !important;
+      &:not(.w-button--disabled):hover {
+        color: map-get($theme, hover-color);
+      }
+      &:not(.w-button--disabled):active {
+        color: map-get($theme, active-color);
+      }
+    }
+  } @else {
+    .w-button--#{$type} {
+      color: map-get($theme, color);
+      background-color: map-get($theme, background-color);
+      @if map-has-key($theme, "border-color") {
+        border: 1px map-get($theme, border-style) map-get($theme, border-color);
+      } @else {
+        border: none;
+      }
+      &:not(.w-button--disabled):hover {
+        color: map-get($theme, hover-color);
+        border-color: map-get($theme, hover-border-color);
+        @if map-has-key($theme, "hover-background-color") {
+          background-color: map-get($theme, hover-background-color);
+        }
+      }
+      &:not(.w-button--disabled):active {
+        color: map-get($theme, active-color);
+        border-color: map-get($theme, active-border-color);
+        @if map-has-key($theme, "active-background-color") {
+          background-color: map-get($theme, active-background-color);
+        }
+      }
+    }
   }
-  // 不能是禁用状态
-  &:not(.w-button--disabled):active {
-    color: $active-base-color;
-    border-color: $active-base-color;
+  .w-button--#{$type}.is-plain {
+    @if map-has-key($theme, "plain-color") {
+      color: map-get($theme, plain-color);
+    }
+    @if map-has-key($theme, "plain-border-color") {
+      border: 1px solid map-get($theme, plain-border-color);
+    }
+    @if map-has-key($theme, "plain-background-color") {
+      background-color: map-get($theme, plain-background-color);
+      &:not(.w-button--disabled):hover {
+        border-color: map-get($theme, plain-hover-border-color);
+        background-color: map-get($theme, plain-hover-background-color);
+      }
+      &:not(.w-button--disabled):active {
+        border-color: map-get($theme, plain-active-border-color);
+        background-color: map-get($theme, plain-active-background-color);
+      }
+    }
   }
-}
-.w-button--primary {
-  color: $white-color;
-  background-color: $primary-base-color;
-  &:hover {
-    background-color: $hover-base-color;
-  }
-  &:active {
-    background-color: $active-base-color;
-  }
-}
-.w-button--dashed {
-  color: $second-text-color;
-  background-color: $white-color;
-  border: $border-dashed;
-  &:not(.w-button--disabled):hover {
-    color: $hover-base-color;
-    border-color: $hover-base-color;
-  }
-  &:not(.w-button--disabled):active {
-    color: $active-base-color;
-    border-color: $active-base-color;
-  }
-}
-.w-button--text {
-  color: $primary-base-color;
-  border: none;
-  padding: 0 !important;
-  background: none !important;
-  &:not(.w-button--disabled):hover {
-    color: $hover-base-color;
-  }
-  &:not(.w-button--disabled):active {
-    color: $active-base-color;
-  }
-}
-.w-button--disabled {
-  cursor: not-allowed;
-  &.w-button--default,
-  &.w-button--primary,
-  &.w-button--dashed {
-    color: $third-text-color;
-    background-color: $disabled-fill-color;
-  }
-  &.w-button--text {
-    color: $third-text-color;
-  }
-  &:hover,
-  &:active {
-    border-color: none;
-    background-color: none;
+  .w-button--#{$type}.w-button--disabled {
+    cursor: not-allowed;
+    color: map-get($theme, disabled-color);
+    @if map-has-key($theme, "disabled-background-color") {
+      background-color: map-get($theme, disabled-background-color);
+    }
+    @if map-has-key($theme, "disabled-border-color") {
+      border-color: map-get($theme, disabled-border-color);
+    } @else {
+      border: none;
+    }
+    .w-icon {
+      color: $second-icon-color !important;
+    }
   }
 }
 .w-button--medium {
@@ -206,18 +225,60 @@ export default {
   font-size: $font-size;
   line-height: $line-height;
   height: $button-height;
+  &.is-round {
+    border-radius: $button-height / 2;
+  }
+  &.is-circle {
+    border-radius: 50%;
+    padding: $button-height / 2;
+    &.w-button--icon {
+      padding: ($button-height - $font-size) / 2;
+      .w-icon {
+        width: $font-size;
+        height: $font-size;
+      }
+    }
+  }
 }
 .w-button--small {
   padding: 4px 20px;
   font-size: $font-size--small;
   line-height: $line-height--small;
   height: $button-height--small;
+  &.is-round {
+    border-radius: $button-height--small / 2;
+  }
+  &.is-circle {
+    border-radius: 50%;
+    padding: $button-height--small / 2;
+    &.w-button--icon {
+      padding: ($button-height--small - $font-size--small) / 2;
+      .w-icon {
+        width: $font-size--small;
+        height: $font-size--small;
+      }
+    }
+  }
 }
 .w-button--large {
   padding: 8px 20px;
   font-size: $font-size--large;
   line-height: $line-height--large;
   height: $button-height--large;
+  &.is-round {
+    border-radius: $button-height--large / 2;
+  }
+  &.is-circle {
+    border-radius: 50%;
+    padding: $button-height--large / 2;
+    &.w-button--icon {
+      padding: ($button-height--large - $font-size--large) / 2;
+      .w-icon {
+        width: $font-size--large;
+        height: $font-size--large;
+      }
+    }
+  }
 }
 // 内部有图标的按钮
 .w-button--icon {

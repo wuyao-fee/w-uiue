@@ -106,13 +106,13 @@
 
 ### 属性
 
-| 参数       | 说明                                    | 类型    | 可选值                  | 默认值 |
-| ---------- | --------------------------------------- | ------- | ----------------------- | ------ |
-| title       | 主标题                                    | string  | — | —      |
-| subTitle       | 副标题                                    | string  | —  | — |
-| size    | 卡片尺寸                          | string | small / large                       | small  |
-| shadow | 卡片阴影                  | string | always / hover / never                       | always  |
-| bottom   | 卡片内容区域的底部内边距                            | number / string | —                       | 40  |
+| 参数       | 说明                                    | 类型    | 是否必须 | 可选值                  | 默认值 |
+| ---------- | --------------------------------------- | ------- | ------ |----------------------- | ------ |
+| title       | 主标题                                    | string  | 否 | — | —      |
+| subTitle       | 副标题                                    | string  | 否 |  —  | — |
+| size    | 卡片尺寸                          | string | 否 | small / large                         |small  |
+| shadow | 卡片阴影                  | string | 否 | always / hover / never                        | always  |
+| bottom   | 卡片内容区域的底部内边距                            | number / string | 否 | —                       | 40  |
 
 
 ### 插槽

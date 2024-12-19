@@ -1,5 +1,11 @@
 # 更新日志
 
+## v0.0.8
+发布时间：2024-12-19
+
+- 新增Scrollbar滚动条组件
+- Button组件新增`plain`、`round`、`circle`属性，`type`类型新增`success`、`warning`、`danger`、`help`
+
 ## v0.0.7
 发布时间：2024-12-18
 

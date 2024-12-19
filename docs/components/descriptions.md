@@ -79,14 +79,14 @@
 
 ### w-descriptions 属性
 
-| 参数       | 说明                                    | 类型    | 可选值                  | 默认值 |
-| ---------- | --------------------------------------- | ------- | ----------------------- | ------ |
-| title       | 标题文本                                    | string  | — | —      |
-| column       | 一行显示`w-descriptions-item`的数量                                    | string / number  | — | 3 |
-| colon    | label是否显示冒号                          | boolean | —                       | true  |
-| ellipsis | 内容超出一行是否显示省略号（默认换行）                  | boolean | —                       | false  |
-| labelWidth   | label宽度                            | string | —                       | false  |
-| labelAlign       | label对齐方式                                | string  | left / center / right                       |    left    |
+| 参数       | 说明                                    | 类型    | 是否必须  | 可选值                  | 默认值 |
+| ---------- | --------------------------------------- | ------- | ----- | ----------------------- | ------ |
+| title       | 标题文本                                    | string  | 否  | — | —      |
+| column       | 一行显示`w-descriptions-item`的数量                                    | string / number  | 否 | — | 3 |
+| colon    | label是否显示冒号                          | boolean | 否 | —                       | true  |
+| ellipsis | 内容超出一行是否显示省略号（默认换行）                  | boolean | 否 | —                       | false  |
+| labelWidth   | label宽度                            | string | 否 | —                       | false  |
+| labelAlign       | label对齐方式                                | string  | 否 |  left / center / right                       |    left    |
 
 
 ### w-descriptions 插槽
@@ -99,7 +99,7 @@
 
 ### w-descriptions-item 属性
 
-| 参数       | 说明                                    | 类型    | 可选值                  | 默认值 |
-| ---------- | --------------------------------------- | ------- | ----------------------- | ------ |
-| label       | 标签文本                                    | string  | — | —      |
-| span       | 列所占数量              | string / number  | — | 1 |
+| 参数       | 说明                                    | 类型    | 是否必须 | 可选值                  | 默认值 |
+| ---------- | --------------------------------------- | ------- | ---- | ----------------------- | ------ |
+| label       | 标签文本                                    | string  | 是 |  — | —      |
+| span       | 列所占数量              | string / number  | 否 | — | 1 |
