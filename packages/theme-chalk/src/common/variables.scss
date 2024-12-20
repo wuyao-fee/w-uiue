@@ -121,8 +121,7 @@ $button-colors: (
     disabled-border-color: $border-color,
     disabled-background-color: $disabled-fill-color,
   ),
-  primary:
-  (
+  primary: (
     color: $white-color,
     background-color: $primary-base-color,
     hover-color: $white-color,
@@ -143,8 +142,7 @@ $button-colors: (
     plain-active-border-color: $active-base-color,
     plain-active-background-color: $active-base-color,
   ),
-  dashed:
-  (
+  dashed: (
     color: $second-text-color,
     background-color: $white-color,
     border-style: dashed,
@@ -159,15 +157,13 @@ $button-colors: (
     disabled-border-color: $border-color,
     disabled-background-color: $disabled-fill-color,
   ),
-  text:
-  (
+  text: (
     color: $primary-base-color,
     hover-color: $hover-base-color,
     active-color: $active-base-color,
     disabled-color: $third-text-color,
   ),
-  success:
-  (
+  success: (
     color: $white-color,
     background-color: $success-color,
     hover-color: $white-color,
@@ -188,8 +184,7 @@ $button-colors: (
     plain-active-border-color: $active-success-color,
     plain-active-background-color: $active-success-color,
   ),
-  warning:
-  (
+  warning: (
     color: $white-color,
     background-color: $warning-color,
     hover-color: $white-color,
@@ -210,8 +205,7 @@ $button-colors: (
     plain-active-border-color: $active-warning-color,
     plain-active-background-color: $active-warning-color,
   ),
-  danger:
-  (
+  danger: (
     color: $white-color,
     background-color: $danger-color,
     hover-color: $white-color,
@@ -232,8 +226,7 @@ $button-colors: (
     plain-active-border-color: $active-danger-color,
     plain-active-background-color: $active-danger-color,
   ),
-  help:
-  (
+  help: (
     color: $white-color,
     background-color: $help-color,
     hover-color: $white-color,

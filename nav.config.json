@@ -87,6 +87,11 @@
           "title": "Scrollbar滚动条",
           "path": "/components/scrollbar.md",
           "collapsable": false
+        },
+        {
+          "title": "Radio单选框",
+          "path": "/components/radio.md",
+          "collapsable": false
         }
       ]
     }

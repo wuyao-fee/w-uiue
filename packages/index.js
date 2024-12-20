@@ -7,6 +7,8 @@ import DescriptionsItem from "./descriptions-item/src/descriptions-item.vue";
 import Icon from "./icon/src/icon.vue";
 import Message from "./message/index.js";
 import Scrollbar from "./scrollbar/src/scrollbar.vue";
+import Radio from "./radio/src/radio.vue";
+import RadioGroup from "./radio-group/src/radio-group.vue";
 import { importAllSvg } from "./svg-icon/index";
 // 导入所有SVG
 importAllSvg();
@@ -22,6 +24,8 @@ const components = [
   Icon,
   Message,
   Scrollbar,
+  Radio,
+  RadioGroup,
 ];
 
 // 定义 install 方法
@@ -55,4 +59,6 @@ export default {
   Icon,
   Message,
   Scrollbar,
+  Radio,
+  RadioGroup,
 };

@@ -458,6 +458,38 @@
         </ul>
       </w-scrollbar>
     </div>
+    <div class="white">
+      <h1>Radio 示例</h1>
+      <div class="radio-demo" style="display: flex; margin-bottom: 10px">
+        <w-radio v-model="radio" label="上海"></w-radio>
+        <w-radio v-model="radio" label="北京"></w-radio>
+        <w-radio v-model="radio" label="武汉"></w-radio>
+      </div>
+      <div class="radio-demo" style="display: flex; margin-bottom: 10px">
+        <w-radio v-model="radio" label="上海" border></w-radio>
+        <w-radio v-model="radio" label="北京" border disabled></w-radio>
+        <w-radio v-model="radio" label="武汉" border></w-radio>
+      </div>
+      <div class="radio-demo" style="display: flex; margin-bottom: 10px">
+        <w-radio v-model="radio" label="上海" fill></w-radio>
+        <w-radio v-model="radio" label="北京" fill disabled></w-radio>
+        <w-radio v-model="radio" label="武汉" fill></w-radio>
+      </div>
+      <div class="radio-demo" style="display: flex; margin-bottom: 10px">
+        <w-radio-group v-model="radio">
+          <w-radio label="上海"></w-radio>
+          <w-radio label="北京"></w-radio>
+          <w-radio label="武汉"></w-radio>
+        </w-radio-group>
+      </div>
+      <div class="radio-demo" style="display: flex; margin-bottom: 10px">
+        <w-radio-group v-model="radio">
+          <w-radio label="上海" border></w-radio>
+          <w-radio label="北京" border disabled></w-radio>
+          <w-radio label="武汉" border></w-radio>
+        </w-radio-group>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -470,6 +502,7 @@ export default {
       viewStyle: {
         backgroundColor: "red",
       },
+      radio: "上海",
     };
   },
   methods: {
