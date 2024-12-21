@@ -1,6 +1,7 @@
 .gieee
 .temp
 .dist
+.vuepress
 dist
 docs
 lib

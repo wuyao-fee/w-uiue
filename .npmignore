@@ -5,6 +5,7 @@ packages/
 docs/
 .temp/
 .gitee/
+.vuepress/
 node_modules/
 build/
 
