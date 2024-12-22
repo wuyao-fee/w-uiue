@@ -69,7 +69,7 @@ export default {
 </script>
 
 <template>
-  <div class='page-right-toc'>
+  <div class='page-right-toc' ref="rightToc">
     <ul class="right-toc-list">
         <li v-for="item in $page.headers" :key="item.slug" :class="{ active: isActive(item) }">
             <a :href="`#${item.slug}`" @click.prevent="scrollToHeader(item)">{{ item.title }}</a>
@@ -101,6 +101,11 @@ ul.right-toc-list {
 ul.right-toc-list li a {
     color: #282828;
     font-size: 12px;
+    display: block;
+    max-width: 200px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
 }
 ul.right-toc-list li.active a {
     color: #3eaf7c;

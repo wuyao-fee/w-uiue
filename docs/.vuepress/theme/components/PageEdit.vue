@@ -24,14 +24,14 @@
 
 <script>
 import isNil from 'lodash/isNil'
-import { endingSlashRE, outboundRE } from '../util'
+import { endingSlashRE, outboundRE, formatDate } from '../util'
 
 export default {
   name: 'PageEdit',
 
   computed: {
     lastUpdated () {
-      return this.$page.lastUpdated
+      return formatDate(this.$page.lastUpdated);
     },
 
     lastUpdatedText () {

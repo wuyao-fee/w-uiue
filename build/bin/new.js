@@ -50,6 +50,34 @@ export default {
 </style>
 `;
 
+// 其它导入模版
+const otherImportTemplate = 
+`
+import { importAllSvg } from "./svg-icon/index";
+import { debounce, throttle, copyToClipboard, calculatePixels } from "./theme-chalk/src/utils/tool.js";
+import { isFunction, isObject } from "./theme-chalk/src/utils/types.js";
+// 导入所有SVG
+importAllSvg();
+`;
+
+// 工具方法插件模版
+const toolPluginTemplate =
+`
+// 工具方法插件
+const UtilsPlugin = {
+  install(Vue) {
+    Vue.prototype.$utils = {
+      debounce,
+      throttle,
+      copyToClipboard,
+      calculatePixels,
+      isFunction,
+      isObject,
+    }
+  },
+}
+`;
+
 const installTemplate = `
 // 定义 install 方法
 const install = function (Vue) {
@@ -63,6 +91,7 @@ const install = function (Vue) {
   });
 
   Vue.prototype.$message = Message;
+  Vue.use(UtilsPlugin);
 };
 
 // 检测到 Vue 才执行
@@ -117,6 +146,7 @@ async function updateSidebarEntry(filePath, newEntry) {
   }
 }
 
+// 注册组件
 async function registerComponent(_filePath) {
   try {
     const fileContent = await fs.readFile(_filePath, "utf-8");
@@ -134,8 +164,10 @@ async function registerComponent(_filePath) {
     }
     // fs写入文件
     exportDefaultContent += `};`;
-    packagesIndexContent += `import { importAllSvg } from "./svg-icon/index";\n// 导入所有SVG\nimportAllSvg();\n\n`;
+    // packagesIndexContent += `import { importAllSvg } from "./svg-icon/index";\n// 导入所有SVG\nimportAllSvg();\n\n`;
+    packagesIndexContent += `${otherImportTemplate}\n`;
     packagesIndexContent += `${packagesIndexComponentsContent}];\n`;
+    packagesIndexContent += `${toolPluginTemplate}\n`;
     packagesIndexContent += `${installTemplate}\n`;
     packagesIndexContent += exportDefaultContent + "\n";
     const indexPath = path.resolve(__dirname, "../../packages/index.js");

@@ -242,3 +242,26 @@ function resolveItem (item, pages, base, groupDepth = 1) {
     }
   }
 }
+
+function padZero(num) {
+  return num.toString().padStart(2, '0');
+}
+
+export function formatDate(date, formatString = 'yyyy-MM-dd HH:mm:ss') {
+  const d = new Date(date);
+  const year = d.getFullYear();
+  const month = padZero(d.getMonth() + 1); // 注意月份是从0开始的
+  const day = padZero(d.getDate());
+  const hour = padZero(d.getHours());
+  const minute = padZero(d.getMinutes());
+  const second = padZero(d.getSeconds());
+
+  return formatString
+    .replace('yyyy', year)
+    .replace('MM', month)
+    .replace('dd', day)
+    .replace('HH', hour)
+    .replace('mm', minute)
+    .replace('ss', second);
+}
+

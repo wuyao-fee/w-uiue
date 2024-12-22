@@ -36,4 +36,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "../../../packages/theme-chalk/src/common/variables.scss";
+.w-radio-group {
+  display: flex;
+}
 </style>

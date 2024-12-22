@@ -17,6 +17,11 @@
       "link": "/guide/updateLog"
     },
     {
+      "text": "Gitee",
+      "link": "https://gitee.com/wuyao-fee/w-uiue",
+      "target": "_blank"
+    },
+    {
       "text": "博客",
       "link": "http://113.45.180.231/",
       "target": "_blank"
@@ -40,6 +45,11 @@
         {
           "title": "更新日志",
           "path": "/guide/updateLog.md",
+          "collapsable": false
+        },
+        {
+          "title": "$utils工具方法",
+          "path": "/guide/$utils.md",
           "collapsable": false
         }
       ]

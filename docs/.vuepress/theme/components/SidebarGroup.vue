@@ -112,7 +112,7 @@ export default {
   color $textColor
   transition color .15s ease
   cursor pointer
-  font-size 1.1em
+  font-size 1em
   font-weight bold
   // text-transform uppercase
   padding 0.35rem 1.5rem 0.35rem 1.25rem
@@ -136,6 +136,9 @@ export default {
 
 .sidebar-group-items
   transition height .1s ease-out
-  font-size 0.95em
+  font-size 0.875em
   overflow hidden
+  color: #595959
+  .sidebar-link
+    color: #595959
 </style>
