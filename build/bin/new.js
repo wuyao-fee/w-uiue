@@ -51,8 +51,7 @@ export default {
 `;
 
 // 其它导入模版
-const otherImportTemplate = 
-`
+const otherImportTemplate = `
 import { importAllSvg } from "./svg-icon/index";
 import { debounce, throttle, copyToClipboard, calculatePixels } from "./theme-chalk/src/utils/tool.js";
 import { isFunction, isObject } from "./theme-chalk/src/utils/types.js";
@@ -61,8 +60,7 @@ importAllSvg();
 `;
 
 // 工具方法插件模版
-const toolPluginTemplate =
-`
+const toolPluginTemplate = `
 // 工具方法插件
 const UtilsPlugin = {
   install(Vue) {

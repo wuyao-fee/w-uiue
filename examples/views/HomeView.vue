@@ -489,6 +489,20 @@
           <w-radio label="武汉" border></w-radio>
         </w-radio-group>
       </div>
+      <div class="radio-demo" style="display: flex; margin-bottom: 10px">
+        <w-radio-group v-model="radio" border>
+          <w-radio label="上海"></w-radio>
+          <w-radio label="北京"></w-radio>
+          <w-radio label="武汉"></w-radio>
+        </w-radio-group>
+      </div>
+      <div class="radio-demo" style="display: flex; margin-bottom: 10px">
+        <w-radio-group v-model="radio" fill>
+          <w-radio label="上海"></w-radio>
+          <w-radio label="北京"></w-radio>
+          <w-radio label="武汉"></w-radio>
+        </w-radio-group>
+      </div>
     </div>
   </div>
 </template>

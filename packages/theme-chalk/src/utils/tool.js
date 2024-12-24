@@ -14,20 +14,20 @@ export function debounce(func, wait) {
 
 /**
  * 通用节流函数
- * @param {*} fn 
- * @param {*} wait 
- * @returns 
+ * @param {*} fn
+ * @param {*} wait
+ * @returns
  */
 export function throttle(fn, wait) {
   let lastCall = 0;
-  return function(...args) {
-      const now = new Date().getTime();
-      if (now - lastCall >= wait) {
-          lastCall = now;
-          fn.apply(this, args);
-      }
-  }
-}  
+  return function (...args) {
+    const now = new Date().getTime();
+    if (now - lastCall >= wait) {
+      lastCall = now;
+      fn.apply(this, args);
+    }
+  };
+}
 
 /**
  * 复制到剪贴板

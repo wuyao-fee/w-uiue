@@ -6,9 +6,16 @@ export default {
   mixins: [Emitter],
   props: {
     value: {
+      required: true,
       type: [String, Number, Boolean],
     },
     disabled: {
+      type: Boolean,
+    },
+    border: {
+      type: Boolean,
+    },
+    fill: {
       type: Boolean,
     },
   },
@@ -16,6 +23,11 @@ export default {
     this.$on("handleChange", (value) => {
       this.$emit("change", value);
     });
+  },
+  provide() {
+    return {
+      radioGroup: this,
+    };
   },
   mounted() {
     // 当radioGroup没有默认选项时，第一个可以选中Tab导航
@@ -29,7 +41,14 @@ export default {
 </script>
 
 <template>
-  <div class="w-radio-group" :class="[disabled ? 'is-disabled' : '']">
+  <div
+    class="w-radio-group"
+    :class="[
+      disabled ? 'is-disabled' : '',
+      border ? 'is-group-border' : '',
+      fill ? 'is-group-fill' : '',
+    ]"
+  >
     <slot></slot>
   </div>
 </template>

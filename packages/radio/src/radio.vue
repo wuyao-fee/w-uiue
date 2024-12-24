@@ -6,6 +6,7 @@ export default {
   mixins: [Emitter],
   props: {
     value: {
+      required: true,
       type: [String, Number, Boolean],
       default: "",
     },
@@ -27,6 +28,11 @@ export default {
     return {
       radioGroup: null,
     };
+  },
+  inject: {
+    radioGroup: {
+      default: () => ({}), // 提供一个空对象作为默认值
+    },
   },
   computed: {
     model: {
@@ -64,6 +70,7 @@ export default {
   },
   mounted() {
     console.log(this.isGroup, "isGroup");
+    console.log(this.radioGroup?.border, "radioGroup");
   },
   methods: {
     handleChange() {
@@ -89,6 +96,8 @@ export default {
       { 'is-checked': model === label },
       { 'is-border': border },
       { 'is-fill': fill },
+      { 'is-group-border': isGroup && radioGroup.border },
+      { 'is-group-fill': isGroup && radioGroup.fill },
     ]"
     :aria-checked="model === label"
     :aria-disabled="isDisabled"
@@ -100,6 +109,8 @@ export default {
         :class="[
           { 'is-disabled': isDisabled },
           { 'is-checked': model === label },
+          { 'is-group-border': isGroup && radioGroup.border },
+          { 'is-group-fill': isGroup && radioGroup.fill },
         ]"
       ></span>
       <input
@@ -137,7 +148,7 @@ export default {
   align-items: center;
   cursor: pointer;
   box-sizing: border-box;
-  &__inner {
+  &__inner:not(.is-group-border):not(.is-group-fill) {
     position: relative;
     display: block;
     width: 16px;
@@ -240,7 +251,67 @@ export default {
     }
   }
 }
-.w-radio + .w-radio {
+.w-radio:not(.is-group-border):not(.is-group-fill)
+  + .w-radio:not(.is-group-border):not(.is-group-fill) {
   margin-left: 20px;
+}
+.w-radio.is-group-border {
+  padding: 6px 20px;
+  border: 1px solid $border-color;
+  box-sizing: border-box;
+  height: 34px;
+  &:first-of-type {
+    border-top-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+  }
+  &:last-of-type {
+    border-top-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+  }
+  .w-radio__label {
+    color: $second-text-color;
+  }
+  &:not(.is-disabled):hover,
+  &:not(.is-disabled).is-checked {
+    border-color: $active-base-color;
+    .w-radio__label {
+      color: $active-base-color;
+    }
+  }
+  &.is-disabled {
+    .w-radio__label {
+      color: $disabled-text-color;
+    }
+  }
+}
+.w-radio.is-group-fill {
+  padding: 6px 20px;
+  box-sizing: border-box;
+  height: 34px;
+  background-color: $background-fill-color;
+  &:first-of-type {
+    border-top-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+  }
+  &:last-of-type {
+    border-top-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+  }
+  .w-radio__label {
+    color: $second-text-color;
+  }
+  &:not(.is-disabled):hover,
+  &:not(.is-disabled).is-checked {
+    background-color: $primary-base-color;
+    .w-radio__label {
+      color: $white-color;
+    }
+  }
+  &.is-disabled {
+    background-color: $disabled-fill-color;
+    .w-radio__label {
+      color: $disabled-text-color;
+    }
+  }
 }
 </style>

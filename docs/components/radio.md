@@ -1,6 +1,6 @@
 # Radio 单选框
 
-在一组备选项中进行单选
+在一组备选项中进行单选，一般多于2个，少于5个时使用。
 
 ### 基础用法
 
@@ -103,3 +103,113 @@
 </style>
 ```
 :::
+
+### 边框型单选按钮
+
+适用于在多个互斥的选项中选择的场景
+
+:::demo 通过添加`border`属性可以设置边框型按钮。
+
+```html
+<template>
+  <div>
+    <div class="radio-demo">
+      <w-radio-group v-model="radio">
+          <w-radio :label="3" border>备选项</w-radio>
+          <w-radio :label="6" border>备选项</w-radio>
+          <w-radio :label="9" border>备选项</w-radio>
+      </w-radio-group>
+    </div>
+    <div class="radio-demo">
+      <w-radio-group v-model="radio" border>
+          <w-radio :label="3">备选项</w-radio>
+          <w-radio :label="6">备选项</w-radio>
+          <w-radio :label="9">备选项</w-radio>
+      </w-radio-group>
+    </div>
+  </div>
+</template>
+
+<script>
+  export default {
+    data () {
+      return {
+        radio: 3
+      };
+    }
+  }
+</script>
+
+<style>
+.radio-demo {
+  display: flex;
+  margin-bottom: 10px;
+}
+</style>
+```
+:::
+
+### 填充型单选按钮
+
+适用于在多个互斥的选项中选择的场景
+
+:::demo 通过添加`fill`属性可以设置填充型按钮。
+
+```html
+<template>
+  <div>
+    <div class="radio-demo">
+      <w-radio-group v-model="radio">
+          <w-radio :label="3" fill>备选项</w-radio>
+          <w-radio :label="6" fill>备选项</w-radio>
+          <w-radio :label="9" fill>备选项</w-radio>
+      </w-radio-group>
+    </div>
+    <div class="radio-demo">
+      <w-radio-group v-model="radio" fill>
+          <w-radio :label="3">备选项</w-radio>
+          <w-radio :label="6">备选项</w-radio>
+          <w-radio :label="9">备选项</w-radio>
+      </w-radio-group>
+    </div>
+  </div>
+</template>
+
+<script>
+  export default {
+    data () {
+      return {
+        radio: 3
+      };
+    }
+  }
+</script>
+
+<style>
+.radio-demo {
+  display: flex;
+  margin-bottom: 10px;
+}
+</style>
+```
+:::
+
+### w-radio-group 属性
+
+| 参数       | 说明                                    | 类型    | 是否必须  | 可选值                  | 默认值 |
+| ---------- | --------------------------------------- | ------- | ------------ |----------------------- | ------ |
+| value / v-model       | 绑定值                                    | string / number / boolean  | 是 | —  | —      |
+| disabled       | 是否禁用                                    | boolean  | 否 | —  | false |
+| border    | 是否边框按钮                          | boolean | 否 | —                       | false  |
+| fill    | 是否填充按钮                          | boolean | 否 | —                       | false  |
+
+
+### w-radio 属性
+
+| 参数       | 说明                                    | 类型    | 是否必须  | 可选值                  | 默认值 |
+| ---------- | --------------------------------------- | ------- | ------------ |----------------------- | ------ |
+| value / v-model       | 绑定值                                    | string / number / boolean  | 是 | —  | —      |
+| label       | w-radio的value值                                    | string / number / boolean  | 否 | —  | —      |
+| disabled       | 是否禁用                                    | boolean  | 否 | —  | false |
+| border    | 是否边框按钮                          | boolean | 否 | —                       | false  |
+| fill    | 是否填充按钮                          | boolean | 否 | —                       | false  |

@@ -8,8 +8,14 @@ import Icon from "./icon/src/icon.vue";
 import Message from "./message/index.js";
 import Scrollbar from "./scrollbar/src/scrollbar.vue";
 import Radio from "./radio/src/radio.vue";
+import RadioGroup from "./radio-group/src/radio-group.vue";
 import { importAllSvg } from "./svg-icon/index";
-import { debounce, throttle, copyToClipboard, calculatePixels } from "./theme-chalk/src/utils/tool.js";
+import {
+  debounce,
+  throttle,
+  copyToClipboard,
+  calculatePixels,
+} from "./theme-chalk/src/utils/tool.js";
 import { isFunction, isObject } from "./theme-chalk/src/utils/types.js";
 // 导入所有SVG
 importAllSvg();
@@ -26,6 +32,7 @@ const components = [
   Message,
   Scrollbar,
   Radio,
+  RadioGroup,
 ];
 
 // 工具方法插件
@@ -38,10 +45,9 @@ const UtilsPlugin = {
       calculatePixels,
       isFunction,
       isObject,
-    }
+    };
   },
-}
-
+};
 
 // 定义 install 方法
 const install = function (Vue) {
@@ -76,4 +82,5 @@ export default {
   Message,
   Scrollbar,
   Radio,
+  RadioGroup,
 };

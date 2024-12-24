@@ -8,5 +8,6 @@
   "Icon": "./icon/src/icon.vue",
   "Message": "./message/index.js",
   "Scrollbar": "./scrollbar/src/scrollbar.vue",
-  "Radio": "./radio/src/radio.vue"
+  "Radio": "./radio/src/radio.vue",
+  "RadioGroup": "./radio-group/src/radio-group.vue"
 }
