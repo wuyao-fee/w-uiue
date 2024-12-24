@@ -9,5 +9,6 @@
   "Message": "./message/index.js",
   "Scrollbar": "./scrollbar/src/scrollbar.vue",
   "Radio": "./radio/src/radio.vue",
-  "RadioGroup": "./radio-group/src/radio-group.vue"
+  "RadioGroup": "./radio-group/src/radio-group.vue",
+  "Input": "./input/src/input.vue"
 }

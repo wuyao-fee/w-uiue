@@ -9,6 +9,8 @@ import Message from "./message/index.js";
 import Scrollbar from "./scrollbar/src/scrollbar.vue";
 import Radio from "./radio/src/radio.vue";
 import RadioGroup from "./radio-group/src/radio-group.vue";
+import Input from "./input/src/input.vue";
+
 import { importAllSvg } from "./svg-icon/index";
 import {
   debounce,
@@ -33,6 +35,7 @@ const components = [
   Scrollbar,
   Radio,
   RadioGroup,
+  Input,
 ];
 
 // 工具方法插件
@@ -83,4 +86,5 @@ export default {
   Scrollbar,
   Radio,
   RadioGroup,
+  Input,
 };

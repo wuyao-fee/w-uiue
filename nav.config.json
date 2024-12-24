@@ -102,6 +102,11 @@
           "title": "Radio单选框",
           "path": "/components/radio.md",
           "collapsable": false
+        },
+        {
+          "title": "Input",
+          "path": "/components/input.md",
+          "collapsable": false
         }
       ]
     }
