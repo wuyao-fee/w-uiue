@@ -17,8 +17,19 @@ import {
   throttle,
   copyToClipboard,
   calculatePixels,
+  UUIDv4,
+  randomString,
+  formatDate,
+  deepClone,
+  parseUrlParams,
+  objectToUrlParams,
 } from "./theme-chalk/src/utils/tool.js";
-import { isFunction, isObject } from "./theme-chalk/src/utils/types.js";
+import {
+  isFunction,
+  isObject,
+  getType,
+  typeUtils,
+} from "./theme-chalk/src/utils/types.js";
 // 导入所有SVG
 importAllSvg();
 
@@ -48,6 +59,19 @@ const UtilsPlugin = {
       calculatePixels,
       isFunction,
       isObject,
+      UUIDv4,
+      randomString,
+      formatDate,
+      getType,
+      isEmpty: typeUtils.isEmpty,
+      isNull: typeUtils.isNull,
+      isUndefined: typeUtils.isUndefined,
+      isNumber: typeUtils.isNumber,
+      isString: typeUtils.isString,
+      isBoolean: typeUtils.isBoolean,
+      deepClone,
+      parseUrlParams,
+      objectToUrlParams,
     };
   },
 };

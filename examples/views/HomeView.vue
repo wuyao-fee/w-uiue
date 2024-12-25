@@ -1,5 +1,91 @@
+<script>
+export default {
+  name: "HomeView",
+  mounted() {
+    console.log(this.$router.options);
+  },
+  data() {
+    return {
+      loading: false,
+      viewStyle: {
+        backgroundColor: "red",
+      },
+      radio: "上海",
+    };
+  },
+  methods: {
+    handleClick() {
+      this.loading = true;
+      setTimeout(() => {
+        this.loading = false;
+      }, 2000);
+    },
+    async handleClick2() {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve();
+        }, 2000);
+      });
+    },
+    handleClick3(type) {
+      if (type === "success") {
+        this.$message.success("操作成功");
+      }
+      if (type === "error") {
+        this.$message.error("操作失败");
+      }
+      if (type === "warning") {
+        this.$message.warning("操作警告");
+      }
+      if (type === "info") {
+        this.$message.info("操作信息");
+      }
+      if (type === "help") {
+        this.$message.help("帮助信息");
+      }
+    },
+    handleClick4() {
+      this.$message({
+        type: "info",
+        message: "这是一条消息提示",
+        duration: 0,
+        showClose: true,
+      });
+    },
+    handleClick5() {
+      this.$message({
+        type: "info",
+        message: "这是一条消息提示",
+        offset: 100,
+      });
+    },
+    handleClick6() {
+      this.$message({
+        type: "info",
+        message: "这是一条消息提示",
+        duration: 0,
+        showClose: true,
+        onClose: () => {
+          this.$message.success("关闭成功");
+        },
+      });
+    },
+  },
+};
+</script>
+
 <template>
   <div class="home">
+    <w-card>
+      <ul class="nav">
+        <li v-for="item in $router.options.routes" :key="item.path">
+          <router-link :to="item.path">{{
+            item.meta?.title ? item.meta.title : item.name
+          }}</router-link>
+        </li>
+      </ul>
+    </w-card>
+
     <h1>Button 示例</h1>
     <div class="button-demo">
       <w-button>默认按钮-中</w-button>
@@ -507,80 +593,17 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "HomeView",
-  data() {
-    return {
-      loading: false,
-      viewStyle: {
-        backgroundColor: "red",
-      },
-      radio: "上海",
-    };
-  },
-  methods: {
-    handleClick() {
-      this.loading = true;
-      setTimeout(() => {
-        this.loading = false;
-      }, 2000);
-    },
-    async handleClick2() {
-      return new Promise((resolve) => {
-        setTimeout(() => {
-          resolve();
-        }, 2000);
-      });
-    },
-    handleClick3(type) {
-      if (type === "success") {
-        this.$message.success("操作成功");
-      }
-      if (type === "error") {
-        this.$message.error("操作失败");
-      }
-      if (type === "warning") {
-        this.$message.warning("操作警告");
-      }
-      if (type === "info") {
-        this.$message.info("操作信息");
-      }
-      if (type === "help") {
-        this.$message.help("帮助信息");
-      }
-    },
-    handleClick4() {
-      this.$message({
-        type: "info",
-        message: "这是一条消息提示",
-        duration: 0,
-        showClose: true,
-      });
-    },
-    handleClick5() {
-      this.$message({
-        type: "info",
-        message: "这是一条消息提示",
-        offset: 100,
-      });
-    },
-    handleClick6() {
-      this.$message({
-        type: "info",
-        message: "这是一条消息提示",
-        duration: 0,
-        showClose: true,
-        onClose: () => {
-          this.$message.success("关闭成功");
-        },
-      });
-    },
-  },
-};
-</script>
-
 <style scoped>
+ul.nav {
+  display: flex;
+}
+.nav li {
+  margin: 10px;
+}
+.nav li a {
+  font-size: 20px;
+  font-weight: bold;
+}
 .home {
   background-color: #f3f3f3;
   padding-bottom: 100px;

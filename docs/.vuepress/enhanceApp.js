@@ -49,7 +49,7 @@ export default async ({ Vue, router }) => {
     Vue.use(IconPlugin);
     Vue.prototype.$commonSvgIcon = getSvgIconNames(commonSvgRequire);
     Vue.prototype.$tipSvgIcon = getSvgIconNames(tipSvgRequire);
-    Vue.prototype.$copy = copyToClipboard;
+    Vue.prototype.$copyToClipboard = copyToClipboard;
   }
   router.beforeEach((to, from, next) => {
     // 触发百度的pv统计

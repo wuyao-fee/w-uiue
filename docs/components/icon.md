@@ -64,7 +64,7 @@ icon-demo .w-icon {
         const whiteList = ["line-plus"];
         return whiteList.includes(iconName);
       },
-      handleClick(e) {
+      async handleClick(e) {
         // 检查点击的目标是否为 .icon-name 或 w-icon 组件
         if (e.target.closest('.icon-name') || e.target.closest('w-icon') || e.target.closest('span.li-span') || e.target.closest('.icon-list li')) {
           // 获取最近的 li 元素上的 data-icon 属性值
@@ -75,10 +75,19 @@ icon-demo .w-icon {
             if (iconName === 'spinner') {
               text = `<w-icon name="${iconName}" pulse />`;
             } else {
-              const text = `<w-icon name="${iconName}" />`;
+              text = `<w-icon name="${iconName}" />`;
             }
-            this.$copy(text); 
-            alert('复制成功');
+            try {
+              const bool = await this.$copyToClipboard(text);
+              if (bool) {
+                this.$message.success('复制成功');
+              } else {
+                this.$message.error('复制失败');
+              }
+            } catch (err) {
+              console.error(err);
+              this.$message.error('复制失败');
+            }
           }
         }
       }
