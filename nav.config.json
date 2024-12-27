@@ -104,7 +104,7 @@
           "collapsable": false
         },
         {
-          "title": "Input",
+          "title": "Input输入框",
           "path": "/components/input.md",
           "collapsable": false
         }

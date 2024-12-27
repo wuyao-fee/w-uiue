@@ -3,9 +3,9 @@ export default {
   name: "InputExample",
   data() {
     return {
-      input: "",
+      input: "123",
       password: "123456",
-      textarea: "",
+      textarea: "1235",
     };
   },
 };
@@ -16,12 +16,15 @@ export default {
     <w-input v-model="input" placeholder="请输入input"></w-input>
     <w-input
       v-model="input"
+      clearable
       prefixIcon="plus"
+      suffixIcon="plus"
       placeholder="请输入input"
     ></w-input>
     <w-input
       v-model="password"
       type="password"
+      showPassword
       placeholder="请输入密码"
     ></w-input>
     <w-input
