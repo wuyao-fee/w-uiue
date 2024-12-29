@@ -55,6 +55,8 @@ const otherImportTemplate = `
 import { importAllSvg } from "./svg-icon/index";
 import { debounce, throttle, copyToClipboard, calculatePixels, UUIDv4, randomString, formatDate, deepClone, parseUrlParams, objectToUrlParams } from "./theme-chalk/src/utils/tool.js";
 import { isFunction, isObject, getType, typeUtils } from "./theme-chalk/src/utils/types.js";
+import to from "./theme-chalk/src/utils/to.js";
+import createOverload from "./theme-chalk/src/utils/createOverload.js";
 // 导入所有SVG
 importAllSvg();
 `;
@@ -85,6 +87,8 @@ const UtilsPlugin = {
       parseUrlParams,
       objectToUrlParams,
     };
+    Vue.prototype.$to = to;
+    Vue.prototype.$createOverload = createOverload;
   },
 };
 `;

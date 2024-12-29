@@ -23,10 +23,10 @@ export function isObject(value) {
 /**
  * 获取数据的详细类型
  * @param {any} data - 需要判断类型的数据
- * @param {boolean} [lowercase=false] - 是否返回小写字符串
+ * @param {boolean} [lowercase=true] - 是否返回小写字符串
  * @returns {string} 返回数据类型字符串
  */
-export function getType(data, lowercase = false) {
+export function getType(data, lowercase = true) {
   // 处理 null 和 undefined
   if (data === null) return "Null";
   if (data === undefined) return "Undefined";

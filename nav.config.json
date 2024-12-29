@@ -46,10 +46,26 @@
           "title": "更新日志",
           "path": "/guide/updateLog.md",
           "collapsable": false
+        }
+      ]
+    },
+    {
+      "title": "工具",
+      "collapsable": false,
+      "children": [
+        {
+          "title": "$to",
+          "path": "/utils/$to.md",
+          "collapsable": false
         },
         {
-          "title": "$utils工具方法",
-          "path": "/guide/$utils.md",
+          "title": "$utils",
+          "path": "/utils/$utils.md",
+          "collapsable": false
+        },
+        {
+          "title": "$createOverload",
+          "path": "/utils/$createOverload.md",
           "collapsable": false
         }
       ]

@@ -3,6 +3,8 @@ import "../../lib/w-uiue.css";
 import "@fortawesome/fontawesome-free/css/all.css";
 import iconJson from '../../icon.json';
 import { copyToClipboard } from "../../packages/theme-chalk/src/utils/tool.js";
+import to from "../../packages/theme-chalk/src/utils/to.js";
+import createOverload from "../../packages/theme-chalk/src/utils/createOverload.js";
 
 const commonSvgRequire = require.context(
   "../../packages/theme-chalk/src/images/svg/common",
@@ -50,6 +52,8 @@ export default async ({ Vue, router }) => {
     Vue.prototype.$commonSvgIcon = getSvgIconNames(commonSvgRequire);
     Vue.prototype.$tipSvgIcon = getSvgIconNames(tipSvgRequire);
     Vue.prototype.$copyToClipboard = copyToClipboard;
+    Vue.prototype.$to = to;
+    Vue.prototype.$createOverload = createOverload;
   }
   router.beforeEach((to, from, next) => {
     // 触发百度的pv统计
