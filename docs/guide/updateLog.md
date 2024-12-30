@@ -1,11 +1,19 @@
 # 更新日志
 
+新增：新增Input输入框组件
+
+新增：新增$to函数，便于错误处理，不需要使用try catch
+
+新增：新增$createOverload函数，实现函数重载功能
+
+新增：扩展$utils工具方法集合，新增`UUIDv4`、`randomString`、`formatDate`、`deepClone`、`parseUrlParams`、`objectToUrlParams`等方法
+
 ## v0.0.9
 发布时间：2024-12-24
 
 1.新增：新增Radio单选框组件
 
-2.新增：新增`$utils`工具方法集合
+2.新增：新增`$utils`工具方法集合，包含`debounce`、`throttle`、`copyToClipboard`、`calculatePixels`、`isObject`、`isFunction`等方法
 
 3.修复：Button组件默认圆形按钮添加图标时，图标不显示的问题
 

@@ -13,7 +13,12 @@ export default {
 
 <template>
   <div class="w">
-    <w-input v-model="input" placeholder="请输入input"></w-input>
+    <w-input
+      v-model="input"
+      placeholder="请输入input"
+      show-word-limit
+      maxlength="10"
+    ></w-input>
     <w-input
       v-model="input"
       clearable
@@ -21,6 +26,7 @@ export default {
       suffixIcon="plus"
       placeholder="请输入input"
     ></w-input>
+    <w-input v-model="input" clearable placeholder="请输入input"></w-input>
     <w-input
       v-model="password"
       type="password"
@@ -31,7 +37,11 @@ export default {
       v-model="textarea"
       type="textarea"
       placeholder="请输入textarea"
+      show-word-limit
+      rows="3"
+      maxlength="300"
     ></w-input>
+    <w-input v-model="input" placeholder="请输入内容" clearable></w-input>
   </div>
 </template>
 

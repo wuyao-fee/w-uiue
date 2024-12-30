@@ -1,4 +1,4 @@
-import { getType } from './types.js';
+import { getType } from "./types.js";
 /**
  * 函数重载
  * 基于参数类型映射实现

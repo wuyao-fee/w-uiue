@@ -29,6 +29,10 @@ export default {
     suffixIcon: {
       type: String,
     },
+    showWordLimit: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -43,25 +47,46 @@ export default {
     isDisabled() {
       return this.disabled;
     },
+    showClear() {
+      return this.clearable && !this.isDisabled && this.nativeInputValue;
+    },
     getPasswordVisible() {
       return this.showPassword && !this.isDisabled;
     },
     getClearVisible() {
-      console.log(
-        this.clearable && this.value && !this.isDisabled,
-        this.clearable,
-        this.value,
-        this.isDisabled
-      );
       return this.clearable && this.value && !this.isDisabled;
     },
     isSuffixVisible() {
-      return this.suffixIcon || this.$slots.suffix || this.showPassword;
+      return (
+        this.suffixIcon ||
+        this.$slots.suffix ||
+        this.showPassword ||
+        this.showClear
+      );
     },
     nativeInputValue() {
       return this.value === null || this.value === undefined
         ? ""
         : String(this.value);
+    },
+    isWordLimitVisible() {
+      console.log(this.showWordLimit, "aa");
+      return (
+        this.showWordLimit &&
+        this.$attrs.maxlength &&
+        (this.type === "text" || this.type === "textarea") &&
+        !this.isDisabled &&
+        !this.showPassword
+      );
+    },
+    upperLimit() {
+      return this.$attrs.maxlength;
+    },
+    textLength() {
+      if (typeof this.value === "number") {
+        return String(this.value).length;
+      }
+      return (this.value || "").length;
     },
   },
   watch: {
@@ -145,6 +170,8 @@ export default {
         :type="showPassword ? (isPasswordVisible ? 'text' : 'password') : type"
         v-bind="$attrs"
         @input="handleInput"
+        @focus="focus"
+        @blur="blur"
         @change="handleChange"
       />
       <!-- 后置内容 -->
@@ -195,8 +222,28 @@ export default {
       <span class="w-input__append" v-if="$slots.append">
         <slot name="append"></slot>
       </span>
+      <!-- 字数限制 -->
+      <span class="w-input__count" v-if="isWordLimitVisible && type === 'text'"
+        >{{ textLength }}/{{ upperLimit }}</span
+      >
     </template>
-    <textarea v-else ref="textarea" class="w-textarea__inner"></textarea>
+    <textarea
+      v-else
+      ref="textarea"
+      class="w-textarea__inner"
+      v-bind="$attrs"
+      :disabled="isDisabled"
+      @input="handleInput"
+      @focus="focus"
+      @blur="blur"
+      @change="handleChange"
+    ></textarea>
+    <div
+      class="w-textarea-count__wrapper"
+      v-if="isWordLimitVisible && type === 'textarea'"
+    >
+      <span class="w-textarea__count">{{ textLength }}/{{ upperLimit }}</span>
+    </div>
   </div>
 </template>
 
@@ -206,13 +253,13 @@ export default {
   box-sizing: border-box;
   position: relative;
   width: 100%;
-  height: 32px;
   line-height: 32px;
   &.w-input--prefix {
     .w-input__inner {
       padding-left: 30px;
     }
   }
+
   .w-input__inner {
     width: 100%;
     height: 32px;
@@ -268,8 +315,40 @@ export default {
     width: 100%;
     box-sizing: border-box;
   }
+  .w-textarea-count__wrapper {
+    position: relative;
+    display: flex;
+    .w-textarea__count {
+      position: absolute;
+      margin-left: auto;
+      height: 22px;
+      line-height: 22px;
+      font-size: $font-size;
+      color: $second-text-color;
+      top: -10px;
+      right: 0;
+    }
+  }
+  .w-input__count {
+    position: absolute;
+    font-size: $font-size;
+    color: $second-text-color;
+    top: 0;
+    right: 12px;
+  }
+  &:not(.w-input--suffix) {
+    .w-input__suffix-inner {
+      .w-input__suffix-icon-clear {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
 }
-::v-deep input {
+::v-deep input,
+::v-deep textarea {
   outline: none !important;
   box-shadow: none !important;
 }
@@ -277,5 +356,25 @@ export default {
 ::v-deep .w-icon::before {
   display: block;
   width: 14px;
+  color: $third-text-color;
+}
+.w-textarea__inner {
+  border: 1px solid $border-color;
+  border-radius: $radius;
+  color: $first-text-color;
+  line-height: 22px;
+  padding: 8px 12px;
+  &::placeholder {
+    font-size: $font-size;
+    color: $third-text-color;
+  }
+  &::-ms-reveal {
+    display: none;
+  }
+  &:focus-visible,
+  &:focus {
+    outline: none;
+    border-color: $primary-base-color;
+  }
 }
 </style>

@@ -16,7 +16,7 @@ const to = createOverload();
 /**
  * 处理 Promise 的结果，将结果和错误分别返回
  */
-to.add('promise', 'object', (promise, errorExt = {}) => {
+to.add("promise", "object", (promise, errorExt = {}) => {
   return promise
     .then((data) => [null, data])
     .catch((err) => {
@@ -32,7 +32,7 @@ to.add('promise', 'object', (promise, errorExt = {}) => {
 /**
  * 处理 Promise 的结果，将结果和错误分别返回，并允许自定义错误处理函数
  */
-to.add('promise', 'function', (promise, errorHandler) => {
+to.add("promise", "function", (promise, errorHandler) => {
   return promise
     .then((data) => [null, data])
     .catch((err) => {

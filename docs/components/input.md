@@ -168,3 +168,45 @@ export default {
 ```
 
 :::
+
+
+### 输入长度限制
+
+
+:::demo maxlength 和 minlength 是原生属性，用来限制输入框的字符长度，其中字符长度是用 Javascript 的字符串长度统计的。对于类型为 text 或 textarea 的输入框，在使用 maxlength 属性限制最大输入长度的同时，可通过设置 show-word-limit 属性来展示字数统计。
+
+```html
+<template>
+  <div class="input-demo">
+    <w-input v-model="input" placeholder="请输入内容" maxlength="20" show-word-limit></w-input>
+    <w-input type="textarea" v-model="textarea" placeholder="请输入内容" :rows="2" maxlength="200" show-word-limit></w-input>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      input: '',
+      textarea: ''
+    }
+  }
+}
+</script>
+```
+
+:::
+
+
+### 属性
+
+| 参数       | 说明                                    | 类型    | 是否必须  | 可选值                  | 默认值 |
+| ---------- | --------------------------------------- | ------- | ------------ |----------------------- | ------ |
+| value / v-model       | 绑定值                                    | string / number  | 是 | —  | —      |
+| type       | 类型                                    | string  | 否 | text / textarea 更多查看MDN | text     |
+| placeholder       | 输入框占位文本                    | string  | 否 |—  | — 
+| disabled   | 是否禁用状态                            | boolean | 否 | —                       | false  |
+| clearable       | 是否可清空                                | boolean  | 否 | —                       | false       |
+| show-password       | 是否显示切换密码图标                                | boolean  | 否 | —                       | false       |
+| prefix-icon       | 输入框头部图标                                | string  | 否 | —                       | —        |
+| suffix-icon       | 输入框尾部图标                                | string  | 否 | —                       | —        |
