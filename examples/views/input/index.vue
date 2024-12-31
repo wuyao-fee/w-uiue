@@ -18,6 +18,7 @@ export default {
       placeholder="请输入input"
       show-word-limit
       maxlength="10"
+      disabled
     ></w-input>
     <w-input
       v-model="input"
@@ -40,6 +41,7 @@ export default {
       show-word-limit
       rows="3"
       maxlength="300"
+      disabled
     ></w-input>
     <w-input v-model="input" placeholder="请输入内容" clearable></w-input>
   </div>

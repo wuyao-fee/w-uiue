@@ -210,3 +210,40 @@ export default {
 | show-password       | 是否显示切换密码图标                                | boolean  | 否 | —                       | false       |
 | prefix-icon       | 输入框头部图标                                | string  | 否 | —                       | —        |
 | suffix-icon       | 输入框尾部图标                                | string  | 否 | —                       | —        |
+| name       | 原生属性                                | string  | 否 | —                       | —        |
+| rows       | textarea行数                                | number  | 否 | —                       | 2       |
+| maxlength       | 原生属性，输入最大长度                                | number  | 否 | —                       | —        |
+| minlength       | 原生属性，输入最小长度                                | number  | 否 | —                       | —        |
+| max       | 原生属性，最大值                                | —    | 否 | —                       | —        |
+| min       | 原生属性，最小值                                | —    | 否 | —                       | —        |
+| step       | 原生属性，输入的数字间隔                               | —    | 否 | —                       | —        |
+
+
+### 插槽
+
+| 名称       | 说明                                    | 
+| ---------- | --------------------------------------- |
+| prefix       | 输入框头部内容，只对 type="text" 有效                                    | 
+| suffix       | 输入框尾部内容，只对 type="text" 有效                                    | 
+| prepend       | 输入框前置内容，只对 type="text" 有效                                    | 
+| append       | 输入框后置内容，只对 type="text" 有效                                    | 
+
+
+### 事件
+
+| 名称       | 说明                                    |  回调参数 |
+| ---------- | --------------------------------------- | ------------|
+| input       | 在 Input 值改变时触发    |             | (e:Event) |
+| change       | 仅在输入框失去焦点或用户按下回车时触发    | (e:Event)            |
+| clear       | 在点击由 clearable 属性生成的清空按钮时触发    |  (value:string | number)          |
+| blur       |在 Input 失去焦点时触发    |   (value:string | number)          |
+| focus       | 在 Input 获得焦点时触发    |    —          |
+
+
+### 方法
+
+| 名称       | 说明                                    |  参数 |
+| ---------- | --------------------------------------- | ------------|
+| select       | 选中 input 中的文字    |             |  —  |
+| blur       |使 input 失去焦点    |    —          |
+| focus       | 使 input 获取焦点    |    —          |

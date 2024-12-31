@@ -1,12 +1,15 @@
 # 更新日志
 
-新增：新增Input输入框组件
+## v0.0.10
+发布时间：2024-12-31
 
-新增：新增$to函数，便于错误处理，不需要使用try catch
+1.新增：新增Input输入框组件
 
-新增：新增$createOverload函数，实现函数重载功能
+2.新增：新增$to函数，便于错误处理，不需要使用try catch
 
-新增：扩展$utils工具方法集合，新增`UUIDv4`、`randomString`、`formatDate`、`deepClone`、`parseUrlParams`、`objectToUrlParams`等方法
+3.新增：新增$createOverload函数，实现函数重载功能
+
+4.新增：扩展$utils工具方法集合，新增`getType`、`UUIDv4`、`randomString`、`formatDate`、`deepClone`、`parseUrlParams`、`objectToUrlParams`、`isEmpty`、`isNull`、`isUndefined`、`isNumber`、`isString`、`isBoolean`等方法
 
 ## v0.0.9
 发布时间：2024-12-24

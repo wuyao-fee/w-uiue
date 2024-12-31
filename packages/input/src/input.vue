@@ -168,6 +168,7 @@ export default {
         ref="input"
         class="w-input__inner"
         :type="showPassword ? (isPasswordVisible ? 'text' : 'password') : type"
+        :disabled="isDisabled"
         v-bind="$attrs"
         @input="handleInput"
         @focus="focus"
@@ -344,6 +345,14 @@ export default {
         top: 50%;
         transform: translateY(-50%);
       }
+    }
+  }
+  &.is-disabled {
+    .w-input__inner,
+    .w-textarea__inner {
+      color: $disabled-text-color;
+      background-color: $disabled-fill-color;
+      cursor: not-allowed;
     }
   }
 }
