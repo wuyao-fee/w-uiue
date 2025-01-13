@@ -17,6 +17,32 @@
       "link": "/guide/updateLog"
     },
     {
+      "text": "解决方案",
+      "ariaLabel": "解决方案",
+      "items": [
+        {
+          "text": "多人在线协同编辑",
+          "link": "/soluciones/onlineEditing"
+        },
+        {
+          "text": "前端导出Excel",
+          "link": "/soluciones/exportExcel"
+        },
+        {
+          "text": "前端预览文件",
+          "link": "/soluciones/preview"
+        },
+        {
+          "text": "前端打印",
+          "link": "/soluciones/print"
+        },
+        {
+          "text": "移动端开发模块",
+          "link": "/soluciones/mobileTemplate"
+        }
+      ]
+    },
+    {
       "text": "Gitee",
       "link": "https://gitee.com/wuyao-fee/w-uiue",
       "target": "_blank"
@@ -45,6 +71,37 @@
         {
           "title": "更新日志",
           "path": "/guide/updateLog.md",
+          "collapsable": false
+        }
+      ]
+    },
+    {
+      "title": "解决方案",
+      "collapsable": false,
+      "children": [
+        {
+          "title": "多人在线协同编辑",
+          "path": "/soluciones/onlineEditing.md",
+          "collapsable": false
+        },
+        {
+          "title": "前端导出Excel",
+          "path": "/soluciones/exportExcel.md",
+          "collapsable": false
+        },
+        {
+          "title": "前端预览文件",
+          "path": "/soluciones/preview.md",
+          "collapsable": false
+        },
+        {
+          "title": "前端打印",
+          "path": "/soluciones/print.md",
+          "collapsable": false
+        },
+        {
+          "title": "移动端开发模块",
+          "path": "/soluciones/mobileTemplate.md",
           "collapsable": false
         }
       ]
@@ -122,6 +179,11 @@
         {
           "title": "Input输入框",
           "path": "/components/input.md",
+          "collapsable": false
+        },
+        {
+          "title": "Select选择器",
+          "path": "/components/select.md",
           "collapsable": false
         }
       ]

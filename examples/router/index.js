@@ -26,6 +26,11 @@ const routes = [
     name: "input",
     component: () => import("../views/input/index.vue"),
   },
+  {
+    path: "/select",
+    name: "select",
+    component: () => import("../views/select/index.vue"),
+  },
 ];
 
 const router = new VueRouter({

@@ -143,11 +143,11 @@ async function updateSidebarEntry(filePath, newEntry) {
   try {
     const fileContent = await fs.readFile(filePath, "utf-8");
     let { nav, sidebar } = JSON.parse(fileContent);
-    if (!sidebar[1]?.children) {
-      sidebar[1] = { children: [] };
+    if (!sidebar[3]?.children) {
+      sidebar[3] = { children: [] };
     }
-    if (!sidebar[1].children.some((item) => item.path === newEntry.path)) {
-      sidebar[1].children.push(newEntry);
+    if (!sidebar[3].children.some((item) => item.path === newEntry.path)) {
+      sidebar[3].children.push(newEntry);
       return await fs.writeFile(
         filePath,
         JSON.stringify({ nav, sidebar }, null, 2),

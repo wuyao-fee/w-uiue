@@ -12,3 +12,4 @@ coverage
 *.scss
 *.woff
 *.ttf
+packages/theme-chalk

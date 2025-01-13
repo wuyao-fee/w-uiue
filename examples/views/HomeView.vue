@@ -595,7 +595,16 @@ export default {
 
 <style scoped>
 ul.nav {
-  display: flex;
+  /* display: flex; */
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(130px, 1fr)
+  ); /* 每个网格项最小宽度为100px，最大宽度为1fr */
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #ccc;
 }
 .nav li {
   margin: 10px;

@@ -10,5 +10,6 @@
   "Scrollbar": "./scrollbar/src/scrollbar.vue",
   "Radio": "./radio/src/radio.vue",
   "RadioGroup": "./radio-group/src/radio-group.vue",
-  "Input": "./input/src/input.vue"
+  "Input": "./input/src/input.vue",
+  "Select": "./select/src/select.vue"
 }
