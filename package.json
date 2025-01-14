@@ -47,6 +47,7 @@
     "resize-observer-polyfill": "^1.5.1",
     "uppercamelcase": "^3.0.0",
     "vue": "^2.6.14",
+    "vue-popperjs": "^2.3.0",
     "vue-router": "^3.5.1",
     "vuepress-plugin-demo-container": "^0.2.0",
     "vuex": "^3.6.2"

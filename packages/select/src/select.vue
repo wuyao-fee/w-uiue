@@ -1,6 +1,7 @@
 <script>
 import WInput from "../../input/src/input.vue";
 import WSelectMenu from "./select-dropdown.vue";
+import { debounce, valueEquals } from "../../theme-chalk/src/utils/tool.js";
 export default {
   name: "WSelect",
   components: { WInput, WSelectMenu },
@@ -14,6 +15,10 @@ export default {
     multipleLimit: {
       type: Number,
       default: 0,
+    },
+    popperAppendToBody: {
+      type: Boolean,
+      default: true,
     },
   },
   data() {
@@ -63,6 +68,133 @@ export default {
       }
       return null;
     },
+    debounce() {
+      return this.remote ? 300 : 0;
+    },
+  },
+  watch: {
+    value(val, oldVal) {
+      if (this.multiple) {
+        this.resetInputHeight();
+        if (
+          (val && val.length > 0) ||
+          (this.$refs.input && this.query !== "")
+        ) {
+          this.currentPlaceholder = "";
+        } else {
+          this.currentPlaceholder = this.cachedPlaceHolder;
+        }
+        if (this.filterable && !this.reserveKeyword) {
+          this.query = "";
+          this.handleQueryChange(this.query);
+        }
+      }
+      this.setSelected();
+      if (this.filterable && !this.multiple) {
+        this.inputLength = 20;
+      }
+      if (!valueEquals(val, oldVal)) {
+        this.dispatch("ElFormItem", "el.form.change", val);
+      }
+    },
+    visible(val) {
+      if (!val) {
+        this.broadcast("ElSelectDropdown", "destroyPopper");
+        if (this.$refs.input) {
+          this.$refs.input.blur();
+        }
+        this.query = "";
+        this.previousQuery = null;
+        this.selectedLabel = "";
+        this.inputLength = 20;
+        this.menuVisibleOnFocus = false;
+        this.resetHoverIndex();
+        this.$nextTick(() => {
+          if (
+            this.$refs.input &&
+            this.$refs.input.value === "" &&
+            this.selected.length === 0
+          ) {
+            this.currentPlaceholder = this.cachedPlaceHolder;
+          }
+        });
+        if (!this.multiple) {
+          if (this.selected) {
+            if (
+              this.filterable &&
+              this.allowCreate &&
+              this.createdSelected &&
+              this.createdLabel
+            ) {
+              this.selectedLabel = this.createdLabel;
+            } else {
+              this.selectedLabel = this.selected.currentLabel;
+            }
+            if (this.filterable) this.query = this.selectedLabel;
+          }
+
+          if (this.filterable) {
+            this.currentPlaceholder = this.cachedPlaceHolder;
+          }
+        }
+      } else {
+        this.broadcast("ElSelectDropdown", "updatePopper");
+        if (this.filterable) {
+          this.query = this.remote ? "" : this.selectedLabel;
+          this.handleQueryChange(this.query);
+          if (this.multiple) {
+            this.$refs.input.focus();
+          } else {
+            if (!this.remote) {
+              this.broadcast("ElOption", "queryChange", "");
+              this.broadcast("ElOptionGroup", "queryChange");
+            }
+
+            if (this.selectedLabel) {
+              this.currentPlaceholder = this.selectedLabel;
+              this.selectedLabel = "";
+            }
+          }
+        }
+      }
+      this.$emit("visible-change", val);
+    },
+  },
+  created() {
+    this.debouncedOnInputChange = debounce(() => {
+      this.onInputChange();
+    }, this.debounce);
+  },
+  methods: {
+    handleFocus(event) {
+      if (!this.softFocus) {
+        if (this.automaticDropdown || this.filterable) {
+          if (this.filterable && !this.visible) {
+            this.menuVisibleOnFocus = true;
+          }
+          this.visible = true;
+        }
+        this.$emit("focus", event);
+      } else {
+        this.softFocus = false;
+      }
+    },
+    handleBlur(event) {
+      setTimeout(() => {
+        if (this.isSilentBlur) {
+          this.isSilentBlur = false;
+        } else {
+          this.$emit("blur", event);
+        }
+      }, 50);
+      this.softFocus = false;
+    },
+    onInputChange() {
+      if (this.filterable && this.query !== this.selectedLabel) {
+        this.query = this.selectedLabel;
+        this.handleQueryChange(this.query);
+      }
+    },
   },
 };
 </script>
@@ -72,7 +204,14 @@ export default {
     <!-- 多选下拉框 -->
     <div class="el-select__tags" v-if="multiple"></div>
 
-    <w-input ref="reference" type="text"></w-input>
+    <w-input
+      ref="reference"
+      type="text"
+      v-model="selectedLabel"
+      @focus="handleFocus"
+      @blur="handleBlur"
+      @input="debouncedOnInputChange"
+    ></w-input>
 
     <transition name="w-zoom-in-top">
       <w-select-menu

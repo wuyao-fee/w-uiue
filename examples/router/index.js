@@ -31,6 +31,11 @@ const routes = [
     name: "select",
     component: () => import("../views/select/index.vue"),
   },
+  {
+    path: "/popper",
+    name: "popper",
+    component: () => import("../views/popper/index.vue"),
+  },
 ];
 
 const router = new VueRouter({
