@@ -36,6 +36,14 @@ const routes = [
     name: "popper",
     component: () => import("../views/popper/index.vue"),
   },
+  {
+    path: "/text-open-close",
+    name: "text-open-close",
+    component: () => import("../views/text-open-close/index.vue"),
+    meta: {
+      title: "多行文本展开收起",
+    },
+  },
 ];
 
 const router = new VueRouter({
