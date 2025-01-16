@@ -12,6 +12,7 @@ import RadioGroup from "./radio-group/src/radio-group.vue";
 import Input from "./input/src/input.vue";
 import Select from "./select/src/select.vue";
 import Popper from "./popper/src/popper.vue";
+import ExpandableText from "./expandable-text/src/expandable-text.vue";
 
 import { importAllSvg } from "./svg-icon/index";
 import {
@@ -53,6 +54,7 @@ const components = [
   Input,
   Select,
   Popper,
+  ExpandableText,
 ];
 
 // 工具方法插件
@@ -121,4 +123,5 @@ export default {
   Input,
   Select,
   Popper,
+  ExpandableText,
 };

@@ -12,5 +12,6 @@
   "RadioGroup": "./radio-group/src/radio-group.vue",
   "Input": "./input/src/input.vue",
   "Select": "./select/src/select.vue",
-  "Popper": "./popper/src/popper.vue"
+  "Popper": "./popper/src/popper.vue",
+  "ExpandableText": "./expandable-text/src/expandable-text.vue"
 }

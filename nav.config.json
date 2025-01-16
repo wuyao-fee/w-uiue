@@ -185,6 +185,11 @@
           "title": "Popper弹出框",
           "path": "/components/popper.md",
           "collapsable": false
+        },
+        {
+          "title": "ExpandableText可展开文本",
+          "path": "/components/expandableText.md",
+          "collapsable": false
         }
       ]
     }

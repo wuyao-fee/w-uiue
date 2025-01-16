@@ -11,11 +11,11 @@
     >渲染的文本内容</expandable-text>
 -->
 <template>
-  <div class="expandable-text-wrapper">
-    <input :id="uniqueId" class="exp" type="checkbox" />
-    <div class="text" :line-clamp="maxLines">
+  <div class="w-expandable-text">
+    <input :id="uniqueId" class="w-expandable-text__exp" type="checkbox" />
+    <div class="w-expandable-text__text" :line-clamp="maxLines">
       <label
-        class="btn"
+        class="w-expandable-text__btn"
         :for="uniqueId"
         :data-expand="expandText"
         :data-collapse="collapseText"
@@ -28,7 +28,7 @@
 
 <script>
 export default {
-  name: "ExpandableText",
+  name: "WExpandableText",
   props: {
     text: {
       type: String,
@@ -52,7 +52,9 @@ export default {
   },
   data() {
     return {
-      uniqueId: `exp-${Math.random().toString(36).substr(2, 9)}`, // 确保ID唯一
+      uniqueId: `w-expandable-text__exp-${Math.random()
+        .toString(36)
+        .substr(2, 9)}`, // 确保ID唯一
     };
   },
   computed: {
@@ -85,11 +87,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../../packages/theme-chalk/src/common/common.scss";
 $font-size: 14px;
 $line-height: 1.5em;
 $btn-line-height: 22px;
 
-.text {
+.w-expandable-text {
+  display: flex;
+}
+.w-expandable-text__text {
   font-size: $font-size;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -103,12 +109,12 @@ $btn-line-height: 22px;
   max-height: 4.5em;
   transition: 0.3s max-height;
 }
-.text::before {
+.w-expandable-text__text::before {
   content: "";
   height: calc(100% - $btn-line-height + 2px);
   float: right;
 }
-.text::after {
+.w-expandable-text__text::after {
   content: "";
   width: 999vw;
   height: 999vw;
@@ -116,41 +122,45 @@ $btn-line-height: 22px;
   box-shadow: inset calc(100px - 999vw) calc(30px - 999vw) 0 0 #fff;
   margin-left: -100px;
 }
-.btn {
+.w-expandable-text__btn {
   position: relative;
   float: right;
   clear: both;
   margin-left: 20px;
   font-size: $font-size;
   padding: 0 8px;
-  background: #3f51b5;
+  background: $help-color;
   line-height: calc($btn-line-height - 2px);
   border-radius: 4px;
   color: #fff;
   cursor: pointer;
   /* margin-top: -30px; */
 }
-.btn::after {
+.w-expandable-text__btn::after {
   //   content: "展开";
   content: attr(data-expand);
 }
-.exp {
+.w-expandable-text__exp {
   display: none;
 }
-.exp:checked + .text {
+.w-expandable-text__exp:checked + .w-expandable-text__text {
   max-height: none;
 }
-.exp:checked + .text::after {
+.w-expandable-text__exp:checked + .w-expandable-text__text::after {
   visibility: hidden;
 }
-.exp:checked + .text .btn::before {
+.w-expandable-text__exp:checked
+  + .w-expandable-text__text
+  .w-expandable-text__btn::before {
   visibility: hidden;
 }
-.exp:checked + .text .btn::after {
+.w-expandable-text__exp:checked
+  + .w-expandable-text__text
+  .w-expandable-text__btn::after {
   //   content: "收起";
   content: attr(data-collapse);
 }
-.btn::before {
+.w-expandable-text__btn::before {
   content: "...";
   position: absolute;
   left: -5px;
