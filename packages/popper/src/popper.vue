@@ -62,6 +62,11 @@ export default {
       type: String,
       default: "",
     },
+    // 宽度
+    width: {
+      type: String,
+      default: "auto",
+    },
   },
 };
 </script>
@@ -78,7 +83,7 @@ export default {
         modifiers: { offset: { offset: '0,10px' } },
       }"
     >
-      <div class="popper" :class="popperClass">
+      <div class="popper" :class="popperClass" :style="{ width: width }">
         <slot>{{ content }}</slot>
       </div>
 
@@ -92,6 +97,7 @@ export default {
 <style lang="scss" scoped>
 @import "../../../packages/theme-chalk/src/common/common.scss";
 .popper {
+  min-width: 150px;
   background: #fff;
   padding: 4px 16px;
   border-radius: 4px;
