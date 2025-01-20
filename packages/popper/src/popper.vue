@@ -14,7 +14,7 @@ export default {
     },
     placement: {
       type: String,
-      default: "bottom",
+      default: "top",
       validate: function (value) {
         return [
           "auto",
@@ -82,6 +82,8 @@ export default {
         placement: placement,
         modifiers: { offset: { offset: '0,10px' } },
       }"
+      v-bind="$attrs"
+      v-on="$listeners"
     >
       <div class="popper" :class="popperClass" :style="{ width: width }">
         <slot>{{ content }}</slot>
