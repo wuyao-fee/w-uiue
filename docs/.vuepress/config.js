@@ -2,6 +2,8 @@ const navConfigJson = require("../../nav.config.json");
 module.exports = {
   title: "w-uiue",
   description: "w-uiue前端组件库",
+  // 打包目录生成在根目录docsDist下
+  dest: "docsDist",
   head: [
     // 注入到当前页面的 HTML <head> 中的标签
     ["link", { rel: "icon", href: "/logo.jpg" }], // 增加一个自定义的 favicon(网页标签的图标)
