@@ -19,7 +19,7 @@ module.exports = {
     ]
   ],
   port: "6200", // 监听端口
-  base: "/", // 这是部署到github相关的配置
+  base: "/w-uiue/", // 这是部署到github相关的配置，部署子目录：/w-uiue/
   markdown: {
     lineNumbers: false, // 代码块显示行号
   },
