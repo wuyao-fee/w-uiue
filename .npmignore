@@ -1,0 +1,21 @@
+# 忽略目录
+examples/
+public/
+packages/
+docs/
+.temp/
+.gitee/
+.vuepress/
+node_modules/
+build/
+
+# 忽略指定文件
+vue.config.js
+babel.config.js
+*.map
+.prettierignore
+.prettierrc
+.eslintignore
+components.json
+icon.json
+nav.config.json

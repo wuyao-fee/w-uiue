@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>$utils工具方法 | w-uiue</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/logo.jpg">
+    <script>var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?7c45c2c42d636d77d05c8a1fe97a34ef";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();</script>
+    <meta name="description" content="w-uiue前端组件库">
+    
+    <link rel="preload" href="/assets/css/0.styles.7b4b15e1.css" as="style"><link rel="preload" href="/assets/js/app.2fdc35c9.js" as="script"><link rel="preload" href="/assets/js/2.81422b61.js" as="script"><link rel="preload" href="/assets/js/1.d8c1eb04.js" as="script"><link rel="preload" href="/assets/js/50.5b26831f.js" as="script"><link rel="prefetch" href="/assets/js/10.eb3b48d8.js"><link rel="prefetch" href="/assets/js/11.8ae96999.js"><link rel="prefetch" href="/assets/js/12.8d1d3859.js"><link rel="prefetch" href="/assets/js/13.4c8d5edc.js"><link rel="prefetch" href="/assets/js/14.92f5e98a.js"><link rel="prefetch" href="/assets/js/15.f4a7a346.js"><link rel="prefetch" href="/assets/js/16.a4471762.js"><link rel="prefetch" href="/assets/js/17.ec4754ee.js"><link rel="prefetch" href="/assets/js/18.3bb39154.js"><link rel="prefetch" href="/assets/js/19.9c1f251e.js"><link rel="prefetch" href="/assets/js/20.3b5126c6.js"><link rel="prefetch" href="/assets/js/21.54b575bb.js"><link rel="prefetch" href="/assets/js/22.581bed6e.js"><link rel="prefetch" href="/assets/js/23.38302a19.js"><link rel="prefetch" href="/assets/js/24.75afad3d.js"><link rel="prefetch" href="/assets/js/25.e8503ac3.js"><link rel="prefetch" href="/assets/js/26.05249f62.js"><link rel="prefetch" href="/assets/js/27.55c277b8.js"><link rel="prefetch" href="/assets/js/28.8a56302f.js"><link rel="prefetch" href="/assets/js/29.4bcc169b.js"><link rel="prefetch" href="/assets/js/3.64d7b871.js"><link rel="prefetch" href="/assets/js/30.027bed74.js"><link rel="prefetch" href="/assets/js/31.693362a3.js"><link rel="prefetch" href="/assets/js/32.51b80baf.js"><link rel="prefetch" href="/assets/js/33.12ee532e.js"><link rel="prefetch" href="/assets/js/34.f23ae4b3.js"><link rel="prefetch" href="/assets/js/35.5d9f4ce0.js"><link rel="prefetch" href="/assets/js/36.4fb83e64.js"><link rel="prefetch" href="/assets/js/37.b16d619c.js"><link rel="prefetch" href="/assets/js/38.8f2b70d7.js"><link rel="prefetch" href="/assets/js/39.abd33b86.js"><link rel="prefetch" href="/assets/js/4.335554d8.js"><link rel="prefetch" href="/assets/js/40.d6b857fb.js"><link rel="prefetch" href="/assets/js/41.5893d9a6.js"><link rel="prefetch" href="/assets/js/42.d9a1774a.js"><link rel="prefetch" href="/assets/js/43.9d2f503d.js"><link rel="prefetch" href="/assets/js/44.c8ce023d.js"><link rel="prefetch" href="/assets/js/45.400c7758.js"><link rel="prefetch" href="/assets/js/46.0d84672c.js"><link rel="prefetch" href="/assets/js/47.0b1bda19.js"><link rel="prefetch" href="/assets/js/48.f59e713c.js"><link rel="prefetch" href="/assets/js/49.077ee9e4.js"><link rel="prefetch" href="/assets/js/5.a1ea42d3.js"><link rel="prefetch" href="/assets/js/6.b2b45190.js"><link rel="prefetch" href="/assets/js/7.211cafb8.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.b8f134b8.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.7b4b15e1.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">w-uiue</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/guide/install.html" class="nav-link">
+  指南
+</a></div><div class="nav-item"><a href="/components/icon.html" class="nav-link">
+  组件
+</a></div><div class="nav-item"><a href="/guide/updateLog.html" class="nav-link">
+  更新日志
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="解决方案" class="dropdown-title"><span class="title">解决方案</span> <span class="arrow down"></span></button> <button type="button" aria-label="解决方案" class="mobile-dropdown-title"><span class="title">解决方案</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/soluciones/onlineEditing.html" class="nav-link">
+  多人在线协同编辑
+</a></li><li class="dropdown-item"><!----> <a href="/soluciones/exportExcel.html" class="nav-link">
+  前端导出Excel
+</a></li><li class="dropdown-item"><!----> <a href="/soluciones/preview.html" class="nav-link">
+  前端预览文件
+</a></li><li class="dropdown-item"><!----> <a href="/soluciones/print.html" class="nav-link">
+  前端打印
+</a></li><li class="dropdown-item"><!----> <a href="/soluciones/mobileTemplate.html" class="nav-link">
+  移动端开发模块
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发文档" class="dropdown-title"><span class="title">开发文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="开发文档" class="mobile-dropdown-title"><span class="title">开发文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/mirrors/exceljs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  exceljs中文文档
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><a href="https://gitee.com/wuyao-fee/w-uiue" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="http://113.45.180.231/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/guide/install.html" class="nav-link">
+  指南
+</a></div><div class="nav-item"><a href="/components/icon.html" class="nav-link">
+  组件
+</a></div><div class="nav-item"><a href="/guide/updateLog.html" class="nav-link">
+  更新日志
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="解决方案" class="dropdown-title"><span class="title">解决方案</span> <span class="arrow down"></span></button> <button type="button" aria-label="解决方案" class="mobile-dropdown-title"><span class="title">解决方案</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/soluciones/onlineEditing.html" class="nav-link">
+  多人在线协同编辑
+</a></li><li class="dropdown-item"><!----> <a href="/soluciones/exportExcel.html" class="nav-link">
+  前端导出Excel
+</a></li><li class="dropdown-item"><!----> <a href="/soluciones/preview.html" class="nav-link">
+  前端预览文件
+</a></li><li class="dropdown-item"><!----> <a href="/soluciones/print.html" class="nav-link">
+  前端打印
+</a></li><li class="dropdown-item"><!----> <a href="/soluciones/mobileTemplate.html" class="nav-link">
+  移动端开发模块
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发文档" class="dropdown-title"><span class="title">开发文档</span> <span class="arrow down"></span></button> <button type="button" aria-label="开发文档" class="mobile-dropdown-title"><span class="title">开发文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://gitee.com/mirrors/exceljs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  exceljs中文文档
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><a href="https://gitee.com/wuyao-fee/w-uiue" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="http://113.45.180.231/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>指南</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/install.html" class="sidebar-link">安装</a></li><li><a href="/guide/quickstart.html" class="sidebar-link">快速开始</a></li><li><a href="/guide/updateLog.html" class="sidebar-link">更新日志</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>解决方案</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/soluciones/onlineEditing.html" class="sidebar-link">多人在线协同编辑</a></li><li><a href="/soluciones/exportExcel.html" class="sidebar-link">前端导出Excel</a></li><li><a href="/soluciones/preview.html" class="sidebar-link">前端预览文件</a></li><li><a href="/soluciones/print.html" class="sidebar-link">前端打印</a></li><li><a href="/soluciones/mobileTemplate.html" class="sidebar-link">移动端开发模块</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>工具</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/utils/$to.html" class="sidebar-link">$to</a></li><li><a href="/utils/$utils.html" aria-current="page" class="active sidebar-link">$utils</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/utils/$createOverload.html" class="sidebar-link">$createOverload</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>组件</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/components/icon.html" class="sidebar-link">Icon图标</a></li><li><a href="/components/svgIcon.html" class="sidebar-link">SvgIcon图标</a></li><li><a href="/components/button.html" class="sidebar-link">Button按钮</a></li><li><a href="/components/divider.html" class="sidebar-link">Divider分割线</a></li><li><a href="/components/card.html" class="sidebar-link">Card卡片</a></li><li><a href="/components/descriptions.html" class="sidebar-link">Descriptions描述列表</a></li><li><a href="/components/message.html" class="sidebar-link">Message消息提示</a></li><li><a href="/components/scrollbar.html" class="sidebar-link">Scrollbar滚动条</a></li><li><a href="/components/radio.html" class="sidebar-link">Radio单选框</a></li><li><a href="/components/input.html" class="sidebar-link">Input输入框</a></li><li><a href="/components/popper.html" class="sidebar-link">Popper弹出框</a></li><li><a href="/components/expandableText.html" class="sidebar-link">ExpandableText可展开文本</a></li><li><a href="/components/teleport.html" class="sidebar-link">Teleport传送门</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="utils工具方法"><a href="#utils工具方法" class="header-anchor">#</a> $utils工具方法</h1> <h3 id="debounce"><a href="#debounce" class="header-anchor">#</a> debounce</h3> <p>防抖函数</p> <p>调用：<code>this.$utils.debounce(fn, delay)</code></p> <p>参数：</p> <div class="language- extra-class"><pre class="language-text"><code>* @param { Function } fn 需要防抖的函数
+* @param { Number } delay 延迟时间
+* @returns { Function } 返回一个防抖函数
+</code></pre></div><h3 id="throttle"><a href="#throttle" class="header-anchor">#</a> throttle</h3> <p>节流函数</p> <p>调用：<code>this.$utils.throttle(fn, delay)</code></p> <p>参数：</p> <div class="language- extra-class"><pre class="language-text"><code>* @param { Function } fn 需要节流的函数
+* @param { Number } delay 延迟时间
+* @returns { Function } 返回一个节流函数
+</code></pre></div><h3 id="copytoclipboard"><a href="#copytoclipboard" class="header-anchor">#</a> copyToClipboard</h3> <p>复制到剪贴板</p> <p>调用：<code>this.$utils.copyToClipboard(text)</code></p> <p>参数：</p> <div class="language- extra-class"><pre class="language-text"><code>* @param { String } text - 要复制的文本
+* @returns { Promise&lt;Boolean&gt; } 是否复制成功
+</code></pre></div><h3 id="calculatepixels"><a href="#calculatepixels" class="header-anchor">#</a> calculatePixels</h3> <p>计算像素</p> <p>调用：<code>this.$utils.calculatePixels(pixel, pixel2)</code></p> <p>参数：</p> <div class="language- extra-class"><pre class="language-text"><code>* @param { String } pixel 需要计算的像素
+* @param { String } pixel2 需要计算的像素
+* @returns { Number } 返回计算后的像素
+</code></pre></div><h3 id="isobject"><a href="#isobject" class="header-anchor">#</a> isObject</h3> <p>判断是否是对象</p> <p>调用：<code>this.$utils.isObject(obj)</code></p> <p>参数：</p> <div class="language- extra-class"><pre class="language-text"><code>* @param { Any } obj 需要判断的对象
+* @returns { Boolean } 返回是否是对象
+</code></pre></div><h3 id="isfunction"><a href="#isfunction" class="header-anchor">#</a> isFunction</h3> <p>判断是否是函数</p> <p>调用：<code>this.$utils.isFunction(fn)</code></p> <p>参数：</p> <div class="language- extra-class"><pre class="language-text"><code>* @param { Any } fn 需要判断的函数
+* @returns { Boolean } 返回是否是函数
+</code></pre></div><h3 id="uuidv4"><a href="#uuidv4" class="header-anchor">#</a> UUIDv4</h3> <p>生成UUIDv4</p> <p>调用：<code>this.$utils.UUIDv4()</code></p> <p>参数：</p> <div class="language- extra-class"><pre class="language-text"><code>* @returns { String } 返回生成的UUIDv4
+</code></pre></div><h3 id="randomstring"><a href="#randomstring" class="header-anchor">#</a> randomString</h3> <p>生成随机字符串</p> <p>调用：<code>this.$utils.randomString(options = {})</code></p> <p>参数：</p> <div class="language- extra-class"><pre class="language-text"><code>* @param { String } prefix 随机字符串前缀，默认&quot;&quot;
+* @param { Number } length 随机字符串长度，默认16位
+* @param { Boolean } onlyNumbers 是否只生成数字，默认false
+* @param { Boolean } useTimestamp 是否使用时间戳，默认true
+* @returns { String } 返回生成的随机字符串
+</code></pre></div><h3 id="formatdate"><a href="#formatdate" class="header-anchor">#</a> formatDate</h3> <p>格式化日期</p> <p>调用：<code>this.$utils.formatDate(date, format = 'YYYY-MM-DD HH:mm:ss')</code></p> <p>参数：</p> <div class="language- extra-class"><pre class="language-text"><code>* @param { Date | number | string } date - 日期对象、时间戳或日期字符串
+* @param { string } format - 格式化模式字符串
+* @returns { string } 格式化后的日期字符串
+</code></pre></div><h3 id="deepclone"><a href="#deepclone" class="header-anchor">#</a> deepClone</h3> <p>深度克隆</p> <p>调用：<code>this.$utils.deepClone(data, hash = new WeakMap())</code></p> <p>参数：</p> <div class="language- extra-class"><pre class="language-text"><code>* @param { any } data - 需要深拷贝的数据
+* @param { WeakMap } [hash=new WeakMap()] - 用于处理循环引用
+* @returns { any } 深拷贝后的数据
+</code></pre></div><h3 id="parseurlparams"><a href="#parseurlparams" class="header-anchor">#</a> parseUrlParams</h3> <p>解析URL参数</p> <p>调用：<code>this.$utils.parseUrlParams(url = window.location.href)</code></p> <p>参数：</p> <div class="language- extra-class"><pre class="language-text"><code>* @param { string } [url=window.location.href] - URL字符串
+* @returns { Object } 解析后的参数对象
+</code></pre></div><h3 id="objecttourlparams"><a href="#objecttourlparams" class="header-anchor">#</a> objectToUrlParams</h3> <p>将对象转换为URL参数</p> <p>调用：<code>this.$utils.objectToUrlParams(data)</code></p> <p>参数：</p> <div class="language- extra-class"><pre class="language-text"><code>* @param { Object } data - 需要转换的对象
+* @returns { string } URL参数字符串
+</code></pre></div></div> <div class="page-right-toc"><ul class="right-toc-list"><li><a href="#debounce">debounce</a></li><li><a href="#throttle">throttle</a></li><li><a href="#copytoclipboard">copyToClipboard</a></li><li><a href="#calculatepixels">calculatePixels</a></li><li><a href="#isobject">isObject</a></li><li><a href="#isfunction">isFunction</a></li><li><a href="#uuidv4">UUIDv4</a></li><li><a href="#randomstring">randomString</a></li><li><a href="#formatdate">formatDate</a></li><li><a href="#deepclone">deepClone</a></li><li><a href="#parseurlparams">parseUrlParams</a></li><li><a href="#objecttourlparams">objectToUrlParams</a></li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新于:</span> <span class="time">2024-12-29 18:31:28</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/utils/$to.html" class="prev">
+        $to
+      </a></span> <span class="next"><a href="/utils/$createOverload.html">
+        $createOverload
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.2fdc35c9.js" defer></script><script src="/assets/js/2.81422b61.js" defer></script><script src="/assets/js/1.d8c1eb04.js" defer></script><script src="/assets/js/50.5b26831f.js" defer></script>
+  </body>
+</html>

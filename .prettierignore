@@ -1,0 +1,17 @@
+.gieee
+.temp
+.dist
+.vuepress
+dist
+docs
+lib
+*.log
+*.swp
+*.swo
+*.swn
+*.swnb
+*.swp
+*.swpx
+*.swpu
+*.swp~
+node_modules
