@@ -12,5 +12,5 @@ features:
     details: 基于联通UIUE交互规范实现。
   - title: 持续维护
     details: 持续更新，及时修复bug。
-footer: MIT Licensed | Copyright © 2024-present w-uiue
+footer: MIT Licensed | Copyright ©2024-present w-uiue
 ---

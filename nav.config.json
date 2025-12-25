@@ -43,6 +43,17 @@
       ]
     },
     {
+      "text": "开发文档",
+      "ariaLabel": "开发文档",
+      "items": [
+        {
+          "text": "exceljs中文文档",
+          "link": "https://gitee.com/mirrors/exceljs",
+          "target": "_blank"
+        }
+      ]
+    },
+    {
       "text": "Gitee",
       "link": "https://gitee.com/wuyao-fee/w-uiue",
       "target": "_blank"
@@ -189,6 +200,11 @@
         {
           "title": "ExpandableText可展开文本",
           "path": "/components/expandableText.md",
+          "collapsable": false
+        },
+        {
+          "title": "Teleport传送门",
+          "path": "/components/teleport.md",
           "collapsable": false
         }
       ]

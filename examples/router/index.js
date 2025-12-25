@@ -44,6 +44,14 @@ const routes = [
       title: "多行文本展开收起",
     },
   },
+  {
+    path: "/teleport",
+    name: "teleport",
+    component: () => import("../views/teleport/index.vue"),
+    meta: {
+      title: "Teleport",
+    },
+  },
 ];
 
 const router = new VueRouter({

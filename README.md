@@ -6,7 +6,7 @@
 
 组件库说明文档：http://113.45.180.231:6200/
 
-版本：0.0.10
+版本：0.0.12
 
 #### 文档首页
 
@@ -31,21 +31,13 @@ npm install w-uiue -S
 
 ```js
 import Vue from "vue";
-import App from "./App.vue";
-import router from "./router";
 import WUIUE from "w-uiue";
 // 引入样式文件, 注意：v0.0.4及以前版本使用该路径样式
 import "w-uiue/dist/w-uiue.css";
 // 引入样式文件, v0.0.5及以后版本使用该路径样式
 import "w-uiue/lib/w-uiue.css";
 
-Vue.config.productionTip = false;
 Vue.use(WUIUE);
-
-new Vue({
-  router,
-  render: (h) => h(App),
-}).$mount("#app");
 ```
 
 以上代码便完成了 w-uiue 的引入。需要注意的是，样式文件需要单独引入，v0.0.5 版本及以后样式文件的路径不一样。
